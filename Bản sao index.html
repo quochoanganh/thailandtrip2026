@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lịch Trình Bangkok 5N4Đ (05/11 - 09/11/2026) | 3D Bento Edition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-primary: #1D5CFF;
+      --blue-deep: #0B38B8;
+      --orange-primary: #FF441F;
+      --orange-deep: #E02B00;
+      --bg-canvas: #F4F7FE;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(145deg, #1D5CFF 0%, #1044D4 55%, #0B38B8 100%);
+      color: #0F172A;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Main 3D White Container */
+    .main-shell {
+      max-width: 1320px;
+      margin: 18px auto 40px auto;
+      background: #FFFFFF;
+      border-radius: 36px;
+      box-shadow: 0 20px 0 #072785, 0 32px 64px rgba(4, 18, 66, 0.45);
+      border: 3px solid #E2EBF8;
+      transition: max-width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Mobile Simulation Mode */
+    .main-shell.mobile-sim {
+      max-width: 430px !important;
+      border-radius: 42px;
+      border: 6px solid #0F172A;
+    }
+
+    /* 3D Bento Card Base */
+    .bento-card {
+      background: #FFFFFF;
+      border-radius: 26px;
+      border: 2px solid #DCE6F7;
+      box-shadow: 0 10px 0 #D0DCF5, 0 18px 32px rgba(11, 56, 184, 0.12);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .bento-card-interactive {
+      cursor: pointer;
+    }
+
+    .bento-card-interactive:hover {
+      transform: translateY(-3px);
+      border-color: #1D5CFF;
+      box-shadow: 0 13px 0 #B8CCF5, 0 22px 38px rgba(29, 92, 255, 0.18);
+    }
+
+    .bento-card-interactive:active {
+      transform: translateY(4px);
+      box-shadow: 0 5px 0 #B8CCF5, 0 10px 20px rgba(29, 92, 255, 0.14);
+    }
+
+    /* Electric Blue 3D Block */
+    .bento-blue {
+      background: linear-gradient(135deg, #1D5CFF 0%, #0B38B8 100%);
+      color: #FFFFFF;
+      border-radius: 28px;
+      border: 2px solid #477BFF;
+      box-shadow: 0 10px 0 #072680, 0 20px 36px rgba(11, 56, 184, 0.28);
+    }
+
+    /* Vibrant Orange-Red 3D Block */
+    .bento-orange {
+      background: linear-gradient(135deg, #FF441F 0%, #E02B00 100%);
+      color: #FFFFFF;
+      border-radius: 26px;
+      border: 2px solid #FF7256;
+      box-shadow: 0 10px 0 #A81E00, 0 20px 34px rgba(224, 43, 0, 0.28);
+    }
+
+    /* Soft Tinted 3D Card */
+    .bento-soft {
+      background: #F4F7FE;
+      border-radius: 24px;
+      border: 2px solid #D5E2FA;
+      box-shadow: 0 8px 0 #C7D7F4, 0 14px 26px rgba(11, 56, 184, 0.08);
+    }
+
+    /* Tactile 3D Buttons */
+    .btn-3d-blue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1D5CFF 0%, #0B38B8 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      border-radius: 9999px;
+      border: 2px solid #4E82FF;
+      box-shadow: 0 6px 0 #062378, 0 12px 24px rgba(29, 92, 255, 0.28);
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-3d-blue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 0 #062378, 0 16px 28px rgba(29, 92, 255, 0.35);
+    }
+
+    .btn-3d-blue:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #062378, 0 6px 12px rgba(29, 92, 255, 0.25);
+    }
+
+    .btn-3d-orange {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FF441F 0%, #E02B00 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      border-radius: 9999px;
+      border: 2px solid #FF785E;
+      box-shadow: 0 6px 0 #9E1C00, 0 12px 24px rgba(255, 68, 31, 0.3);
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-3d-orange:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 0 #9E1C00, 0 16px 28px rgba(255, 68, 31, 0.38);
+    }
+
+    .btn-3d-orange:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #9E1C00, 0 6px 12px rgba(255, 68, 31, 0.25);
+    }
+
+    .btn-3d-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: #0F172A;
+      font-weight: 700;
+      border-radius: 9999px;
+      border: 2px solid #CBD8F0;
+      box-shadow: 0 5px 0 #BCCCEB, 0 10px 18px rgba(15, 23, 42, 0.08);
+      transition: all 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-3d-white:hover {
+      transform: translateY(-2px);
+      border-color: #1D5CFF;
+      color: #1D5CFF;
+      box-shadow: 0 7px 0 #B0C4EC, 0 14px 22px rgba(29, 92, 255, 0.15);
+    }
+
+    .btn-3d-white:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #B0C4EC;
+    }
+
+    /* Navigation Tabs */
+    .nav-tab {
+      padding: 10px 18px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: #F1F5FD;
+      color: #334155;
+      box-shadow: 0 4px 0 #D5E0F5;
+    }
+
+    .nav-tab:hover {
+      background: #E4ECFC;
+      color: #1D5CFF;
+      transform: translateY(-1px);
+    }
+
+    .nav-tab.active {
+      background: linear-gradient(135deg, #1D5CFF 0%, #0B38B8 100%);
+      color: #FFFFFF;
+      border-color: #598BFF;
+      box-shadow: 0 5px 0 #072680, 0 10px 20px rgba(29, 92, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Highlight Keyword Pill inside Headings */
+    .pill-highlight {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF441F 0%, #E02B00 100%);
+      color: #FFFFFF;
+      padding: 2px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 0 #9E1C00;
+      transform: rotate(-1.5deg);
+    }
+
+    /* Circular Arrow Badge */
+    .arrow-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 9999px;
+      background: #FF441F;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Hide scrollbar for clean horizontal pills */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="px-2 sm:px-5 py-3">
+
+  <!-- TOP UTILITY BAR (OUTSIDE SHELL) -->
+  <div class="max-w-[1320px] mx-auto mb-3 flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-[#092C96]/90 border border-blue-400/30 text-white backdrop-blur-md">
+    <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold">
+      <span class="px-2.5 py-1 rounded-full bg-[#FF441F] text-white font-extrabold text-xs">LIVE 2026</span>
+      <span>Bangkok 5N4Đ (05/11 - 09/11/2026) • Đã thanh toán Vé bay & Khách sạn</span>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <button type="button" onclick="window.openRateModal()" class="px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-xs font-bold transition cursor-pointer">
+        💱 Tỷ giá: 1 THB = <span id="topRateDisplay">760</span>đ • Nhóm <span id="topPaxDisplay">4</span> người (Chỉnh sửa)
+      </button>
+      <button type="button" id="viewportToggleBtn" onclick="window.toggleViewportMode()" class="px-3 py-1.5 rounded-full bg-[#FF441F] hover:bg-[#E02B00] text-white text-xs font-bold transition cursor-pointer shadow">
+        📱 Chế độ Điện thoại
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN 3D WHITE CONTAINER -->
+  <div id="mainShell" class="main-shell pb-12">
+
+    <!-- STICKY TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-[#DCE6F7] rounded-t-[34px] px-4 sm:px-7 py-3.5">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        <!-- Brand Logo -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3 cursor-pointer" onclick="window.switchTab('overview')">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#1D5CFF] to-[#0B38B8] text-white font-extrabold flex items-center justify-center text-lg shadow-md border border-blue-300">
+              BKK
+            </div>
+            <div>
+              <div class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
+                BANGKOK <span class="text-[#FF441F]">2026</span>
+              </div>
+              <div class="text-[11px] font-semibold text-slate-500 mt-0.5">
+                05/11 – 09/11/2026 • Top High Airport Link Hotel
+              </div>
+            </div>
+          </div>
+          <button type="button" onclick="window.openRateModal()" class="lg:hidden btn-3d-white px-3 py-1.5 text-xs">
+            Tỷ giá & Nhóm
+          </button>
+        </div>
+
+        <!-- Navigation Pills -->
+        <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1.5 pt-0.5" id="mainNavTabs">
+          <button type="button" data-tab="overview" onclick="window.switchTab('overview')" class="nav-tab active">
+            Tổng Quan
+          </button>
+          <button type="button" data-tab="day1" onclick="window.switchTab('day1')" class="nav-tab">
+            Ngày 1 (05/11)
+          </button>
+          <button type="button" data-tab="day2" onclick="window.switchTab('day2')" class="nav-tab">
+            Ngày 2 (06/11)
+          </button>
+          <button type="button" data-tab="day3" onclick="window.switchTab('day3')" class="nav-tab">
+            Ngày 3 (07/11)
+          </button>
+          <button type="button" data-tab="day4" onclick="window.switchTab('day4')" class="nav-tab">
+            Ngày 4 (08/11)
+          </button>
+          <button type="button" data-tab="day5" onclick="window.switchTab('day5')" class="nav-tab">
+            Ngày 5 (09/11)
+          </button>
+          <button type="button" data-tab="survey" onclick="window.switchTab('survey')" class="nav-tab">
+            Khảo Sát Thị Trường
+          </button>
+          <button type="button" data-tab="notes" onclick="window.switchTab('notes')" class="nav-tab">
+            Lưu Ý Di Chuyển
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="px-4 sm:px-8 pt-6">
+
+      <!-- ==========================================
+           VIEW 1: TỔNG QUAN (OVERVIEW)
+           ========================================== -->
+      <section id="view-overview" class="tab-view space-y-8">
+        <!-- 3D Hero Section -->
+        <div class="bento-blue p-6 sm:p-9 relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-7 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold tracking-wide uppercase">
+                Hành Trình Tối Ưu Không Đi Ngược Tuyến • Đã Trả Vé Bay & Khách Sạn
+              </div>
+              <h1 class="text-2xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.15] tracking-tight">
+                Lịch Trình Khám Phá <span class="pill-highlight">Bangkok 5N4Đ</span> Nghệ Thuật, Ẩm Thực & Sáng Tạo
+              </h1>
+              <p class="text-blue-100 text-sm sm:text-base leading-relaxed max-w-2xl">
+                Thiết kế chuẩn 3D Bento trực quan: Sắp xếp theo cụm địa lý chống kẹt xe, kết hợp xe buýt / tàu điện / đi bộ dưới 1km, nghỉ trưa máy lạnh 12:00–14:30 mỗi ngày và cảnh báo giao thông thực tế dịp concert BIGBANG.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <button type="button" onclick="window.switchTab('day1')" class="btn-3d-orange px-6 py-3 text-sm sm:text-base">
+                  <span>Bắt đầu xem Ngày 1 (05/11)</span>
+                  <span class="arrow-badge bg-white text-[#FF441F]">→</span>
+                </button>
+                <button type="button" onclick="window.switchTab('survey')" class="btn-3d-white px-5 py-3 text-sm">
+                  <span>Khảo Sát Nhà Sách & VPP</span>
+                  <span class="arrow-badge">→</span>
+                </button>
+                <a href="https://www.google.com/maps/search/?api=1&query=Top+High+Airport+Link+Hotel+33+Soi+Petchaburi+11-13+Ratchathewi+Bangkok" target="_blank" rel="noopener noreferrer" class="btn-3d-white px-4 py-3 text-sm">
+                  <span>Vị trí Khách sạn trên Maps</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tilted 3D Orange-Red Summary Card -->
+            <div class="lg:col-span-5">
+              <div class="bento-orange p-6 transform lg:rotate-2 space-y-4">
+                <div class="flex items-center justify-between border-b border-white/25 pb-3">
+                  <div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-orange-100">Tổng Chi Phí Dự Kiến / 1 Người</div>
+                    <div class="text-2xl sm:text-3xl font-extrabold mt-0.5" id="heroTotalThb">4,650 THB</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-xs font-bold uppercase tracking-wider text-orange-100">Quy đổi VNĐ</div>
+                    <div class="text-xl sm:text-2xl font-extrabold text-yellow-200" id="heroTotalVnd">~3,534,000đ</div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm">
+                  <div class="bg-black/20 rounded-2xl p-3 border border-white/15">
+                    <div class="text-orange-100 text-xs">Khách sạn lưu trú (4 đêm)</div>
+                    <div class="font-bold mt-0.5">Top High Airport Link</div>
+                    <div class="text-[11px] text-yellow-200 font-semibold mt-0.5">✓ Đã thanh toán (0 THB)</div>
+                  </div>
+                  <div class="bg-black/20 rounded-2xl p-3 border border-white/15">
+                    <div class="text-orange-100 text-xs">Vé máy bay khứ hồi</div>
+                    <div class="font-bold mt-0.5">SGN ⇄ DMK (05–09/11)</div>
+                    <div class="text-[11px] text-yellow-200 font-semibold mt-0.5">✓ Đã thanh toán (0 THB)</div>
+                  </div>
+                </div>
+
+                <div class="bg-white/15 rounded-2xl p-3.5 text-xs leading-relaxed">
+                  <div class="font-extrabold uppercase tracking-wide mb-1">Nguyên tắc tối ưu nhóm <span id="heroGroupSize">4</span> người:</div>
+                  Đi nhóm 3–4 người gọi <strong>Bolt / GrabCar chia đầu người</strong> ở các chặng ngắn rẻ hơn hoặc ngang tàu BTS/MRT mà không phải đi bộ nắng; chỉ dùng MRT/BTS khi xuyên tâm giờ cao điểm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIGBANG CONCERT SPECIAL ALERT BANNER -->
+        <div class="bento-blue p-5 sm:p-6 border-2 border-yellow-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1.5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
+                Cảnh Báo Sự Kiện Lớn Tại Bangkok (07/11 & 08/11/2026)
+              </div>
+              <h2 class="text-lg sm:text-xl font-extrabold">
+                Concert BIGBANG &lt;XX : COSMOS&gt; World Tour tại SVĐ Quốc gia Rajamangala (19:00 tối Thứ 7 & Chủ Nhật)
+              </h2>
+              <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">
+                Hơn 50.000 khán giả đổ về trục đường Ratchadaphisek – Rama 9 – Ramkhamhaeng từ 16:30–19:00 và lúc tan show 21:30–23:00. Lịch trình <strong>Ngày 3 (07/11)</strong> đã được thiết kế đi <strong>tàu ngầm MRT Blue Line</strong> từ Chatuchak về thẳng Jodd Fairs Ratchada lúc 18:15 (không đi taxi mặt đất) và rút khỏi Jodd Fairs lúc <strong>20:40</strong> trước khi concert kết thúc!
+              </p>
+            </div>
+            <button type="button" onclick="window.switchTab('day3')" class="btn-3d-orange px-5 py-3 text-xs sm:text-sm shrink-0">
+              <span>Xem chiến thuật Ngày 3</span>
+              <span class="arrow-badge bg-white text-[#FF441F]">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 DAY BENTO GRID CARDS -->
+        <div class="space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div>
+              <div class="text-xs font-extrabold uppercase tracking-wider text-[#1D5CFF]">Bấm vào từng ngày để xem bản đồ & chi tiết</div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-0.5">
+                Tóm Tắt 5 Ngày Hành Trình <span class="pill-highlight">Chuẩn Tuyến Đường</span>
+              </h2>
+            </div>
+            <div class="text-xs font-bold text-slate-500">
+              Nhấp vào thẻ bất kỳ bên dưới để mở chi tiết ngày đó
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="overviewDayCardsGrid">
+            <!-- Rendered dynamically & cleanly via JS -->
+          </div>
+        </div>
+
+        <!-- BUDGET SUMMARY & HOTEL / FLIGHT BASE INFO -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Left: 5-Day Budget Table -->
+          <div class="lg:col-span-7 bento-card p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div>
+                <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Bảng Tổng Hợp Ngân Sách Thực Tế</div>
+                <h3 class="text-xl font-extrabold text-slate-900">Chi Phí Ăn Uống, Vé Tham Quan & Di Chuyển</h3>
+              </div>
+              <button type="button" onclick="window.openRateModal()" class="btn-3d-white px-3.5 py-1.5 text-xs">
+                Đổi tỷ giá (<span class="rate-inline-label">760</span>đ)
+              </button>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead>
+                  <tr class="border-b-2 border-slate-200 text-slate-500 uppercase text-[11px]">
+                    <th class="py-2.5 pr-2">Hạng mục / Ngày</th>
+                    <th class="py-2.5 px-2">Nội dung chính</th>
+                    <th class="py-2.5 px-2 text-right">1 Người (THB)</th>
+                    <th class="py-2.5 pl-2 text-right">1 Người (VNĐ)</th>
+                  </tr>
+                </thead>
+                <tbody id="overviewBudgetTableBody" class="divide-y divide-slate-200 font-medium">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right: Base Camp & Transit Golden Rules -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="bento-soft p-6 space-y-3">
+              <div class="inline-block px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">
+                Điểm Đóng Quân Cố Định (4 Đêm)
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900">Top High Airport Link Hotel</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                📍 <strong>Địa chỉ:</strong> 33 Soi Petchaburi 11-13, Thanon Phaya Thai, Ratchathewi, Bangkok 10400.<br/>
+                🚶 <strong>Lợi thế vị trí:</strong> Ngay sát ga ARL & BTS Phaya Thai, đi bộ 350m ra phố ẩm thực đêm Phetchaburi Soi 10–12, đi bộ 850m qua cầu bộ hành Ratchaprasong về thẳng từ Siam Paragon.
+              </p>
+              <div class="pt-1 flex flex-wrap gap-2">
+                <a href="https://www.google.com/maps/search/?api=1&query=Top+High+Airport+Link+Hotel+Bangkok" target="_blank" rel="noopener noreferrer" class="btn-3d-blue px-4 py-2 text-xs">
+                  <span>Mở Google Maps Khách sạn</span>
+                  <span class="arrow-badge">↗</span>
+                </a>
+                <button type="button" onclick="window.switchTab('notes')" class="btn-3d-white px-4 py-2 text-xs">
+                  Xem Lưu Ý Xuất Nhập Cảnh
+                </button>
+              </div>
+            </div>
+
+            <div class="bento-card p-6 space-y-3">
+              <div class="text-xs font-extrabold uppercase text-[#FF441F]">Mẹo Tối Ưu Di Chuyển Nhóm 3-4 Người</div>
+              <h3 class="text-lg font-extrabold text-slate-900">Khi nào đi Bolt/Grab, Xe Buýt hay Tàu Điện?</h3>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                <li><strong>1. Chặng ngắn dưới 1km:</strong> Đi bộ 100% (0 THB) ở cụm Warehouse 30 → Talat Noi → Song Wat → Chinatown và cụm Slowcombo → Banthat Thong.</li>
+                <li><strong>2. Chặng 2km – 6km không kẹt xe:</strong> Gọi <strong>Bolt / GrabCar chia 4 người</strong> chỉ từ 18–35 THB/người (rẻ hơn vé BTS 45 THB/người mà đưa đón tận cửa).</li>
+                <li><strong>3. Chặng xuyên tâm giờ cao điểm (17:00–19:30):</strong> Bắt buộc đi <strong>MRT Blue Line hoặc BTS Skytrain</strong> để né kẹt xe mặt đất.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 2..6: CONTAINER FOR DAY 1 TO DAY 5
+           ========================================== -->
+      <section id="view-day1" class="tab-view hidden"></section>
+      <section id="view-day2" class="tab-view hidden"></section>
+      <section id="view-day3" class="tab-view hidden"></section>
+      <section id="view-day4" class="tab-view hidden"></section>
+      <section id="view-day5" class="tab-view hidden"></section>
+
+      <!-- ==========================================
+           VIEW 7: KHẢO SÁT THỊ TRƯỜNG (MARKET SURVEY)
+           ========================================== -->
+      <section id="view-survey" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div class="space-y-2 max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
+                Chuyên Đề Nghiên Cứu & Khảo Sát Thực Địa
+              </div>
+              <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                Khảo Sát Thị Trường <span class="pill-highlight">Nhà Sách, VPP & Art Hub</span> Tại Bangkok
+              </h2>
+              <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
+                Danh sách 8 tổ hợp Nhà sách (Bookstore), Văn phòng phẩm (Stationery), Blindbox/Art Toy và Không gian Triển lãm Sáng tạo hàng đầu Bangkok. Mỗi địa điểm đều có gợi ý <strong>khung giờ ghé thăm & điểm thay thế tương ứng</strong> trong lịch trình 5 ngày để bạn linh hoạt tách nhóm hoặc ghép tuyến.
+              </p>
+            </div>
+            <div class="shrink-0">
+              <a href="https://www.google.com/maps/dir/B2S+Think+Space+CentralWorld+Bangkok/Open+House+Central+Embassy+Bangkok/Medium+and+More+Samyan+Mitrtown+Bangkok/Siam+Discovery+Bangkok/Kinokuniya+Siam+Paragon+Bangkok/Bangkok+Art+and+Culture+Centre/Siam+Square+Soi+2+Bangkok/TCDC+Bangkok" target="_blank" rel="noopener noreferrer" class="btn-3d-orange px-5 py-3 text-xs sm:text-sm">
+                <span>Mở Google Maps Tuyến 8 Điểm Khảo Sát</span>
+                <span class="arrow-badge bg-white text-[#FF441F]">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-between gap-3 bento-soft p-4">
+          <div class="flex flex-wrap items-center gap-2" id="surveyFilterButtons">
+            <button type="button" data-filter="all" onclick="window.filterSurvey('all')" class="btn-3d-blue px-4 py-2 text-xs">
+              Tất cả (8 địa điểm)
+            </button>
+            <button type="button" data-filter="bookstore" onclick="window.filterSurvey('bookstore')" class="btn-3d-white px-4 py-2 text-xs">
+              Nhà sách & Co-living
+            </button>
+            <button type="button" data-filter="stationery" onclick="window.filterSurvey('stationery')" class="btn-3d-white px-4 py-2 text-xs">
+              Văn phòng phẩm, Sticker & Blindbox
+            </button>
+            <button type="button" data-filter="exhibition" onclick="window.filterSurvey('exhibition')" class="btn-3d-white px-4 py-2 text-xs">
+              Triển lãm, Thiết kế & Art Hub
+            </button>
+          </div>
+          <div class="text-xs font-bold text-slate-600">
+            Mẹo: Nhấp vào từng thẻ để xem trọng tâm khảo sát & cách ghép vào lịch trình
+          </div>
+        </div>
+
+        <!-- Survey Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="surveyCardsContainer">
+          <!-- Populated cleanly via JS -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 8: LƯU Ý DI CHUYỂN (TRAVEL CHECKLIST)
+           ========================================== -->
+      <section id="view-notes" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8">
+          <div class="max-w-3xl space-y-2">
+            <div class="inline-block px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
+              Cẩm Nang Di Chuyển Việt Nam ⇄ Thái Lan 2026
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold">
+              Lưu Ý Xuất Nhập Cảnh, Giờ Tập Trung & <span class="pill-highlight">Gửi Xe Sân Bay</span>
+            </h2>
+            <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
+              Tổng hợp đầy đủ mốc thời gian ra sân bay Tân Sơn Nhất (Ga Quốc tế T2), phương án tự lái xe ô tô cá nhân của Anh Quốc từ Thisofic Tower, quy định tờ khai điện tử TDAC và hành lý xách tay.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 1: Departure Timeline & Anh Quoc Special Box -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-6 bento-card p-6 space-y-4">
+            <div class="inline-block px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">
+              Chiều Đi • Thứ Năm 05/11/2026 (Chuyến bay 18:05)
+            </div>
+            <h3 class="text-xl font-extrabold text-slate-900">
+              Timeline Tập Trung Tại Sân Bay Quốc Tế Tân Sơn Nhất (Ga T2)
+            </h3>
+            <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                <strong>14:15 – 14:30:</strong> Xuất phát từ nhà/văn phòng tại TP.HCM. Khung giờ đầu giờ chiều đường Trường Sơn – Cộng Hòa thường đông xe, nên trừ hao 45 phút di chuyển.
+              </div>
+              <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-200">
+                <strong>15:00 (Bắt buộc có mặt):</strong> Toàn nhóm có mặt tại <strong>Ga Quốc tế T2 – Sân bay Tân Sơn Nhất</strong> (trước giờ bay đúng 3 tiếng) để làm thủ tục check-in, ký gửi hành lý và qua cửa Hải quan – An ninh soi chiếu.
+              </div>
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                <strong>17:20:</strong> Có mặt tại cửa khởi hành (Boarding Gate). Máy bay cất cánh lúc <strong>18:05</strong>, hạ cánh tại Sân bay Quốc tế Don Mueang (DMK - Bangkok) lúc <strong>19:45</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Box for Anh Quoc -->
+          <div class="lg:col-span-6 bento-orange p-6 space-y-4">
+            <div class="inline-block px-3 py-1 rounded-full bg-black/25 text-white text-xs font-extrabold uppercase">
+              Lưu Ý Riêng Dành Cho Anh Quốc (Tự Lái Xe Cá Nhân)
+            </div>
+            <h3 class="text-xl font-extrabold text-white">
+              Lộ Trình Từ Thisofic Tower (An Khánh) & Bãi Giữ Xe Qua Đêm TCP Park
+            </h3>
+            <div class="space-y-2.5 text-xs sm:text-sm text-orange-50 leading-relaxed">
+              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
+                🕒 <strong>Giờ xuất phát khuyến nghị (14:15 ngày 05/11):</strong> Anh Quốc tự lái xe cá nhân xuất phát từ <strong>Tòa nhà Thisofic Tower (Khu đô thị Sala, Phường An Khánh, TP. Thủ Đức)</strong> đi theo hướng Hầm Thủ Thiêm / Cầu Ba Son → Võ Văn Kiệt / Nguyễn Văn Trỗi → Trường Sơn → Sân bay Tân Sơn Nhất (~11–12km, khoảng 35–40 phút).
+              </div>
+              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
+                💳 <strong>Chi phí Grab ra sân bay = 0 VNĐ:</strong> Do tự lái xe cá nhân nên không tốn tiền taxi/Grab hai chiều.
+              </div>
+              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
+                🅿️ <strong>Gửi xe ô tô qua đêm (5 ngày 4 đêm):</strong> Gửi tại <strong>Nhà để xe TCP Park Tân Sơn Nhất</strong> (nằm ngay đối diện ga Quốc nội, đi bộ qua hành lang có mái che sang Ga Quốc tế T2 khoảng 5–7 phút; nên chọn tầng 3–5 trong nhà có mái che). Phí gửi ô tô qua đêm khoảng <strong>165.000đ – 220.000đ / 24 giờ</strong> (tổng 4,5 ngày khoảng <strong>750.000đ – 880.000đ</strong>), hoặc gửi bãi xe dịch vụ đường Hồng Hà/Bạch Đằng cách sân bay 500m (~120.000đ/ngày, có xe đưa đón sang T2).
+              </div>
+            </div>
+            <a href="https://www.google.com/maps/dir/Thisofic+Tower+Sala+Th%E1%BB%A7+%C4%90%E1%BB%A9c/TCP+Park+Tan+Son+Nhat+Airport" target="_blank" rel="noopener noreferrer" class="btn-3d-white px-4 py-2.5 text-xs">
+              <span>Mở Google Maps Lộ trình Thisofic Tower → Nhà xe TCP Tân Sơn Nhất</span>
+              <span class="arrow-badge">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: 4 Essential Thailand Travel Rules -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bento-card p-6 space-y-2.5">
+            <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">01 • Thủ Tục Nhập Cảnh Thái Lan 2026</div>
+            <h4 class="text-lg font-extrabold text-slate-900">Hộ Chiếu & Tờ Khai Điện Tử TDAC</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              • Hộ chiếu (Passport) phải còn hạn <strong>trên 6 tháng</strong> tính từ ngày 09/11/2026.<br/>
+              • Khai báo <strong>Tờ khai nhập cảnh điện tử Thái Lan (TDAC - Thailand Digital Arrival Card)</strong> trực tuyến trong vòng 72 giờ trước chuyến bay và lưu mã QR cùng vé máy bay khứ hồi, booking khách sạn Top High Airport Link Hotel trên điện thoại.
+            </p>
+          </div>
+
+          <div class="bento-card p-6 space-y-2.5">
+            <div class="text-xs font-extrabold uppercase text-[#FF441F]">02 • Quy Định Tiền Mặt & Thanh Toán</div>
+            <h4 class="text-lg font-extrabold text-slate-900">Quy Định 20.000 THB & Đổi Tiền Tỷ Giá Tốt</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              • Hải quan Thái Lan có quy định kiểm tra ngẫu nhiên tiền mặt tương đương <strong>20.000 THB/người</strong> (hoặc 40.000 THB/nhóm gia đình) tính cả tiền Baht, USD hoặc VNĐ.<br/>
+              • Nên đổi sẵn Baht tại Việt Nam (Tiệm vàng Hà Tâm / Quốc Trinh hoặc ngân hàng) với tỷ giá khoảng <strong>1 THB ≈ 760 VNĐ</strong> và mang thêm thẻ Visa/Mastercard để quẹt tại MRT, ICONSIAM, Siam Paragon.
+            </p>
+          </div>
+
+          <div class="bento-card p-6 space-y-2.5">
+            <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">03 • Quy Định Hành Lý & Pin Dự Phòng</div>
+            <h4 class="text-lg font-extrabold text-slate-900">Pin Sạc Dự Phòng (Power Bank) & Chất Lỏng</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              • <strong>Tuyệt đối KHÔNG để pin sạc dự phòng trong hành lý ký gửi.</strong> Phải xách tay lên máy bay, dung lượng rõ ràng trên vỏ (dưới 20.000mAh / 100Wh) và theo quy định hàng không mới nhất: không cắm sạc dự phòng khi máy bay đang bay.<br/>
+              • Chất lỏng xách tay: mỗi chai/lọ không quá 100ml (tổng tối đa 1 lít).
+            </p>
+          </div>
+
+          <div class="bento-card p-6 space-y-2.5">
+            <div class="text-xs font-extrabold uppercase text-[#FF441F]">04 • Luật Pháp Địa Phương & Chiều Về (09/11)</div>
+            <h4 class="text-lg font-extrabold text-slate-900">Cấm Thuốc Lá Điện Tử & Giờ Ra Sân Bay DMK</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              • <strong>Tuyệt đối không mang thuốc lá điện tử (Vape / Pod / IQOS)</strong> vào Thái Lan vì luật Thái phạt tiền rất nặng.<br/>
+              • <strong>Chiều về Thứ Hai 09/11 (Chuyến bay 15:40):</strong> 12:50 nhận hành lý tại khách sạn → 13:00 lên xe Bolt đi cao tốc Tollway trên cao → 13:30 có mặt tại Sân bay Don Mueang (Terminal 1 Quốc tế) làm thủ tục về lại TP.HCM.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================
+       MODAL: CHỈNH SỬA TỶ GIÁ & SỐ NGƯỜI
+       ========================================== -->
+  <div id="rateModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/70 backdrop-blur-sm p-4">
+    <div class="bento-card max-w-md w-full p-6 space-y-5 bg-white">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Công Cụ Tính Chi Phí Tự Động</div>
+          <h3 class="text-xl font-extrabold text-slate-900">Cài Đặt Tỷ Giá & Số Thành Viên</h3>
+        </div>
+        <button type="button" onclick="window.closeRateModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 font-bold text-slate-700 cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">
+            Tỷ giá 1 THB sang VNĐ (Mặc định: 760 VNĐ)
+          </label>
+          <input type="number" id="inputExchangeRate" value="760" min="500" max="1500" step="5"
+            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#1D5CFF] outline-none font-extrabold text-lg text-slate-900" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">
+            Số người trong nhóm (Để chia tiền xe Bolt/Grab)
+          </label>
+          <input type="number" id="inputGroupSize" value="4" min="1" max="12" step="1"
+            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#1D5CFF] outline-none font-extrabold text-lg text-slate-900" />
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-slate-700 leading-relaxed">
+          💡 Toàn bộ bảng chi phí THB & VNĐ của cả 5 ngày và thẻ tổng quan sẽ tự động tính toán lại ngay khi bạn bấm Lưu.
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button type="button" onclick="window.resetRateDefault()" class="btn-3d-white px-4 py-2.5 text-xs">
+          Khôi phục mặc định (760đ • 4 người)
+        </button>
+        <button type="button" onclick="window.applyRateChanges()" class="btn-3d-blue px-5 py-2.5 text-xs">
+          Lưu & Cập nhật ngay
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CLEAN, BUG-FREE JAVASCRIPT ENGINE
+       ========================================== -->
+  <script>
+    (function () {
+      // Global State
+      window.appState = {
+        exchangeRate: 760,
+        groupSize: 4,
+        activeTab: 'overview',
+        mobileSim: false,
+        activeSurveyFilter: 'all'
+      };
+
+      // Helper: Format Number with Commas
+      function fmtNum(n) {
+        return Math.round(n).toLocaleString('vi-VN');
+      }
+
+      // Helper: Format THB + VND String
+      function fmtThbVnd(thb) {
+        if (!thb || thb <= 0) {
+          return '0 THB (0đ - Miễn phí / Đã trả)';
+        }
+        var vnd = Math.round(thb * window.appState.exchangeRate);
+        return fmtNum(thb) + ' THB (~' + fmtNum(vnd) + 'đ)';
+      }
+
+      // ==========================================
+      // COMPLETE 5-DAY ITINERARY DATA
+      // ==========================================
+      window.itineraryDays = [
+        // ---------------- DAY 1 ----------------
+        {
+          id: 'day1',
+          dayNumber: 'Ngày 1',
+          dateLabel: 'Thứ Năm, 05/11/2026',
+          shortTitle: 'TP.HCM ✈ Bangkok • Nhận Phòng & Ẩm Thực Đêm Ratchathewi',
+          themeStyle: 'white',
+          highlightBadge: 'Khởi Hành & Ăn Đêm Địa Phương',
+          totalThb: 250,
+          summaryDesc: 'Tập trung tại Tân Sơn Nhất lúc 15:00 (Anh Quốc tự lái xe từ Thisofic Tower lúc 14:15). Hạ cánh Don Mueang 19:45, về thẳng khách sạn Top High Airport Link nhận phòng rồi đi bộ 350m thưởng thức lẩu Jim Jum & đồ nướng Isan chuẩn vị bản địa.',
+          lunchRestSummary: 'Chiều bay chuyến 18:05 từ TP.HCM: Ăn nhẹ tại sân bay Tân Sơn Nhất trước giờ lên máy bay.',
+          dinnerSummary: '21:45 – 23:00: Đi bộ 350m (0 THB) ra phố đêm Phetchaburi Soi 10–12 ăn Som Tam, cổ heo nướng & lẩu đất nung Jim Jum tại quán Jaekoy / Jae Kai (100–250 THB/người).',
+          multiStopMapsUrl: 'https://www.google.com/maps/dir/Don+Mueang+International+Airport+Bangkok/Top+High+Airport+Link+Hotel+Bangkok/Jaekoy+Somtum+Phetchaburi+Soi+12+Bangkok',
+          embedMapQuery: 'Top+High+Airport+Link+Hotel+Ratchathewi+Bangkok',
+          transportNote: 'Từ sân bay Don Mueang (DMK) về khách sạn lúc 20:30 tối: Nhóm 3–4 người đặt 1 xe Bolt / GrabCar (~280 THB/xe = 70 THB/người) chạy thẳng cao tốc về tận sảnh khách sạn trong 30 phút, tiện hơn đi A1 Bus + Bus 29 (45 THB/người).',
+          svgNodes: [
+            { code: '01', time: '15:00', name: 'Sân bay Tân Sơn Nhất (T2)', sub: 'Anh Quốc đi từ Thisofic 14:15' },
+            { code: '02', time: '19:45', name: 'Sân bay Don Mueang (DMK)', sub: 'Bolt nhóm 70 THB / Bus 45 THB' },
+            { code: '03', time: '21:15', name: 'Top High Airport Link Hotel', sub: 'Đi bộ 350m (0 THB)' },
+            { code: '04', time: '21:45', name: 'Phố đêm Phetchaburi Soi 10-12', sub: 'Quán Jaekoy / Jae Kai Isan' }
+          ],
+          costBreakdown: [
+            { item: 'Di chuyển tại VN ra sân bay TSN', note: 'Anh Quốc tự lái xe từ Thisofic (0đ Grab); gửi xe TCP tính riêng', thb: 0 },
+            { item: 'Xe Bolt / GrabCar từ sân bay DMK về khách sạn', note: 'Chia 4 người (~280 THB/xe) hoặc đi Bus A1 + Bus 29 (45 THB)', thb: 70 },
+            { item: 'Khách sạn Top High Airport Link Hotel (Đêm 1)', note: 'Đã thanh toán trước 100%', thb: 0 },
+            { item: 'Ăn tối muộn tại Phetchaburi Soi 10–12 & 7-Eleven', note: 'Lẩu Jim Jum, cổ heo nướng, gỏi Som Tam & nước uống', thb: 180 }
+          ],
+          steps: [
+            {
+              num: '(01)',
+              time: '15:00 – 18:05',
+              title: 'Tập trung tại Sân bay Tân Sơn Nhất (Ga Quốc tế T2) & Khởi hành đi Bangkok',
+              brief: 'Có mặt trước 3 tiếng làm thủ tục check-in. Lưu ý riêng cho Anh Quốc tự lái xe từ Thisofic Tower lúc 14:15.',
+              photo: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80',
+              address: 'Ga Quốc tế T2, Sân bay Quốc tế Tân Sơn Nhất, Quận Tân Bình, TP.HCM',
+              hours: 'Chuyến bay cất cánh 18:05 – Hạ cánh Don Mueang (DMK) 19:45',
+              transit: 'Anh Quốc xuất phát lúc 14:15 từ Thisofic Tower (KĐT Sala, An Khánh) tự lái xe cá nhân (0đ Grab), gửi xe qua đêm tại nhà xe TCP Park Tân Sơn Nhất (~165k–220k/ngày).',
+              costThb: 0,
+              tips: 'Kiểm tra kỹ hộ chiếu còn hạn >6 tháng, mã QR tờ khai điện tử TDAC và sạc dự phòng để trong túi xách tay.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Tan+Son+Nhat+International+Airport+Terminal+2'
+            },
+            {
+              num: '(02)',
+              time: '19:45 – 21:15',
+              title: 'Hạ cánh Sân bay Don Mueang (DMK) & Di chuyển về Top High Airport Link Hotel',
+              brief: 'Làm thủ tục nhập cảnh, lấy hành lý và bắt xe Bolt/GrabCar nhóm (hoặc Bus A1) về thẳng khu Ratchathewi.',
+              photo: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80',
+              address: '33 Soi Petchaburi 11-13, Thanon Phaya Thai, Ratchathewi, Bangkok 10400',
+              hours: 'Quầy lễ tân khách sạn mở cửa 24/24',
+              transit: 'Cách 1 (Khuyên dùng cho nhóm 3-4 người): Đặt Bolt / GrabCar tại cổng Arrival (~280 THB/xe = 70 THB/người, đi 30 phút). Cách 2: Đi Bus A1 (30 THB) ra Mo Chit nối Bus 29/34 (15 THB) hoặc BTS về Phaya Thai.',
+              costThb: 70,
+              tips: 'Nhận phòng, cất hành lý và nghỉ ngơi rửa mặt 20 phút trước khi đi bộ ra phố ẩm thực đêm ngay cạnh khách sạn.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Top+High+Airport+Link+Hotel+Bangkok'
+            },
+            {
+              num: '(03)',
+              time: '21:45 – 23:00',
+              title: 'Foodtour Đêm Bình Dân: Phố Phetchaburi Soi 10–12 (Quán Jaekoy & Jae Kai)',
+              brief: 'Đi bộ 350m từ khách sạn (0 THB) thưởng thức ẩm thực Isan địa phương mở xuyên đêm, ngon – bổ – rẻ.',
+              photo: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80',
+              address: 'Đầu ngõ Phetchaburi Soi 10 – Soi 12 (Cách Top High Airport Link Hotel 350m đi bộ)',
+              hours: '17:00 – 02:30 sáng hôm sau',
+              transit: 'Đi bộ 350m dọc đường Phetchaburi (khoảng 4 phút, 0 THB).',
+              costThb: 180,
+              tips: 'Món phải thử tại quán Jaekoy (แจ๊คอย) hoặc Jae Kai: Cổ heo nướng than hoa (Kor Moo Yang), lẩu đất nung Jim Jum nóng hổi, gỏi đu đủ Som Tam và xôi nếp nóng. Sau đó ghé 7-Eleven mua sandwich nướng & sữa Meiji.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Jaekoy+Somtum+Phetchaburi+12+Bangkok'
+            }
+          ]
+        },
+
+        // ---------------- DAY 2 ----------------
+        {
+          id: 'day2',
+          dayNumber: 'Ngày 2',
+          dateLabel: 'Thứ Sáu, 06/11/2026',
+          shortTitle: 'Phố Cổ • Wat Paknam • Wat Arun • ICONSIAM • Chuỗi Đi Bộ Talat Noi - Song Wat - Chinatown',
+          themeStyle: 'white',
+          highlightBadge: 'Di Sản Chùa Cổ & Đi Bộ Nghệ Thuật Ven Sông',
+          totalThb: 1010,
+          summaryDesc: 'Một vòng khép kín dọc sông Chao Phraya không quay đầu: Ăn sáng phố cổ Kolun.h → Đi MRT sang Wat Paknam → Ghé Wat Arun → Ăn trưa & nghỉ máy lạnh tại ICONSIAM → Đi phà sang bờ Đông đi bộ liên hoàn dưới 1km qua Warehouse 30, Talat Noi, Song Wat và kết thúc ở Chinatown.',
+          lunchRestSummary: '11:45 – 14:15: Ăn trưa tại chợ nổi trong nhà SOOKSIAM (Tầng G ICONSIAM: Mì thuyền, Pad Thai, heo quay giòn 80–160 THB) + uống trà sữa Pang Cha / ChaTraMue và nghỉ trưa máy lạnh mát rượi.',
+          dinnerSummary: '19:00 – 21:00: Foodtour đêm Chinatown (Yaowarat): Mì cuộn súp tiêu Guay Jub Ouan Pochana (60 THB), hải sản nướng T&K/Lek&Rut, bánh bao nướng và nước ép lựu đỏ (300–450 THB).',
+          multiStopMapsUrl: 'https://www.google.com/maps/dir/Top+High+Airport+Link+Hotel+Bangkok/Kolun.h+Mahannop+Bangkok/Wat+Paknam+Phasi+Charoen+Bangkok/Wat+Arun+Bangkok/ICONSIAM+Bangkok/Warehouse+30+Bangkok/Talat+Noi+Bangkok/Song+Wat+Road+Bangkok/Yaowarat+Road+Bangkok',
+          embedMapQuery: 'ICONSIAM+Talat+Noi+Yaowarat+Bangkok',
+          transportNote: 'Tối ưu cực đỉnh buổi chiều: Từ Si Phraya Pier đi bộ liên hoàn qua Warehouse 30 (250m) → Talat Noi (650m) → Song Wat (450m) → Chinatown (400m) hoàn toàn 0 THB tiền xe!',
+          svgNodes: [
+            { code: '01', time: '08:00', name: 'Kolun.h (Phố cổ Mahannop)', sub: 'Bus 79/511 hoặc Bolt 25 THB' },
+            { code: '02', time: '09:05', name: 'Wat Paknam Phasi Charoen', sub: 'MRT Sam Yot -> Bang Phai 26 THB' },
+            { code: '03', time: '10:20', name: 'Chùa Bình Minh Wat Arun', sub: 'Bolt ngắn 18 THB • Vé 200 THB' },
+            { code: '04', time: '11:45', name: 'ICONSIAM (SOOKSIAM)', sub: 'Ăn trưa & Nghỉ máy lạnh tới 14:15' },
+            { code: '05', time: '14:30', name: 'Warehouse 30 → Talat Noi', sub: 'Phà 16 THB + Đi bộ < 650m (0 THB)' },
+            { code: '06', time: '16:45', name: 'Song Wat & Wanjai Cafe', sub: 'Đi bộ 450m → 19:00 Chinatown' }
+          ],
+          costBreakdown: [
+            { item: 'Bus 79/511 hoặc Bolt nhóm tới Kolun.h + Ăn sáng mì Hải Nam', note: 'Di chuyển ~25 THB + Ăn sáng 110 THB', thb: 135 },
+            { item: 'Tàu MRT Sam Yot -> Bang Phai + Bolt ngắn qua Wat Arun', note: 'MRT 26 THB + Bolt chia 4 người 18 THB', thb: 44 },
+            { item: 'Vé tham quan Chùa Wat Arun + Phà qua sông Chao Phraya', note: 'Wat Paknam miễn phí; Vé Wat Arun 200 THB + Phà 36 THB', thb: 236 },
+            { item: 'Ăn trưa tại chợ nổi SOOKSIAM (ICONSIAM) + Trà sữa', note: 'Nghỉ trưa máy lạnh 11:45 – 14:15', thb: 185 },
+            { item: 'Chuỗi đi bộ Warehouse 30 – Talat Noi – Song Wat (Wanjai Cafe)', note: 'Đi bộ 0 THB + Xôi xoài & trà Thái tại Wanjai Cafe', thb: 125 },
+            { item: 'Foodtour tối Chinatown (Yaowarat) + Xe về khách sạn', note: 'Ăn tối hải sản/mì cuộn 260 THB + Bolt/Bus 73 về KS 25 THB', thb: 285 }
+          ],
+          steps: [
+            {
+              num: '(01)',
+              time: '08:00 – 08:50',
+              title: 'Ăn sáng tại Kolun.h (โกหลุน - Khu phố cổ Mahannop)',
+              brief: 'Thưởng thức mì Hải Nam truyền thống & súp dê hầm thuốc bắc trứ danh gần Đu quay lớn Giant Swing.',
+              photo: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80',
+              address: 'Thanon Mahannop, Sao Chingcha, Phra Nakhon, Bangkok 10200',
+              hours: '07:30 – 15:30',
+              transit: 'Từ khách sạn bắt xe buýt số 79 hoặc 511 trên đường Phetchaburi (20 THB) hoặc gọi Bolt cho nhóm 4 người (~100 THB/xe = 25 THB/người).',
+              costThb: 135,
+              tips: 'Gọi mì Hải Nam khô/nước (80–120 THB) và bánh mì nướng bơ Kaya. Từ quán chỉ mất 5 phút ra ga MRT Sam Yot.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kolun.h+Mahannop+Bangkok'
+            },
+            {
+              num: '(02)',
+              time: '08:50 – 10:15',
+              title: 'Chùa Wat Paknam Phasi Charoen (Bảo tháp Ngọc Lục Bảo & Đại Phật 69m)',
+              brief: 'Đi tàu điện ngầm MRT sang bờ Tây sông Chao Phraya chiêm ngưỡng vòm trần kính ngọc bích tuyệt đẹp.',
+              photo: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=900&q=80',
+              address: '300 Ratchamongkhon Prasat Alley, Pak Khlong Phasi Charoen, Bangkok 10160',
+              hours: '08:00 – 18:00 (Miễn phí vé vào cửa)',
+              transit: 'Đi tàu MRT Blue Line từ ga Sam Yot (BL30) qua Tha Phra tới ga Bang Phai (BL33) (26 THB, 10 phút), ra Exit 4 đi bộ 650m vào chùa.',
+              costThb: 26,
+              tips: 'Mặc trang phục lịch sự che vai và đầu gối. Lên tầng 5 bảo tháp Maharatchamongkhon để chụp vòm kính xanh ngọc lục bảo.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Wat+Paknam+Phasi+Charoen+Bangkok'
+            },
+            {
+              num: '(03)',
+              time: '10:15 – 11:40',
+              title: 'Chùa Bình Minh Wat Arun (Biểu tượng Gốm sứ bên bờ sông Chao Phraya)',
+              brief: 'Di chuyển cùng bờ Tây Thonburi từ Wat Paknam sang Wat Arun chỉ mất 10 phút xe, không phải vòng qua sông.',
+              photo: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80',
+              address: '158 Thanon Wang Doem, Wat Arun, Bangkok Yai, Bangkok 10600',
+              hours: '08:00 – 18:00',
+              transit: 'Gọi Bolt nhóm từ cổng Wat Paknam chạy thẳng 4.5km sang Wat Arun (~72 THB/xe = 18 THB/người).',
+              costThb: 218,
+              tips: 'Vé tham quan 200 THB/người (tặng kèm 1 chai nước suối). Nắng bắt đầu lên lúc 11:30 nên tham quan xong sẽ lên thuyền sang thẳng ICONSIAM nghỉ mát.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Wat+Arun+Bangkok'
+            },
+            {
+              num: '(04)',
+              time: '11:45 – 14:15',
+              title: 'Ăn trưa & Nghỉ trưa máy lạnh tại ICONSIAM (Chợ nổi trong nhà SOOKSIAM)',
+              brief: 'Khung giờ nắng gắt nhất (12:00–14:15), cả nhóm ăn trưa đa dạng món Thái 4 miền và nghỉ chân trong không gian máy lạnh.',
+              photo: 'https://images.unsplash.com/photo-1582468546235-9bf31e5bc4a1?auto=format&fit=crop&w=900&q=80',
+              address: '299 Charoen Nakhon Rd, Khlong Ton Sai, Khlong San, Bangkok 10600',
+              hours: '10:00 – 22:00',
+              transit: 'Từ bến thuyền Wat Arun đi tàu Chao Phraya Tourist Boat / Phà xuôi sông sang thẳng bến ICONSIAM Pier (~20 THB) hoặc Bolt 15 THB/người.',
+              costThb: 205,
+              tips: 'Tầng G khu SOOKSIAM có hàng trăm quầy ẩm thực giá bình dân (80–160 THB/món). Sau bữa trưa lên tầng 6 ngắm thác nước nhân tạo và thưởng thức trà sữa ChaTraMue / Pang Cha.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=ICONSIAM+Bangkok'
+            },
+            {
+              num: '(05)',
+              time: '14:15 – 16:30',
+              title: 'Chuỗi Đi Bộ Nghệ Thuật (Chặng 1): Phà Si Phraya → Warehouse 30 → Phố cổ Talat Noi',
+              brief: 'Đi phà 5 phút qua sông rồi tản bộ liên hoàn dưới bóng râm qua tổ hợp nhà kho sáng tạo và con hẻm nghệ thuật cổ kính.',
+              photo: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+              address: 'Charoen Krung Soi 30 → Soi Wanit 2 (Talat Noi), Samphanthawong, Bangkok',
+              hours: 'Warehouse 30 mở cửa 09:00 – 18:00; Talat Noi tự do cả ngày',
+              transit: 'Từ bến ICONSIAM đi phà qua bến Si Phraya Pier (16 THB, 5 phút) → Đi bộ 250m tới Warehouse 30 → Đi bộ 650m xuyên hẻm street art vào Talat Noi (0 THB).',
+              costThb: 16,
+              tips: 'Điểm chụp ảnh đẹp nhất ở Talat Noi: Chiếc xe Fiat cổ rỉ sét dưới tán cây, biệt thự cổ So Heng Tai và quán Mother Roaster.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Warehouse+30+Talat+Noi+Bangkok'
+            },
+            {
+              num: '(06)',
+              time: '16:30 – 18:45',
+              title: 'Chuỗi Đi Bộ Nghệ Thuật (Chặng 2): Đường Song Wat & Nghỉ chiều tại Wanjai Cafe House',
+              brief: 'Đi bộ 450m từ Talat Noi sang con phố hip nhất Bangkok hiện nay (Song Wat) và ngồi nghỉ chân thưởng thức xôi xoài.',
+              photo: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80',
+              address: 'Song Wat Rd, Chakkrawat, Samphanthawong, Bangkok 10100',
+              hours: 'Các gallery & quán cafe mở tới 18:30 – 19:00',
+              transit: 'Đi bộ 450m (6 phút, 0 THB) từ Talat Noi dọc bờ sông sang đường Song Wat.',
+              costThb: 125,
+              tips: 'Check-in bức tường "I Wanna Bangkok", Play Art House, cửa hàng gốm Road of Cinnamon và ghé Wanjai Cafe House ăn xôi xoài mát lạnh (95–150 THB).',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Wanjai+Cafe+House+Song+Wat+Bangkok'
+            },
+            {
+              num: '(07)',
+              time: '19:00 – 21:15',
+              title: 'Foodtour Đêm Bình Dân: Phố Ẩm Thực Chinatown (Yaowarat) & Trở về Khách sạn',
+              brief: 'Đi bộ 400m từ Song Wat lên thẳng đại lộ ẩm thực rực rỡ ánh đèn neon Yaowarat.',
+              photo: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80',
+              address: 'Yaowarat Rd, Samphanthawong, Bangkok 10100',
+              hours: '18:00 – 24:00 (Đông vui nhất từ 19:00)',
+              transit: 'Đi bộ 400m (5 phút, 0 THB) từ Song Wat lên đường Yaowarat. Lúc 21:15 bắt Bus 73 hoặc gọi Bolt về khách sạn (~25 THB/người).',
+              costThb: 285,
+              tips: 'Thưởng thức: Mì cuộn súp tiêu Guay Jub Ouan Pochana (60 THB), hải sản nướng T&K Seafood (tôm càng, mực nướng), bánh mì nướng Yaowarat (25 THB) và nước ép lựu.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Yaowarat+Chinatown+Night+Market+Bangkok'
+            }
+          ]
+        },
+
+        // ---------------- DAY 3 ----------------
+        {
+          id: 'day3',
+          dayNumber: 'Ngày 3',
+          dateLabel: 'Thứ Bảy, 07/11/2026',
+          shortTitle: 'Mì Thuyền • Bảo Tàng MOCA • Khu Ari • Chợ Chatuchak & Tòa Nhà Đỏ • Chợ Đêm Jodd Fairs',
+          themeStyle: 'blue',
+          highlightBadge: 'Ngày Cuối Tuần Đặc Sắc • Có Chiến Thuật Né Concert BIGBANG',
+          totalThb: 980,
+          summaryDesc: 'Trải nghiệm trọn vẹn ngày Thứ Bảy: Sáng ăn mì thuyền 18 THB ở Victory Monument → Bảo tàng nghệ thuật đương đại MOCA → Ăn trưa & nghỉ mát tại khu phố xanh Ari → Chiều逛 chợ cuối tuần Chatuchak & Tòa nhà Đỏ Vintage → Đi MRT ngầm sang Jodd Fairs Ratchada né hoàn toàn kẹt xe concert BIGBANG.',
+          lunchRestSummary: '12:15 – 14:15: Ăn trưa bình dân tại khu phố Ari (Mì Tom Yum Ongtong Khao Soi / Cơm địa phương quanh Ari Soi 1–4 giá 70–150 THB) và ngồi nghỉ trưa trong tổ hợp xanh mát Gump\'s Ari.',
+          dinnerSummary: '18:30 – 20:40: Chợ đêm Jodd Fairs Ratchada: Sườn cây núi lửa Leng Zabb (180–250 THB), hải sản sốt Thái, xiên nướng hoặc Buffet lẩu Suki Teenoi ngay tầng 1 The Street Ratchada (276 THB/người).',
+          multiStopMapsUrl: 'https://www.google.com/maps/dir/Top+High+Airport+Link+Hotel+Bangkok/Baan+Kuay+Tiew+Ruathong+Victory+Monument/MOCA+Museum+of+Contemporary+Art+Bangkok/Gump%27s+Ari+Community+Space+Bangkok/Chatuchak+Weekend+Market+Bangkok/Bangsue+Junction+Shopping+Center+Bangkok/Jodd+Fairs+Ratchada+Bangkok',
+          embedMapQuery: 'Chatuchak+Weekend+Market+MOCA+Jodd+Fairs+Ratchada+Bangkok',
+          transportNote: 'CẢNH BÁO CONCERT BIGBANG 19:00 TẠI RAJAMANGALA: Lúc 18:15 tuyệt đối KHÔNG bắt taxi từ Chatuchak đi Jodd Fairs mà xuống ga MRT Kamphaeng Phet đi tàu ngầm 15 phút tới thẳng ga Thailand Cultural Centre (33 THB). Rời Jodd Fairs lúc 20:40 trước khi concert tan lúc 21:30!',
+          svgNodes: [
+            { code: '01', time: '08:15', name: 'Mì thuyền Ruathong (Victory)', sub: 'Đi bộ 1.1km / Bolt 15 THB' },
+            { code: '02', time: '09:40', name: 'Bảo tàng Nghệ thuật MOCA', sub: 'Bus 29/510 hoặc Bolt 35 THB' },
+            { code: '03', time: '12:15', name: 'Khu phố Ari & Gump\'s Ari', sub: 'Ăn trưa & Nghỉ mát tới 14:15' },
+            { code: '04', time: '14:15', name: 'Chợ Chatuchak & Tòa nhà Đỏ', sub: 'BTS Ari -> Mo Chit / Bolt 20 THB' },
+            { code: '05', time: '18:15', name: 'MRT Ngầm -> Jodd Fairs Ratchada', sub: 'MRT 33 THB (Né kẹt xe BIGBANG)' },
+            { code: '06', time: '20:40', name: 'Về Khách sạn trước 21:30', sub: 'Bolt 28 THB trước giờ tan show' }
+          ],
+          costBreakdown: [
+            { item: 'Di chuyển tới Victory Monument + Ăn sáng 4–5 bát Mì thuyền', note: 'Bolt 15 THB + Mì thuyền Ruathong & trà sữa 95 THB', thb: 110 },
+            { item: 'Bus 29/510 hoặc Bolt tới MOCA + Vé vào cửa Bảo tàng MOCA', note: 'Xe 35 THB + Vé MOCA 280 THB (Có thẻ SV giảm còn 120 THB)', thb: 315 },
+            { item: 'Xe về khu phố Ari + Ăn trưa & Cafe nghỉ mát tại Gump\'s Ari', note: 'Xe 30 THB + Bữa trưa Khao Soi / Cơm Thái & nước 170 THB', thb: 200 },
+            { item: 'Di chuyển sang Chatuchak & Tòa nhà Đỏ + Nước dừa/Kem dừa', note: 'Xe 20 THB + Ăn vặt kem dừa JJ Market 60 THB', thb: 80 },
+            { item: 'Tàu ngầm MRT Kamphaeng Phet -> Thailand Cultural Centre', note: 'Đi ngầm 15 phút né 100% kẹt xe giờ concert BIGBANG', thb: 33 },
+            { item: 'Ăn tối Chợ đêm Jodd Fairs Ratchada + Bolt về KS lúc 20:40', note: 'Sườn núi lửa Leng Zabb/Hải sản 214 THB + Bolt về KS 28 THB', thb: 242 }
+          ],
+          steps: [
+            {
+              num: '(01)',
+              time: '08:15 – 09:20',
+              title: 'Ăn sáng Mì Thuyền Chính Gốc: Baan Kuay Tiew Ruathong (Victory Monument)',
+              brief: 'Trải nghiệm xếp chồng những bát mì thuyền 16–18 THB đậm đà ngay chân tượng đài Chiến Thắng.',
+              photo: 'https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=900&q=80',
+              address: '1/7 Ratchawithi Rd, Thung Phaya Thai, Ratchathewi, Bangkok 10400',
+              hours: '08:00 – 21:00',
+              transit: 'Từ khách sạn đi bộ 1.1km (14 phút) dọc đường Phaya Thai hoặc gọi Bolt nhóm (~60 THB/xe = 15 THB/người).',
+              costThb: 110,
+              tips: 'Mỗi bát nhỏ giá 16–18 THB, nên gọi đủ 4 vị: Mì nước đen (Nam Tok), mì Tom Yum chua cay, mì khô và mì Yentafo kèm da heo chiên giòn.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Baan+Kuay+Tiew+Ruathong+Victory+Monument'
+            },
+            {
+              num: '(02)',
+              time: '09:40 – 12:00',
+              title: 'Bảo Tàng Nghệ Thuật Đương Đại MOCA Bangkok (5 Tầng Nghệ Thuật)',
+              brief: 'Điểm xa nhất phía Bắc được xếp đi ngay buổi sáng khi đường thông thoáng, không gian máy lạnh mát lạnh.',
+              photo: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80',
+              address: '499 Kamphaeng Phet 6 Rd, Lat Yao, Chatuchak, Bangkok 10900',
+              hours: '10:00 – 18:00 (Đóng cửa Thứ Hai)',
+              transit: 'Từ đảo xe buýt Victory Monument bắt Bus máy lạnh số 29 hoặc 510 (25 THB) chạy thẳng tới cửa MOCA, hoặc gọi Bolt nhóm (~140 THB/xe = 35 THB/người).',
+              costThb: 315,
+              tips: 'Vé người lớn 280 THB (nếu có thẻ học sinh/sinh viên quốc tế giảm còn 120 THB). Đừng bỏ lỡ đường hầm vũ trụ Richard Green và phòng trưng bày 3 bức tranh khổng lồ ở tầng 4.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=MOCA+Museum+of+Contemporary+Art+Bangkok'
+            },
+            {
+              num: '(03)',
+              time: '12:15 – 14:15',
+              title: 'Ăn trưa & Nghỉ trưa mát mẻ tại Khu Phố Xanh Ari (Gump\'s Ari & Ari Soi 1–4)',
+              brief: 'Thay vì ra chợ Chatuchak lúc 12h trưa nắng đỉnh điểm, cả nhóm dừng ở khu phố rợp bóng cây Ari để ăn trưa và nghỉ ngơi.',
+              photo: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80',
+              address: 'Ari Soi 4 Fang Nua, Samsen Nai, Phaya Thai, Bangkok 10400',
+              hours: '09:00 – 21:00',
+              transit: 'Từ MOCA bắt Bus hoặc gọi Bolt lùi về hướng Nam tới khu Ari (~30 THB/người).',
+              costThb: 200,
+              tips: 'Ăn trưa mì Khao Soi Chiang Mai tại Ongtong Khao Soi (Michelin Bib Gourmand, ~95 THB) hoặc khu ẩm thực đầu ngõ Ari Soi 1, sau đó ngồi cafe máy lạnh và chụp ảnh tại Gump\'s Ari tới 14:15.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Gumps+Ari+Bangkok'
+            },
+            {
+              num: '(04)',
+              time: '14:15 – 18:15',
+              title: 'Chợ Cuối Tuần Chatuchak (JJ Market) & Tòa Nhà Đỏ Bangsue Junction (Vintage Mall)',
+              brief: 'Chỉ họp Thứ 7 & Chủ Nhật! Khi nắng chiều dịu bớt, khám phá khu chợ lớn nhất Thái Lan và trung tâm đồ cổ 6 tầng đối diện.',
+              photo: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80',
+              address: 'Kamphaeng Phet 2 Rd, Chatuchak, Bangkok 10900',
+              hours: 'Chatuchak: 09:00 – 18:00; Tòa nhà Đỏ Bangsue Junction: 10:00 – 20:00',
+              transit: 'Từ Ari đi BTS Ari (N5) -> Mo Chit (N8) hoặc Bolt nhóm (20 THB/người). Giữa Chợ Chatuchak và Tòa nhà Đỏ Bangsue Junction chỉ cách nhau 150m đi bộ băng qua đường.',
+              costThb: 80,
+              tips: 'Bắt đầu ở Tòa nhà Đỏ (Bangsue Junction) có máy lạnh từ 14:15–15:45 để xem đồ nội thất vintage, máy ảnh film và thời trang secondhand (tầng 3–5), sau đó sang Chatuchak từ 15:45–18:15 khi trời mát.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Bangsue+Junction+Chatuchak+Bangkok'
+            },
+            {
+              num: '(05)',
+              time: '18:15 – 20:40',
+              title: 'Foodtour Chợ Đêm Jodd Fairs Ratchada (Đi MRT Ngầm Né Kẹt Xe Concert BIGBANG)',
+              brief: 'Đi tàu điện ngầm MRT trực tiếp từ cổng chợ Chatuchak tới thẳng cửa Jodd Fairs Ratchada chỉ mất 15 phút.',
+              photo: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80',
+              address: 'Ratchadaphisek Rd (Cạnh MRT Thailand Cultural Centre Exit 4), Din Daeng, Bangkok',
+              hours: '17:00 – 24:00',
+              transit: 'Xuống ga MRT Kamphaeng Phet (BL12 - ngay cổng Tòa nhà Đỏ/Chatuchak) đi tàu MRT Blue Line 7 trạm tới ga Thailand Cultural Centre (BL19 - Exit 4) (33 THB, 15 phút). Lúc 20:40 gọi Bolt về khách sạn (~28 THB/người).',
+              costThb: 275,
+              tips: 'Món ngon tại Jodd Fairs: Sườn núi lửa ớt xanh Leng Zabb (180–250 THB), gỏi tôm sống sốt Thái, kem cuộn trái cây; hoặc ăn Buffet lẩu Suki Teenoi (276 THB) ngay tòa The Street Ratchada kế bên. Nhớ lên xe về khách sạn lúc 20:40 trước khi concert BIGBANG tan lúc 21:30!',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Jodd+Fairs+Ratchada+Bangkok'
+            }
+          ]
+        },
+
+        // ---------------- DAY 4 ----------------
+        {
+          id: 'day4',
+          dayNumber: 'Ngày 4',
+          dateLabel: 'Chủ Nhật, 08/11/2026',
+          shortTitle: 'Bảo Tàng DIB Bangkok • Emsphere • Cloud 11 • Happitat & 7-11 Fantasy • Slowcombo & Banthat Thong',
+          themeStyle: 'white',
+          highlightBadge: 'Kiến Trúc Tương Lai, Triển Lãm Tương Tác & Thiên Đường Ẩm Thực Chula',
+          totalThb: 920,
+          summaryDesc: 'Chinh phục trục Đông Nam Sukhumvit – Bang Na theo đường thẳng: Sáng đi Bảo tàng nghệ thuật đương đại quốc tế DIB Bangkok → Ăn trưa & nghỉ máy lạnh tại siêu mall Emsphere → Ghé Cloud 11 → Khám phá Happitat & 7-Eleven Fantasy → Chiều tối quay về Slowcombo xem triển lãm Bit.studio và đi bộ 400m ăn tối ở phố ẩm thực số 1 giới trẻ Banthat Thong.',
+          lunchRestSummary: '11:45 – 14:00: Ăn trưa tại khu ẩm thực EM Market (Tầng G & GM trung tâm thương mại Emsphere: Cơm gà, Pad Kra Pao, mì bò 100–200 THB), tham quan IKEA City Store và ăn Bingsu After You nghỉ mát.',
+          dinnerSummary: '18:45 – 21:15: Đi bộ 400m từ Slowcombo sang phố ẩm thực Banthat Thong: Quán Baan Kook Kai (Mì Mama Tom Yum hải sản & heo quay giòn 120–220 THB/người), nướng Mookata Tang Yuu và bánh mì nướng bơ sữa Nueng Nom Nua.',
+          multiStopMapsUrl: 'https://www.google.com/maps/dir/Top+High+Airport+Link+Hotel+Bangkok/DIB+Bangkok+Museum+Sukhumvit+40/Emsphere+Bangkok/Cloud+11+Sukhumvit+Bangkok/Happitat+at+The+Forestias+Bang+Na/Slowcombo+Chulalongkorn+50+Bangkok/Banthat+Thong+Road+Bangkok',
+          embedMapQuery: 'Emsphere+Slowcombo+Banthat+Thong+Bangkok',
+          transportNote: 'Mẹo tiết kiệm chặng Cloud 11 -> Happitat (Bang Kaeo): Thay vì đi BTS nối MRT Yellow Line tốn 60 THB/người, nhóm 4 người gọi 1 xe Bolt chạy thẳng chỉ hết ~100 THB/xe (25 THB/người)! Chặng Slowcombo -> Banthat Thong đi bộ 400m (0 THB).',
+          svgNodes: [
+            { code: '01', time: '09:30', name: 'DIB Bangkok (Sukhumvit 40)', sub: 'Bolt nhóm 35 THB' },
+            { code: '02', time: '11:45', name: 'Emsphere Mall (Phrom Phong)', sub: 'Ăn trưa & Nghỉ mát tới 14:00' },
+            { code: '03', time: '14:15', name: 'Cloud 11 (BTS Punnawithi)', sub: 'BTS E5 -> E11 Skywalk Exit 6' },
+            { code: '04', time: '15:30', name: 'Happitat & 7-Eleven Fantasy', sub: 'Bolt nhóm 25 THB (rẻ hơn tàu)' },
+            { code: '05', time: '17:15', name: 'Slowcombo (Bit.studio Art)', sub: 'Triển lãm tương tác tầng 3' },
+            { code: '06', time: '18:45', name: 'Phố ẩm thực Banthat Thong', sub: 'Đi bộ 400m (0 THB) • Mì Mama' }
+          ],
+          costBreakdown: [
+            { item: 'Xe Bolt nhóm tới DIB Bangkok + Vé tham quan tiêu chuẩn', note: 'Bolt 35 THB + Vé dự kiến/cafe tại DIB 150 THB', thb: 185 },
+            { item: 'Xe ngắn sang Emsphere + Ăn trưa EM Market & Bingsu', note: 'Xe 15 THB + Bữa trưa & tráng miệng tại Emsphere 210 THB', thb: 225 },
+            { item: 'Tàu BTS Phrom Phong -> Punnawithi (Cloud 11) + Bolt đi Happitat', note: 'BTS 32 THB + Bolt nhóm đi Happitat & 7-11 Fantasy 25 THB', thb: 57 },
+            { item: 'Di chuyển từ Happitat về Slowcombo (Chula 50) + Bit.studio', note: 'Chia tiền xe Bolt cao tốc về thẳng khu Chula (~55 THB/người)', thb: 135 },
+            { item: 'Đi bộ 400m ăn tối tại phố Banthat Thong (Baan Kook Kai & Sữa tươi)', note: 'Đi bộ 0 THB + Ăn tối Mì Mama Tom Yum / Mookata 300 THB', thb: 300 },
+            { item: 'Xe Bolt từ Banthat Thong về khách sạn (2.2km)', note: 'Chia 4 người chỉ ~18 THB/người', thb: 18 }
+          ],
+          steps: [
+            {
+              num: '(01)',
+              time: '09:30 – 11:30',
+              title: 'Bảo Tàng Nghệ Thuật Đương Đại Quốc Tế Mới: DIB Bangkok (Sukhumvit 40)',
+              brief: 'Điểm đến nghệ thuật mới nhất Bangkok với thiết kế kiến trúc đương đại ấn tượng tại khu Rama IV – Sukhumvit 40.',
+              photo: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+              address: '111 Soi Sukhumvit 40, Phra Khanong, Khlong Toei, Bangkok 10110',
+              hours: '10:00 – 19:00',
+              transit: 'Từ khách sạn gọi Bolt nhóm chạy thẳng xuống Sukhumvit 40 (~140 THB/xe = 35 THB/người) hoặc đi BTS Phaya Thai -> Ekkamai.',
+              costThb: 185,
+              tips: 'Khám phá kiến trúc nhà kho cải tạo bởi WHY Architecture với các không gian trưng bày nghệ thuật đương đại quốc tế và khuôn viên sân trong tuyệt đẹp.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=DIB+Bangkok+Sukhumvit+40'
+            },
+            {
+              num: '(02)',
+              time: '11:45 – 14:00',
+              title: 'Ăn trưa & Nghỉ trưa máy lạnh tại Siêu Tổ Hợp Emsphere (Sukhumvit)',
+              brief: 'Trung tâm thương mại kiến trúc Industrial Brutalist nổi bật nhất Sukhumvit với thiên đường ẩm thực tầng G & GM.',
+              photo: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=900&q=80',
+              address: '628 Sukhumvit Rd, Khlong Tan, Khlong Toei, Bangkok 10110',
+              hours: '10:00 – 22:00',
+              transit: 'Từ Sukhumvit 40 bắt Bolt 5 phút (15 THB/người) hoặc đi BTS 2 trạm về Phrom Phong (E5) đi bộ qua Skywalk vào thẳng Emsphere.',
+              costThb: 225,
+              tips: 'Tầng G và GM hội tụ hàng loạt quán ngon: Cơm thịt xào lá hương nhu Phed Mark, bánh Butterbear nổi tiếng, After You Bingsu và tầng 3 có IKEA City Store.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Emsphere+Bangkok'
+            },
+            {
+              num: '(03)',
+              time: '14:00 – 15:25',
+              title: 'Tổ Hợp Sáng Tạo Cloud 11 (Cầu Bộ Hành BTS Punnawithi Exit 6)',
+              brief: 'Đi tàu BTS thẳng một mạch theo tuyến Sukhumvit xuống Punnawithi để chiêm ngưỡng kiến trúc hub sáng tạo mới của châu Á.',
+              photo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
+              address: 'Sukhumvit Rd (BTS Punnawithi Exit 6), Bang Na, Bangkok 10260',
+              hours: '10:00 – 20:00',
+              transit: 'Đi tàu BTS từ ga Phrom Phong (E5) thẳng tới ga Punnawithi (E11) (32 THB, 12 phút), đi bộ trên cầu Skywalk Exit 6 dẫn thẳng vào Cloud 11.',
+              costThb: 32,
+              tips: 'Tham quan kiến trúc bậc thang xanh trên cao và không gian công nghệ – sáng tạo.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cloud+11+Bangkok'
+            },
+            {
+              num: '(04)',
+              time: '15:30 – 17:00',
+              title: 'Tổ Hợp Happitat Bangkok & Cửa Hàng 7-Eleven Fantasy (Bang Kaeo)',
+              brief: 'Check-in không gian thiết kế kỳ ảo Happitat và cửa hàng 7-Eleven chủ đề Fantasy độc đáo.',
+              photo: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80',
+              address: 'Bang Na-Trat Rd Km 7 (Gần MRT Yellow Line Si Iam YL17), Bang Kaeo, Bang Phli',
+              hours: '10:00 – 21:00',
+              transit: 'Mẹo tiết kiệm: Từ Cloud 11 gọi Bolt cho nhóm 4 người chạy thẳng 6km ra Happitat chỉ ~100 THB/xe (25 THB/người), rẻ hơn một nửa so với đi BTS nối MRT Yellow Line (60 THB/người).',
+              costThb: 25,
+              tips: 'Ghé chụp hình kiến trúc Happitat và mua đồ ăn vặt độc quyền tại 7-Eleven Fantasy trước khi quay về trung tâm lúc 17:00.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Happitat+The+Forestias+Bangkok'
+            },
+            {
+              num: '(05)',
+              time: '17:15 – 18:40',
+              title: 'Tổ Hợp Văn Hóa Slowcombo & Triển Lãm Tương Tác Bit.studio (Tầng 3)',
+              brief: 'Ghé đúng ngày Chủ Nhật để xem triển lãm nghệ thuật kỹ thuật số tương tác Bit.studio (chỉ mở Thứ 6 – Chủ Nhật).',
+              photo: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80',
+              address: '126 Soi Chulalongkorn 50, Wang Mai, Pathum Wan, Bangkok 10330 (Cạnh MRT Sam Yan Exit 2)',
+              hours: 'Slowcombo: 10:00 – 21:00; Triển lãm Bit.studio Tầng 3: Thứ 6 – Chủ Nhật (14:00 – 20:00)',
+              transit: 'Từ Happitat gọi Bolt chạy đường cao tốc về thẳng Slowcombo (~55 THB/người) hoặc đi MRT về ga Sam Yan.',
+              costThb: 135,
+              tips: 'Ngoài tầng 3 có không gian tương tác kỹ thuật số của Bit.studio, tầng 1 & 2 của Slowcombo còn có các cửa hàng lifestyle, sách nghệ thuật và trà matcha rất chill.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Slowcombo+Bangkok'
+            },
+            {
+              num: '(06)',
+              time: '18:45 – 21:15',
+              title: 'Foodtour Đêm Bình Dân: Phố Ẩm Thực Banthat Thong (Baan Kook Kai, Tang Yuu & Nueng Nom Nua)',
+              brief: 'Đi bộ 400m từ Slowcombo sang con phố ẩm thực sôi động nhất của sinh viên đại học Chulalongkorn.',
+              photo: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80',
+              address: 'Banthat Thong Rd (Chula Soi 12 – Soi 16), Wang Mai, Pathum Wan, Bangkok 10330',
+              hours: '16:30 – 24:00',
+              transit: 'Đi bộ 400m (5 phút, 0 THB) từ Slowcombo băng qua khu Chula sang đường Banthat Thong. Lúc 21:15 bắt Bolt 2.2km về khách sạn (~18 THB/người).',
+              costThb: 318,
+              tips: 'Mẹo không phải xếp hàng 2 tiếng ở Jeh O Chula: Hãy ăn quán Baan Kook Kai (บ้านกุ๊กไก่) ngay cùng trục đường — món Mì Mama Tom Yum hải sản nồi lớn và heo quay giòn ngon xuất sắc mà chỉ đợi 10–15 phút (120–220 THB/người), hoặc ăn nướng Mookata tại Tang Yuu, tráng miệng bánh mì nướng kem sữa tại Nueng Nom Nua.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Baan+Kook+Kai+Banthat+Thong+Bangkok'
+            }
+          ]
+        },
+
+        // ---------------- DAY 5 ----------------
+        {
+          id: 'day5',
+          dayNumber: 'Ngày 5',
+          dateLabel: 'Thứ Hai, 09/11/2026',
+          shortTitle: 'Central Park Bangkok • Siam Square Soi 2 • Siam Paragon (Be Trend, Kinokuniya, Nextopia) ✈ Sài Gòn',
+          themeStyle: 'orange',
+          highlightBadge: 'Mua Sắm Văn Phòng Phẩm, Sách & Bay Chiều 15:40',
+          totalThb: 490,
+          summaryDesc: 'Buổi sáng ngày cuối thảnh thơi, đúng giờ bay 15:40: Check-out gửi hành lý tại khách sạn lúc 08:30 → Dạo công viên tầng thượng Central Park Bangkok (Silom) → Về cụm Siam Square Soi 2 & Siam Paragon khám phá Be Trend, nhà sách Kinokuniya (Tầng 3), Nextopia (Tầng 5) & ăn trưa tại Gourmet Eats (Tầng G) → Đi bộ 850m qua cầu Skywalk về khách sạn lấy vali lúc 12:50 → Ra sân bay Don Mueang lúc 13:30.',
+          lunchRestSummary: '11:45 – 12:35: Ăn trưa nhanh gọn, ngon rẻ tại Food Court Gourmet Eats (Tầng G Siam Paragon: Cơm chân giò, Pad Thai, mì vịt tiềm 70–160 THB) và mua trà Thái ChaTraMue / bánh After You mang về.',
+          dinnerSummary: 'Bay chuyến 15:40 chiều từ Don Mueang (DMK) về lại TP.HCM lúc 17:15 chiều.',
+          multiStopMapsUrl: 'https://www.google.com/maps/dir/Top+High+Airport+Link+Hotel+Bangkok/Central+Park+946+Rama+IV+Road+Bangkok/Siam+Square+Soi+2+Bangkok/Siam+Paragon+Bangkok/Top+High+Airport+Link+Hotel+Bangkok/Don+Mueang+International+Airport+Bangkok',
+          embedMapQuery: 'Siam+Paragon+Siam+Square+Soi+2+Bangkok',
+          transportNote: 'Tối ưu đường về khách sạn lúc 12:35 trưa: Từ Siam Paragon đi bộ trên cầu bộ hành có mái che Ratchaprasong – Phaya Thai Skywalk về thẳng khách sạn chỉ 850m (10 phút, 0 THB, không sợ kẹt xe ngã tư Pathum Wan). Đúng 13:00 lên xe Bolt đi cao tốc Tollway ra sân bay DMK!',
+          svgNodes: [
+            { code: '01', time: '08:30', name: 'Gửi hành lý tại Khách sạn', sub: 'Bolt/Bus 50 đi Silom (20 THB)' },
+            { code: '02', time: '08:50', name: 'Central Park Bangkok (Rama IV)', sub: 'Vườn tầng thượng ngắm Lumpini' },
+            { code: '03', time: '10:20', name: 'Siam Square Soi 2', sub: 'Daddy, Frank Garcon, Peylaa' },
+            { code: '04', time: '11:00', name: 'Siam Paragon (Tầng 3, 5 & G)', sub: 'Kinokuniya, Be Trend, Ăn trưa' },
+            { code: '05', time: '12:35', name: 'Đi bộ Skywalk 850m về KS', sub: '12:50 lấy vali • 0 THB' },
+            { code: '06', time: '13:00', name: 'Ra Sân bay Don Mueang (DMK)', sub: 'Có mặt 13:30 • Bay 15:40' }
+          ],
+          costBreakdown: [
+            { item: 'Xe Bolt / Bus 50 từ khách sạn tới Central Park Bangkok (946 Rama IV)', note: 'Di chuyển buổi sáng (~20 THB/người)', thb: 20 },
+            { item: 'Di chuyển từ Central Park Silom về cụm Siam Square Soi 2', note: 'Đi BTS Sala Daeng -> Siam hoặc Bolt nhóm (~25 THB/người)', thb: 25 },
+            { item: 'Mua sắm nhỏ / Cafe tại Siam Square Soi 2 & Siam Paragon', note: 'Tùy nhu cầu cá nhân (ước tính cơ bản)', thb: 200 },
+            { item: 'Ăn trưa tại Gourmet Eats Food Court (Tầng G Siam Paragon)', note: 'Cơm Thái, mì vịt, trà sữa ChaTraMue (11:45 – 12:35)', thb: 175 },
+            { item: 'Đi bộ 850m qua cầu Skywalk từ Siam về khách sạn lấy hành lý', note: 'Đi bộ 10 phút trên cầu bộ hành mát mẻ (0 THB)', thb: 0 },
+            { item: 'Xe Bolt nhóm đi cao tốc Tollway từ khách sạn ra Sân bay DMK', note: 'Chia 4 người (~280 THB/xe = 70 THB/người)', thb: 70 }
+          ],
+          steps: [
+            {
+              num: '(01)',
+              time: '08:30 – 10:15',
+              title: 'Check-out gửi hành lý & Dạo Vườn Tầng Thượng Central Park Bangkok (946 Rama IV)',
+              brief: 'Gửi gọn vali tại lễ tân khách sạn rồi ghé công viên kiến trúc xanh mới tinh đối diện công viên Lumpini.',
+              photo: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=80',
+              address: '946 Rama IV Rd, Silom, Bang Rak, Bangkok 10500 (Tổ hợp Dusit Central Park)',
+              hours: '08:00 – 22:00 (Miễn phí vào khu vườn tầng thượng)',
+              transit: 'Từ khách sạn gọi Bolt nhóm hoặc bắt Bus số 50 (~20 THB/người, 12 phút) tới ngay ngã tư Silom – Rama IV.',
+              costThb: 20,
+              tips: 'Buổi sáng 09:00 thời tiết dịu mát, góc chụp từ khu vườn bậc thang nhìn thẳng ra toàn cảnh công viên Lumpini và đường chân trời Bangkok cực đẹp.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Dusit+Central+Park+946+Rama+IV+Bangkok'
+            },
+            {
+              num: '(02)',
+              time: '10:20 – 11:05',
+              title: 'Khám Phá Phố Trẻ Siam Square Soi 2 (Daddy, Frank Garcon, Peylaa)',
+              brief: 'Thiên đường sticker, văn phòng phẩm thiết kế, phụ kiện local brand Thái Lan ngay trung tâm Siam.',
+              photo: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=80',
+              address: 'Siam Square Soi 2, Pathum Wan, Bangkok 10330',
+              hours: '10:00 – 21:00',
+              transit: 'Từ Central Park Silom đi BTS Sala Daeng tới ga Siam hoặc gọi Bolt nhóm (~25 THB/người, 8 phút).',
+              costThb: 125,
+              tips: 'Ghé chuỗi 3 cửa hàng sát vách nhau trên đường Soi 2: Daddy and the Muscle Academy (postcard, sticker nghệ sĩ Thái), Frank Garcon (lifestyle unisex) và Peylaa (văn phòng phẩm & quà tặng giá mềm).',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Siam+Square+Soi+2+Bangkok'
+            },
+            {
+              num: '(03)',
+              time: '11:05 – 12:35',
+              title: 'Siam Paragon: Khảo Sát Tầng 3 (Be Trend & Kinokuniya), Tầng 5 (Nextopia) & Ăn Trưa Tầng G',
+              brief: 'Đi bộ băng qua trạm BTS Siam vào thẳng Siam Paragon để khảo sát nhà sách lớn nhất Bangkok và ăn trưa trước giờ ra sân bay.',
+              photo: 'https://images.unsplash.com/photo-1507842229356-51c61504d3ab?auto=format&fit=crop&w=900&q=80',
+              address: '991/1 Rama I Rd, Pathum Wan, Bangkok 10330',
+              hours: '10:00 – 22:00',
+              transit: 'Đi bộ 150m qua cầu BTS Siam từ Siam Square Soi 2 sang thẳng Siam Paragon (0 THB).',
+              costThb: 275,
+              tips: 'Lộ trình gọn theo tầng: (1) Lên Tầng 5 xem không gian công nghệ tương lai Nextopia -> (2) Xuống Tầng 3 khảo sát đại siêu thị văn phòng phẩm Be Trend & Nhà sách quốc tế Kinokuniya -> (3) Đúng 11:45 xuống Tầng G ăn trưa tại Gourmet Eats Food Court (70–160 THB/món).',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kinokuniya+Siam+Paragon+Bangkok'
+            },
+            {
+              num: '(04)',
+              time: '12:35 – 15:40',
+              title: 'Đi Bộ 850m Về Khách Sạn Lấy Hành Lý (12:50) & Ra Sân Bay Don Mueang Bay Chuyến 15:40',
+              brief: 'Canh chuẩn từng phút để có mặt tại Sân bay Quốc tế Don Mueang lúc 13:30 (trước giờ bay 2 tiếng 10 phút).',
+              photo: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80',
+              address: 'Sân bay Quốc tế Don Mueang (DMK - Terminal 1 Quốc tế), Bangkok',
+              hours: 'Chuyến bay cất cánh 15:40 – Hạ cánh TP.HCM 17:15',
+              transit: '12:35: Đi bộ 850m dọc cầu Skywalk từ Siam về khách sạn (10 phút, 0 THB). 12:50: Nhận lại vali. 13:00: Lên xe Bolt chạy đường cao tốc trên cao Don Muang Tollway (~70 THB/người) tới thẳng Ga Quốc tế T1 lúc 13:30.',
+              costThb: 70,
+              tips: 'Nói tài xế chạy lên đường cao tốc trên cao (Tollway) để đảm bảo đúng 25–30 phút là tới thẳng sảnh Departure của sân bay Don Mueang.',
+              mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Don+Mueang+International+Airport+Terminal+1'
+            }
+          ]
+        }
+      ];
+
+      // ==========================================
+      // MARKET RESEARCH SURVEY DATA (8 HUBS)
+      // ==========================================
+      window.surveyLocations = [
+        {
+          id: 's1',
+          category: 'stationery',
+          catLabel: 'Nhà sách & Văn phòng phẩm lớn',
+          title: '(01) B2S Think Space (CentralWorld - Tầng 6)',
+          location: 'Tầng 6 khu Central @ CentralWorld, Ratchaprasong (Cách khách sạn 1km)',
+          proposedTime: 'Chiều Thứ Năm 05/11 (nếu bay sớm) hoặc Sáng Thứ Hai 09/11 (10:00 – 11:15)',
+          replaceNote: 'Có thể ghép chung hoặc thay thế chặng Central Park Silom sáng Ngày 5 vì nằm ngay trục đi bộ Skywalk về Siam Paragon.',
+          highlights: 'Không gian trưng bày sách & văn phòng phẩm thiết kế bậc thang gỗ khổng lồ đẹp bậc nhất Bangkok. Chuyên sâu các dòng bút Nhật – Âu, sổ tay bullet journal, dụng cụ mỹ thuật chuyên nghiệp, artbook và khu lifestyle.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=B2S+Think+Space+CentralWorld+Bangkok'
+        },
+        {
+          id: 's2',
+          category: 'bookstore',
+          catLabel: 'Co-living & Nhà sách Nghệ thuật',
+          title: '(02) Open House tại Central Embassy (Tầng 6)',
+          location: 'Tầng 6 Central Embassy, 1031 Phloen Chit Rd (BTS Phloen Chit)',
+          proposedTime: 'Chiều Chủ Nhật 08/11 (14:00 – 15:30) hoặc Sáng Thứ Hai 09/11',
+          replaceNote: 'Phương án thay thế tuyệt vời cho chặng đi xa Cloud 11 / Happitat vào chiều Ngày 4 nếu nhóm muốn khảo sát mô hình nhà sách kết hợp F&B cao cấp ngay trung tâm.',
+          highlights: 'Thiết kế bởi Klein Dytham Architecture (tác giả Daikanyama T-Site Tokyo). Toàn bộ tầng 6 là những tháp sách trắng chạm trần đan xen với quán cafe specialty, nhà hàng, gallery nghệ thuật (Open House Bookshop by Hardcover) và khu làm việc sáng tạo.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Open+House+Central+Embassy+Bangkok'
+        },
+        {
+          id: 's3',
+          category: 'stationery',
+          catLabel: 'Siêu thị VPP, Art & Craft',
+          title: '(03) Medium and More + Muji Flagship (Samyan Mitrtown)',
+          location: 'Tầng 3 Samyan Mitrtown, Rama IV Rd (Ngay đối diện Slowcombo - MRT Sam Yan)',
+          proposedTime: 'Chiều tối Chủ Nhật 08/11 (16:45 – 18:30)',
+          replaceNote: 'Nằm sát vách Slowcombo (cách 200m đi bộ)! Bạn có thể ghé ngay trong chiều Ngày 4 trước hoặc sau khi xem triển lãm Bit.studio mà không tốn thêm 1 phút di chuyển nào.',
+          highlights: 'Medium and More là thiên đường nguyên vật liệu thủ công (craft), giấy mỹ thuật, sticker, bút màu, blindbox và đồ văn phòng phẩm phục vụ sinh viên thiết kế đại học Chulalongkorn.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Medium+and+More+Samyan+Mitrtown+Bangkok'
+        },
+        {
+          id: 's4',
+          category: 'stationery',
+          catLabel: 'Thiết kế Nhật Bản & Eco Lifestyle',
+          title: '(04) LOFT Bangkok + ODS & Ecotopia (Siam Discovery)',
+          location: 'Tầng 2 & Tầng 3 Siam Discovery, Rama I Rd (Cạnh Siam Paragon)',
+          proposedTime: 'Sáng Thứ Hai 09/11 (10:15 – 11:30)',
+          replaceNote: 'Nằm ngay cạnh Siam Paragon trong lịch trình sáng Ngày 5 (chỉ cách 100m đi bộ trong nhà).',
+          highlights: 'LOFT (Tầng 2) là chuỗi văn phòng phẩm & character goods nổi tiếng từ Nhật Bản; lên Tầng 3 là ODS (Objects of Desire Store - tuyển tập sản phẩm thiết kế đạt giải thưởng của Thái Lan) và Ecotopia (hệ sinh thái sản phẩm bền vững xanh).',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=LOFT+Siam+Discovery+Bangkok'
+        },
+        {
+          id: 's5',
+          category: 'bookstore',
+          catLabel: 'Nhà sách Quốc tế & VPP Đa năng',
+          title: '(05) Kinokuniya + Be Trend (Siam Paragon - Tầng 3)',
+          location: 'Tầng 3 Siam Paragon, 991 Rama I Rd (BTS Siam)',
+          proposedTime: 'Đã có sẵn trong lịch trình chính thức: Sáng Thứ Hai 09/11 (11:05 – 11:50)',
+          replaceNote: 'Điểm cố định trong Ngày 5 — không cần thay thế bất kỳ điểm nào.',
+          highlights: 'Kinokuniya Siam Paragon là nhà sách ngoại văn, tạp chí thiết kế Nhật – Anh, manga và sách nghệ thuật quy mô lớn nhất Thái Lan. Ngay kế bên là đại siêu thị văn phòng phẩm & quà tặng Be Trend với hàng trăm thương hiệu bút, sổ và blindbox.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Kinokuniya+Siam+Paragon+Bangkok'
+        },
+        {
+          id: 's6',
+          category: 'exhibition',
+          catLabel: 'Trung tâm Nghệ thuật & Art Shop',
+          title: '(06) BACC (Bangkok Art and Culture Centre)',
+          location: '939 Rama I Rd, Ngã tư Pathum Wan (Đối diện Siam Discovery)',
+          proposedTime: 'Chiều Chủ Nhật 08/11 (16:00 – 17:30) hoặc kết hợp khu Siam',
+          replaceNote: 'Lưu ý BACC đóng cửa Thứ Hai (09/11), nên nếu muốn khảo sát BACC hãy ghé vào chiều Chủ Nhật (08/11) trước khi qua Slowcombo.',
+          highlights: 'Kiến trúc xoắn ốc 9 tầng lấy cảm hứng từ Guggenheim. Từ tầng 1 đến tầng 5 là chuỗi cửa hàng indie bán zine độc lập, sách nghệ thuật tự xuất bản, postcard minh họa, dụng cụ vẽ và triển lãm miễn phí ở tầng 7–9.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Bangkok+Art+and+Culture+Centre'
+        },
+        {
+          id: 's7',
+          category: 'exhibition',
+          catLabel: 'Thư viện Vật liệu & Triển lãm Cổ - Đương đại',
+          title: '(07) TCDC Bangkok (Grand Postal Building) & River City Bangkok',
+          location: 'Đường Charoen Krung (Sát Warehouse 30 & Bến phà Si Phraya)',
+          proposedTime: 'Chiều Thứ Sáu 06/11 (14:30 – 16:30)',
+          replaceNote: 'Nằm ngay sát Warehouse 30 và Talat Noi trong lịch trình chiều Ngày 2! Chỉ cần đi bộ 150m là tới cả River City Bangkok và tòa Bưu điện Trung tâm TCDC.',
+          highlights: 'River City Bangkok có hơn 10 triển lãm nghệ thuật thị giác mở cửa miễn phí/có vé mỗi tháng cùng các cửa hàng lưu niệm nghệ thuật. TCDC sở hữu thư viện thiết kế & kho vật liệu sáng tạo lớn nhất Đông Nam Á.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=River+City+Bangkok'
+        },
+        {
+          id: 's8',
+          category: 'stationery',
+          catLabel: 'Indie Sticker, Postcard & Local Brand',
+          title: '(08) Cụm Daddy and the Muscle Academy, Frank Garcon & Peylaa',
+          location: 'Siam Square Soi 2, Pathum Wan (Đối diện Siam Paragon)',
+          proposedTime: 'Đã có sẵn trong lịch trình chính thức: Sáng Thứ Hai 09/11 (10:20 – 11:05)',
+          replaceNote: 'Điểm cố định trong Ngày 5 — đi bộ 2 phút từ trạm BTS Siam.',
+          highlights: 'Mô hình kinh doanh cực kỳ thành công của giới trẻ Thái Lan: Ký gửi và phân phối hàng trăm thương hiệu họa sĩ minh họa độc lập (illustrator), sticker sheet, keychains, photobooth chủ đề và phụ kiện stationery giá từ 30–190 THB.',
+          mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Daddy+and+the+Muscle+Academy+Siam+Square+Soi+2'
+        }
+      ];
+
+      // ==========================================
+      // RENDER: OVERVIEW CARDS & BUDGET TABLE
+      // ==========================================
+      function renderOverviewSection() {
+        var grid = document.getElementById('overviewDayCardsGrid');
+        var tableBody = document.getElementById('overviewBudgetTableBody');
+        if (!grid || !tableBody) return;
+
+        var cardsHtml = '';
+        var rowsHtml = '';
+        var grandTotalThb = 0;
+
+        for (var i = 0; i < window.itineraryDays.length; i++) {
+          var d = window.itineraryDays[i];
+          grandTotalThb += d.totalThb;
+          var vnd = Math.round(d.totalThb * window.appState.exchangeRate);
+
+          var cardClass = 'bento-card bento-card-interactive p-6 flex flex-col justify-between';
+          var badgeClass = 'bg-[#1D5CFF] text-white';
+          var titleColor = 'text-slate-900';
+          var descColor = 'text-slate-600';
+          var priceBoxClass = 'bg-slate-50 border-slate-200 text-slate-900';
+          var btnClass = 'btn-3d-blue';
+
+          if (d.themeStyle === 'blue') {
+            cardClass = 'bento-blue bento-card-interactive p-6 flex flex-col justify-between';
+            badgeClass = 'bg-[#FF441F] text-white';
+            titleColor = 'text-white';
+            descColor = 'text-blue-100';
+            priceBoxClass = 'bg-white/15 border-white/25 text-white';
+            btnClass = 'btn-3d-orange';
+          } else if (d.themeStyle === 'orange') {
+            cardClass = 'bento-orange bento-card-interactive p-6 flex flex-col justify-between';
+            badgeClass = 'bg-black/30 text-white';
+            titleColor = 'text-white';
+            descColor = 'text-orange-50';
+            priceBoxClass = 'bg-black/20 border-white/20 text-white';
+            btnClass = 'btn-3d-white';
+          }
+
+          cardsHtml +=
+            '<div onclick="window.switchTab(\'' + d.id + '\')" class="' + cardClass + '">' +
+              '<div class="space-y-3">' +
+                '<div class="flex items-center justify-between gap-2">' +
+                  '<span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase ' + badgeClass + '">' +
+                    d.dayNumber + ' • ' + d.dateLabel.split(',')[1] +
+                  '</span>' +
+                  '<span class="text-xs font-bold opacity-85">' + d.steps.length + ' chặng</span>' +
+                '</div>' +
+                '<h3 class="text-lg sm:text-xl font-extrabold leading-snug ' + titleColor + '">' +
+                  d.shortTitle +
+                '</h3>' +
+                '<p class="text-xs sm:text-sm leading-relaxed ' + descColor + '">' +
+                  d.summaryDesc +
+                '</p>' +
+              '</div>' +
+              '<div class="pt-4 mt-4 border-t border-current/10 space-y-3">' +
+                '<div class="p-3 rounded-2xl border ' + priceBoxClass + ' flex items-center justify-between text-xs">' +
+                  '<span class="font-bold">Dự kiến / 1 người:</span>' +
+                  '<span class="font-extrabold text-sm">' + fmtNum(d.totalThb) + ' THB (~' + fmtNum(vnd) + 'đ)</span>' +
+                '</div>' +
+                '<button type="button" onclick="event.stopPropagation(); window.switchTab(\'' + d.id + '\')" class="' + btnClass + ' w-full py-2.5 text-xs">' +
+                  '<span>Mở chi tiết ' + d.dayNumber + ' & Bản đồ</span>' +
+                  '<span class="arrow-badge">→</span>' +
+                '</button>' +
+              '</div>' +
+            '</div>';
+
+          rowsHtml +=
+            '<tr class="hover:bg-slate-50 cursor-pointer transition" onclick="window.switchTab(\'' + d.id + '\')">' +
+              '<td class="py-3 pr-2 font-extrabold text-[#1D5CFF] whitespace-nowrap">' + d.dayNumber + ' (' + d.dateLabel.split(',')[1].trim().slice(0, 5) + ')</td>' +
+              '<td class="py-3 px-2 text-slate-700">' + d.shortTitle + '</td>' +
+              '<td class="py-3 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap">' + fmtNum(d.totalThb) + ' THB</td>' +
+              '<td class="py-3 pl-2 text-right font-bold text-[#E02B00] whitespace-nowrap">~' + fmtNum(vnd) + 'đ</td>' +
+            '</tr>';
+        }
+
+        // Add 6th Special Card for Market Research in the 3x2 Bento Grid
+        cardsHtml +=
+          '<div onclick="window.switchTab(\'survey\')" class="bento-soft bento-card-interactive p-6 flex flex-col justify-between">' +
+            '<div class="space-y-3">' +
+              '<div class="flex items-center justify-between gap-2">' +
+                '<span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-[#FF441F] text-white">' +
+                  'Chuyên Đề Riêng' +
+                '</span>' +
+                '<span class="text-xs font-bold text-slate-600">8 Tổ hợp lớn</span>' +
+              '</div>' +
+              '<h3 class="text-lg sm:text-xl font-extrabold leading-snug text-slate-900">' +
+                'Khảo Sát Thị Trường: Nhà Sách, Văn Phòng Phẩm, Blindbox & Triển Lãm' +
+              '</h3>' +
+              '<p class="text-xs sm:text-sm leading-relaxed text-slate-600">' +
+                'Tổng hợp B2S Think Space, Open House Central Embassy, Medium and More, LOFT, Kinokuniya, BACC, TCDC và Siam Square Soi 2 kèm khung giờ ghép tuyến.' +
+              '</p>' +
+            '</div>' +
+            '<div class="pt-4 mt-4 border-t border-slate-200 space-y-3">' +
+              '<div class="p-3 rounded-2xl bg-white border border-slate-200 flex items-center justify-between text-xs">' +
+                '<span class="font-bold text-slate-600">Chế độ lọc:</span>' +
+                '<span class="font-extrabold text-[#1D5CFF]">Nhà sách • VPP • Art Hub</span>' +
+              '</div>' +
+              '<button type="button" onclick="event.stopPropagation(); window.switchTab(\'survey\')" class="btn-3d-blue w-full py-2.5 text-xs">' +
+                '<span>Mở Bảng Khảo Sát Thị Trường</span>' +
+                '<span class="arrow-badge">→</span>' +
+              '</button>' +
+            '</div>' +
+          '</div>';
+
+        // Reserve & Contingency Buffer Row (1,000 THB) to match ~4,650 THB total
+        var bufferThb = 1000;
+        var totalWithBufferThb = grandTotalThb + bufferThb;
+        var totalWithBufferVnd = Math.round(totalWithBufferThb * window.appState.exchangeRate);
+
+        rowsHtml +=
+          '<tr class="bg-slate-50/80">' +
+            '<td class="py-3 pr-2 font-bold text-slate-700">Dự phòng & Mua sắm</td>' +
+            '<td class="py-3 px-2 text-slate-600">SIM 4G/eSIM, quà lưu niệm, văn phòng phẩm, cafe phát sinh</td>' +
+            '<td class="py-3 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap">' + fmtNum(bufferThb) + ' THB</td>' +
+            '<td class="py-3 pl-2 text-right font-bold text-slate-700 whitespace-nowrap">~' + fmtNum(bufferThb * window.appState.exchangeRate) + 'đ</td>' +
+          '</tr>' +
+          '<tr class="bg-blue-50/90 border-t-2 border-[#1D5CFF]">' +
+            '<td class="py-3.5 pr-2 font-extrabold text-[#0B38B8]" colspan="2">TỔNG CỘNG TRỌN GÓI 5N4Đ / 1 NGƯỜI (Vé bay & KS đã trả = 0đ)</td>' +
+            '<td class="py-3.5 px-2 text-right font-extrabold text-base text-[#0B38B8] whitespace-nowrap">' + fmtNum(totalWithBufferThb) + ' THB</td>' +
+            '<td class="py-3.5 pl-2 text-right font-extrabold text-base text-[#E02B00] whitespace-nowrap">~' + fmtNum(totalWithBufferVnd) + 'đ</td>' +
+          '</tr>';
+
+        grid.innerHTML = cardsHtml;
+        tableBody.innerHTML = rowsHtml;
+
+        // Update Hero Numbers
+        var heroThbEl = document.getElementById('heroTotalThb');
+        var heroVndEl = document.getElementById('heroTotalVnd');
+        var heroPaxEl = document.getElementById('heroGroupSize');
+        if (heroThbEl) heroThbEl.textContent = fmtNum(totalWithBufferThb) + ' THB';
+        if (heroVndEl) heroVndEl.textContent = '~' + fmtNum(totalWithBufferVnd) + 'đ';
+        if (heroPaxEl) heroPaxEl.textContent = window.appState.groupSize;
+      }
+
+      // ==========================================
+      // BUILD SVG ROUTE DIAGRAM FOR EACH DAY
+      // ==========================================
+      function buildDaySvgDiagram(dayObj) {
+        var nodes = dayObj.svgNodes || [];
+        var height = Math.max(320, nodes.length * 66 + 30);
+        var svgContent =
+          '<svg viewBox="0 0 540 ' + height + '" class="w-full h-auto rounded-2xl bg-[#0B2B8A] border-2 border-blue-400/40 shadow-inner">' +
+            '<defs>' +
+              '<linearGradient id="routeLineGrad-' + dayObj.id + '" x1="0%" y1="0%" x2="0%" y2="100%">' +
+                '<stop offset="0%" stop-color="#FF441F" />' +
+                '<stop offset="100%" stop-color="#38BDF8" />' +
+              '</linearGradient>' +
+            '</defs>' +
+            '<rect width="540" height="' + height + '" fill="#0B2B8A" rx="16" />' +
+            '<line x1="56" y1="42" x2="56" y2="' + (height - 42) + '" stroke="url(#routeLineGrad-' + dayObj.id + ')" stroke-width="5" stroke-dasharray="8 6" />';
+
+        for (var i = 0; i < nodes.length; i++) {
+          var n = nodes[i];
+          var cy = 44 + i * 62;
+          var circleFill = (i === 0 || i === nodes.length - 1) ? '#FF441F' : '#1D5CFF';
+
+          svgContent +=
+            '<g transform="translate(0, ' + (cy - 24) + ')">' +
+              '<rect x="92" y="2" width="426" height="48" rx="12" fill="#133BB0" stroke="#477BFF" stroke-width="1.5" />' +
+              '<circle cx="56" cy="26" r="18" fill="' + circleFill + '" stroke="#FFFFFF" stroke-width="2.5" />' +
+              '<text x="56" y="31" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">' + n.code + '</text>' +
+              '<text x="108" y="22" fill="#FFFFFF" font-size="13.5" font-weight="800">' + n.time + ' • ' + n.name + '</text>' +
+              '<text x="108" y="40" fill="#93C5FD" font-size="11.5" font-weight="600">↳ ' + n.sub + '</text>' +
+            '</g>';
+        }
+
+        svgContent += '</svg>';
+        return svgContent;
+      }
+
+      // ==========================================
+      // RENDER ALL 5 DAY VIEWS
+      // ==========================================
+      function renderAllDays() {
+        for (var i = 0; i < window.itineraryDays.length; i++) {
+          var d = window.itineraryDays[i];
+          var container = document.getElementById('view-' + d.id);
+          if (!container) continue;
+
+          var dayVnd = Math.round(d.totalThb * window.appState.exchangeRate);
+
+          // Special BIGBANG Concert Alert Banner for Day 3
+          var concertBannerHtml = '';
+          if (d.id === 'day3') {
+            concertBannerHtml =
+              '<div class="bento-blue p-5 border-2 border-yellow-300">' +
+                '<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">' +
+                  '<div class="space-y-1">' +
+                    '<div class="inline-block px-3 py-0.5 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">' +
+                      'Chiến Thuật Giao Thông Ngày 07/11 • Concert BIGBANG 19:00' +
+                    '</div>' +
+                    '<div class="text-base sm:text-lg font-extrabold text-white">' +
+                      'Concert BIGBANG &lt;XX : COSMOS&gt; diễn ra lúc 19:00 tại SVĐ Rajamangala (cách Ratchada 6km)' +
+                    '</div>' +
+                    '<p class="text-xs sm:text-sm text-blue-100">' +
+                      '1. Lúc <strong>18:15</strong> từ Chatuchak/Tòa nhà Đỏ: Đi <strong>tàu ngầm MRT Blue Line</strong> từ ga Kamphaeng Phet tới thẳng ga Thailand Cultural Centre (Jodd Fairs) trong 15 phút, né 100% kẹt xe mặt đất.<br/>' +
+                      '2. Lúc <strong>20:40</strong>: Rời Jodd Fairs Ratchada về khách sạn trước khi concert tan lúc 21:30.' +
+                    '</p>' +
+                  '</div>' +
+                '</div>' +
+              '</div>';
+          }
+
+          // Cost Breakdown Rows
+          var costRowsHtml = '';
+          for (var c = 0; c < d.costBreakdown.length; c++) {
+            var itemObj = d.costBreakdown[c];
+            var itemVnd = Math.round(itemObj.thb * window.appState.exchangeRate);
+            costRowsHtml +=
+              '<tr class="border-b border-slate-200 last:border-0">' +
+                '<td class="py-2.5 pr-2">' +
+                  '<div class="font-bold text-slate-900 text-xs sm:text-sm">' + itemObj.item + '</div>' +
+                  '<div class="text-[11px] text-slate-500">' + itemObj.note + '</div>' +
+                '</td>' +
+                '<td class="py-2.5 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap text-xs sm:text-sm">' +
+                  fmtNum(itemObj.thb) + ' THB' +
+                '</td>' +
+                '<td class="py-2.5 pl-2 text-right font-bold text-[#E02B00] whitespace-nowrap text-xs sm:text-sm">' +
+                  (itemObj.thb > 0 ? '~' + fmtNum(itemVnd) + 'đ' : '0đ') +
+                '</td>' +
+              '</tr>';
+          }
+
+          // Steps Timeline HTML
+          var stepsHtml = '';
+          for (var s = 0; s < d.steps.length; s++) {
+            var st = d.steps[s];
+            var detailId = d.id + '-step-' + s;
+            var btnTextId = d.id + '-btn-text-' + s;
+
+            stepsHtml +=
+              '<div class="bento-card p-5 sm:p-6 space-y-4">' +
+                '<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">' +
+                  '<div class="space-y-1">' +
+                    '<div class="flex flex-wrap items-center gap-2">' +
+                      '<span class="px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold">' +
+                        st.num + ' • ' + st.time +
+                      '</span>' +
+                      '<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200">' +
+                        'Chi phí: ' + fmtThbVnd(st.costThb) +
+                      '</span>' +
+                    '</div>' +
+                    '<h4 class="text-lg sm:text-xl font-extrabold text-slate-900 pt-1">' +
+                      st.title +
+                    '</h4>' +
+                    '<p class="text-xs sm:text-sm text-slate-600">' +
+                      st.brief +
+                    '</p>' +
+                  '</div>' +
+                  '<div class="shrink-0">' +
+                    '<button type="button" onclick="window.toggleDetail(\'' + detailId + '\', \'' + btnTextId + '\')" class="btn-3d-blue px-4 py-2.5 text-xs">' +
+                      '<span id="' + btnTextId + '">Xem chi tiết & Hình ảnh địa điểm</span>' +
+                      '<span class="arrow-badge">▾</span>' +
+                    '</button>' +
+                  '</div>' +
+                '</div>' +
+
+                '<!-- Collapsible Detail Drawer -->' +
+                '<div id="' + detailId + '" class="day-detail-drawer-' + d.id + ' hidden pt-4 border-t-2 border-dashed border-slate-200">' +
+                  '<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start bg-[#F4F7FE] p-4 sm:p-5 rounded-2xl border border-[#D5E2FA]">' +
+                    '<div class="lg:col-span-5">' +
+                      '<img src="' + st.photo + '" alt="' + st.title + '" ' +
+                        'onerror="this.onerror=null;this.src=\'https://placehold.co/800x500/1D5CFF/FFFFFF?text=Bangkok+2026\';" ' +
+                        'class="w-full h-56 sm:h-64 object-cover rounded-2xl border-2 border-white shadow-md" />' +
+                    '</div>' +
+                    '<div class="lg:col-span-7 space-y-2.5 text-xs sm:text-sm text-slate-700">' +
+                      '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
+                        '📍 <strong>Địa chỉ:</strong> ' + st.address +
+                      '</div>' +
+                      '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
+                        '🕒 <strong>Giờ mở cửa / Khung giờ:</strong> ' + st.hours +
+                      '</div>' +
+                      '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
+                        '🚶 <strong>Phương tiện & Cách di chuyển tối ưu:</strong> ' + st.transit +
+                      '</div>' +
+                      '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
+                        '💳 <strong>Chi phí dự kiến (1 người):</strong> <span class="font-extrabold text-[#E02B00]">' + fmtThbVnd(st.costThb) + '</span>' +
+                      '</div>' +
+                      '<div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-slate-800">' +
+                        '💡 <strong>Kinh nghiệm & Lưu ý thực tế:</strong> ' + st.tips +
+                      '</div>' +
+                      '<div class="pt-1">' +
+                        '<a href="' + st.mapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn-3d-orange px-4 py-2 text-xs">' +
+                          '<span>Mở vị trí địa điểm này trên Google Maps</span>' +
+                          '<span class="arrow-badge bg-white text-[#FF441F]">↗</span>' +
+                        '</a>' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>';
+          }
+
+          // Assemble Full 3-Row Day Layout
+          container.innerHTML =
+            '<div class="space-y-7">' +
+              concertBannerHtml +
+
+              '<!-- ROW 1: FULL-WIDTH DAY HEADER + 2 MEAL/REST HIGHLIGHT CARDS -->' +
+              '<div class="bento-blue p-6 sm:p-8 space-y-5">' +
+                '<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">' +
+                  '<div class="space-y-2 max-w-3xl">' +
+                    '<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">' +
+                      d.dayNumber + ' • ' + d.dateLabel + ' • ' + d.highlightBadge +
+                    '</div>' +
+                    '<h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">' +
+                      d.shortTitle +
+                    '</h2>' +
+                    '<p class="text-blue-100 text-xs sm:text-sm leading-relaxed">' +
+                      d.summaryDesc +
+                    '</p>' +
+                  '</div>' +
+                  '<div class="bento-orange p-4 sm:p-5 shrink-0 text-right min-w-[230px]">' +
+                    '<div class="text-[11px] font-bold uppercase text-orange-100">Tổng chi phí ' + d.dayNumber + ' / 1 người</div>' +
+                    '<div class="text-2xl sm:text-3xl font-extrabold mt-0.5">' + fmtNum(d.totalThb) + ' THB</div>' +
+                    '<div class="text-sm font-extrabold text-yellow-200">~' + fmtNum(dayVnd) + ' VNĐ</div>' +
+                  '</div>' +
+                '</div>' +
+
+                '<!-- 2 Summary Cards: Lunch/Midday Rest & Evening Foodtour -->' +
+                '<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">' +
+                  '<div class="bento-orange p-4 space-y-1">' +
+                    '<div class="text-xs font-extrabold uppercase tracking-wider text-yellow-200">Điểm Ăn Trưa & Nghỉ Trưa Máy Lạnh (12:00 – 14:15)</div>' +
+                    '<p class="text-xs sm:text-sm font-medium leading-relaxed text-white">' + d.lunchRestSummary + '</p>' +
+                  '</div>' +
+                  '<div class="bg-white/15 border-2 border-white/25 rounded-2xl p-4 space-y-1">' +
+                    '<div class="text-xs font-extrabold uppercase tracking-wider text-yellow-300">Điểm Ăn Tối & Foodtour Đêm Bình Dân (18:30 – 22:00)</div>' +
+                    '<p class="text-xs sm:text-sm font-medium leading-relaxed text-white">' + d.dinnerSummary + '</p>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+
+              '<!-- ROW 2: 2 COLUMNS (LEFT: VISUAL ROUTE MAP + EMBED | RIGHT: COST BREAKDOWN TABLE) -->' +
+              '<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">' +
+                '<!-- Left Column: Route Map -->' +
+                '<div class="lg:col-span-6 bento-card p-5 sm:p-6 space-y-4">' +
+                  '<div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">' +
+                    '<div>' +
+                      '<div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Sơ Đồ Tuyến Đường Không Đi Ngược Chiều</div>' +
+                      '<h3 class="text-lg font-extrabold text-slate-900">Bản Đồ Lộ Trình ' + d.dayNumber + '</h3>' +
+                    '</div>' +
+                    '<button type="button" onclick="window.toggleMapMode(\'' + d.id + '\')" id="mapToggleBtn-' + d.id + '" class="btn-3d-white px-3.5 py-1.5 text-xs">' +
+                      'Chuyển sang Bản đồ vệ tinh Google Maps' +
+                    '</button>' +
+                  '</div>' +
+
+                  '<!-- Mode A: Guaranteed SVG Diagram -->' +
+                  '<div id="svgMapWrap-' + d.id + '">' +
+                    buildDaySvgDiagram(d) +
+                  '</div>' +
+
+                  '<!-- Mode B: Embedded Google Maps Iframe -->' +
+                  '<div id="iframeMapWrap-' + d.id + '" class="hidden">' +
+                    '<iframe class="w-full h-[360px] rounded-2xl border-2 border-slate-200" loading="lazy" ' +
+                      'src="https://maps.google.com/maps?q=' + d.embedMapQuery + '&t=&z=12&ie=UTF8&iwloc=&output=embed">' +
+                    '</iframe>' +
+                  '</div>' +
+
+                  '<div class="flex flex-wrap items-center justify-between gap-2 pt-1">' +
+                    '<a href="' + d.multiStopMapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn-3d-orange w-full py-3 text-xs sm:text-sm">' +
+                      '<span>Mở Lộ Trình Đa Điểm ' + d.dayNumber + ' Trên Google Maps App</span>' +
+                      '<span class="arrow-badge bg-white text-[#FF441F]">↗</span>' +
+                    '</a>' +
+                  '</div>' +
+                '</div>' +
+
+                '<!-- Right Column: Cost Breakdown Table -->' +
+                '<div class="lg:col-span-6 bento-card p-5 sm:p-6 space-y-4">' +
+                  '<div class="flex items-center justify-between border-b border-slate-200 pb-3">' +
+                    '<div>' +
+                      '<div class="text-xs font-extrabold uppercase text-[#FF441F]">Chi Tiết Ngân Sách Trong Ngày (THB & VNĐ)</div>' +
+                      '<h3 class="text-lg font-extrabold text-slate-900">Bảng Dự Toán ' + d.dayNumber + ' / 1 Người</h3>' +
+                    '</div>' +
+                    '<button type="button" onclick="window.openRateModal()" class="btn-3d-white px-3 py-1.5 text-xs">' +
+                      '1 THB = ' + window.appState.exchangeRate + 'đ' +
+                    '</button>' +
+                  '</div>' +
+
+                  '<div class="overflow-x-auto">' +
+                    '<table class="w-full text-left border-collapse">' +
+                      '<thead>' +
+                        '<tr class="border-b-2 border-slate-200 text-[11px] uppercase text-slate-500">' +
+                          '<th class="py-2 pr-2">Khoản chi & Phương tiện</th>' +
+                          '<th class="py-2 px-2 text-right">THB</th>' +
+                          '<th class="py-2 pl-2 text-right">VNĐ</th>' +
+                        '</tr>' +
+                      '</thead>' +
+                      '<tbody>' +
+                        costRowsHtml +
+                        '<tr class="bg-blue-50/90 border-t-2 border-[#1D5CFF]">' +
+                          '<td class="py-3 pr-2 font-extrabold text-[#0B38B8] text-xs sm:text-sm">TỔNG CỘNG ' + d.dayNumber.toUpperCase() + ' / 1 NGƯỜI</td>' +
+                          '<td class="py-3 px-2 text-right font-extrabold text-[#0B38B8] text-sm sm:text-base whitespace-nowrap">' + fmtNum(d.totalThb) + ' THB</td>' +
+                          '<td class="py-3 pl-2 text-right font-extrabold text-[#E02B00] text-sm sm:text-base whitespace-nowrap">~' + fmtNum(dayVnd) + 'đ</td>' +
+                        '</tr>' +
+                      '</tbody>' +
+                    '</table>' +
+                  '</div>' +
+
+                  '<div class="p-3.5 rounded-2xl bg-[#F4F7FE] border border-[#D5E2FA] text-xs text-slate-700 leading-relaxed">' +
+                    '💡 <strong>Ghi chú di chuyển ' + d.dayNumber + ':</strong> ' + d.transportNote +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+
+              '<!-- ROW 3: FULL-WIDTH TIMELINE & ACCORDION DETAILS -->' +
+              '<div class="space-y-4">' +
+                '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#F4F7FE] p-4 rounded-2xl border border-[#D5E2FA]">' +
+                  '<div>' +
+                    '<div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Lịch Trình Chi Tiết Từng Khung Giờ</div>' +
+                    '<h3 class="text-xl font-extrabold text-slate-900">Timeline & Chi Tiết Điểm Đến ' + d.dayNumber + '</h3>' +
+                  '</div>' +
+                  '<div class="flex flex-wrap items-center gap-2">' +
+                    '<button type="button" onclick="window.expandAllDay(\'' + d.id + '\', true)" class="btn-3d-blue px-4 py-2 text-xs">' +
+                      'Mở rộng tất cả chi tiết' +
+                    '</button>' +
+                    '<button type="button" onclick="window.expandAllDay(\'' + d.id + '\', false)" class="btn-3d-white px-4 py-2 text-xs">' +
+                      'Thu gọn tất cả' +
+                    '</button>' +
+                  '</div>' +
+                '</div>' +
+
+                '<div class="space-y-4">' +
+                  stepsHtml +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        }
+      }
+
+      // ==========================================
+      // RENDER MARKET SURVEY CARDS
+      // ==========================================
+      function renderSurveySection() {
+        var container = document.getElementById('surveyCardsContainer');
+        if (!container) return;
+
+        var filter = window.appState.activeSurveyFilter;
+        var html = '';
+
+        for (var i = 0; i < window.surveyLocations.length; i++) {
+          var s = window.surveyLocations[i];
+          if (filter !== 'all' && s.category !== filter) continue;
+
+          html +=
+            '<div class="bento-card p-6 flex flex-col justify-between space-y-4">' +
+              '<div class="space-y-3">' +
+                '<div class="flex flex-wrap items-center justify-between gap-2">' +
+                  '<span class="px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">' +
+                    s.catLabel +
+                  '</span>' +
+                  '<span class="text-xs font-bold text-[#FF441F]">Đề xuất khảo sát thực địa</span>' +
+                '</div>' +
+                '<h3 class="text-xl font-extrabold text-slate-900">' +
+                  s.title +
+                '</h3>' +
+                '<div class="space-y-2 text-xs sm:text-sm text-slate-700">' +
+                  '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200">' +
+                    '📍 <strong>Vị trí:</strong> ' + s.location +
+                  '</div>' +
+                  '<div class="p-3 rounded-xl bg-blue-50 border border-blue-200">' +
+                    '🕒 <strong>Khung giờ đề xuất ghé thăm:</strong> ' + s.proposedTime +
+                  '</div>' +
+                  '<div class="p-3 rounded-xl bg-orange-50 border border-orange-200 text-slate-800">' +
+                    '🔄 <strong>Phương án ghép / thay thế trong lịch trình:</strong> ' + s.replaceNote +
+                  '</div>' +
+                  '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
+                    '💡 <strong>Trọng tâm khảo sát sản phẩm & mô hình:</strong> ' + s.highlights +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="pt-2">' +
+                '<a href="' + s.mapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn-3d-blue w-full py-2.5 text-xs">' +
+                  '<span>Mở địa điểm khảo sát trên Google Maps</span>' +
+                  '<span class="arrow-badge">↗</span>' +
+                '</a>' +
+              '</div>' +
+            '</div>';
+        }
+
+        container.innerHTML = html;
+      }
+
+      // ==========================================
+      // GLOBAL INTERACTION HANDLERS ON WINDOW
+      // ==========================================
+
+      // 1. Switch Top Navigation Tab
+      window.switchTab = function (tabId) {
+        window.appState.activeTab = tabId;
+
+        // Hide all tab views, show selected
+        var views = document.querySelectorAll('.tab-view');
+        for (var i = 0; i < views.length; i++) {
+          views[i].classList.add('hidden');
+        }
+        var targetView = document.getElementById('view-' + tabId);
+        if (targetView) {
+          targetView.classList.remove('hidden');
+        }
+
+        // Update active state on nav buttons
+        var navButtons = document.querySelectorAll('#mainNavTabs .nav-tab');
+        for (var j = 0; j < navButtons.length; j++) {
+          var btn = navButtons[j];
+          if (btn.getAttribute('data-tab') === tabId) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        }
+
+        // Smooth scroll to top of main container
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // 2. Toggle Single Timeline Item Detail Drawer
+      window.toggleDetail = function (detailId, btnTextId) {
+        var drawer = document.getElementById(detailId);
+        var btnText = document.getElementById(btnTextId);
+        if (!drawer) return;
+
+        var isHidden = drawer.classList.contains('hidden');
+        if (isHidden) {
+          drawer.classList.remove('hidden');
+          if (btnText) btnText.textContent = 'Thu gọn chi tiết địa điểm';
+        } else {
+          drawer.classList.add('hidden');
+          if (btnText) btnText.textContent = 'Xem chi tiết & Hình ảnh địa điểm';
+        }
+      };
+
+      // 3. Expand / Collapse All Timeline Details in a Day
+      window.expandAllDay = function (dayId, shouldExpand) {
+        var drawers = document.querySelectorAll('.day-detail-drawer-' + dayId);
+        for (var i = 0; i < drawers.length; i++) {
+          var dr = drawers[i];
+          var btnText = document.getElementById(dayId + '-btn-text-' + i);
+          if (shouldExpand) {
+            dr.classList.remove('hidden');
+            if (btnText) btnText.textContent = 'Thu gọn chi tiết địa điểm';
+          } else {
+            dr.classList.add('hidden');
+            if (btnText) btnText.textContent = 'Xem chi tiết & Hình ảnh địa điểm';
+          }
+        }
+      };
+
+      // 4. Toggle SVG Diagram vs Embedded Google Maps Iframe
+      window.toggleMapMode = function (dayId) {
+        var svgWrap = document.getElementById('svgMapWrap-' + dayId);
+        var iframeWrap = document.getElementById('iframeMapWrap-' + dayId);
+        var btn = document.getElementById('mapToggleBtn-' + dayId);
+        if (!svgWrap || !iframeWrap) return;
+
+        var showingSvg = !svgWrap.classList.contains('hidden');
+        if (showingSvg) {
+          svgWrap.classList.add('hidden');
+          iframeWrap.classList.remove('hidden');
+          if (btn) btn.textContent = 'Chuyển về Sơ đồ Tuyến đường 3D';
+        } else {
+          iframeWrap.classList.add('hidden');
+          svgWrap.classList.remove('hidden');
+          if (btn) btn.textContent = 'Chuyển sang Bản đồ vệ tinh Google Maps';
+        }
+      };
+
+      // 5. Filter Market Research Survey Cards
+      window.filterSurvey = function (category) {
+        window.appState.activeSurveyFilter = category;
+        var buttons = document.querySelectorAll('#surveyFilterButtons button');
+        for (var i = 0; i < buttons.length; i++) {
+          var b = buttons[i];
+          if (b.getAttribute('data-filter') === category) {
+            b.className = 'btn-3d-blue px-4 py-2 text-xs';
+          } else {
+            b.className = 'btn-3d-white px-4 py-2 text-xs';
+          }
+        }
+        renderSurveySection();
+      };
+
+      // 6. Exchange Rate & Group Size Modal Controls
+      window.openRateModal = function () {
+        var modal = document.getElementById('rateModal');
+        var rateInput = document.getElementById('inputExchangeRate');
+        var paxInput = document.getElementById('inputGroupSize');
+        if (rateInput) rateInput.value = window.appState.exchangeRate;
+        if (paxInput) paxInput.value = window.appState.groupSize;
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        }
+      };
+
+      window.closeRateModal = function () {
+        var modal = document.getElementById('rateModal');
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      };
+
+      window.resetRateDefault = function () {
+        var rateInput = document.getElementById('inputExchangeRate');
+        var paxInput = document.getElementById('inputGroupSize');
+        if (rateInput) rateInput.value = 760;
+        if (paxInput) paxInput.value = 4;
+        window.applyRateChanges();
+      };
+
+      window.applyRateChanges = function () {
+        var rateInput = document.getElementById('inputExchangeRate');
+        var paxInput = document.getElementById('inputGroupSize');
+        var newRate = parseFloat(rateInput ? rateInput.value : 760);
+        var newPax = parseInt(paxInput ? paxInput.value : 4, 10);
+
+        if (isNaN(newRate) || newRate <= 0) newRate = 760;
+        if (isNaN(newPax) || newPax < 1) newPax = 4;
+
+        window.appState.exchangeRate = newRate;
+        window.appState.groupSize = newPax;
+
+        window.updateCalculations();
+        window.closeRateModal();
+      };
+
+      window.updateCalculations = function () {
+        var topRate = document.getElementById('topRateDisplay');
+        var topPax = document.getElementById('topPaxDisplay');
+        if (topRate) topRate.textContent = fmtNum(window.appState.exchangeRate);
+        if (topPax) topPax.textContent = window.appState.groupSize;
+
+        var inlineRates = document.querySelectorAll('.rate-inline-label');
+        for (var i = 0; i < inlineRates.length; i++) {
+          inlineRates[i].textContent = fmtNum(window.appState.exchangeRate);
+        }
+
+        renderOverviewSection();
+        renderAllDays();
+      };
+
+      // 7. Mobile / Desktop Viewport Simulator Toggle
+      window.toggleViewportMode = function () {
+        var shell = document.getElementById('mainShell');
+        var btn = document.getElementById('viewportToggleBtn');
+        window.appState.mobileSim = !window.appState.mobileSim;
+
+        if (window.appState.mobileSim) {
+          if (shell) shell.classList.add('mobile-sim');
+          if (btn) btn.textContent = '🖥️ Chế độ Máy tính (Toàn màn hình)';
+        } else {
+          if (shell) shell.classList.remove('mobile-sim');
+          if (btn) btn.textContent = '📱 Chế độ Điện thoại';
+        }
+      };
+
+      // Initialize Everything cleanly on DOMContentLoaded & Immediate Fallback
+      function initApp() {
+        renderOverviewSection();
+        renderAllDays();
+        renderSurveySection();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+      } else {
+        initApp();
+      }
+    })();
+  </script>
+</body>
+</html>
