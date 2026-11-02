@@ -9,12 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue: #1D5CFF;
-      --blue-deep: #0B38B8;
-      --orange: #FF441F;
-      --orange-deep: #E02B00;
-      --line: #DCE6F7;
-      --soft: #F4F7FE;
+      --blue: #A5122F;
+      --blue-deep: #7B0D24;
+      --orange: #1F2460;
+      --orange-deep: #A5122F;
+      --gold: #F2B01E;
+      --gold-ink: #3A1A00;
+      --navy: #1F2460;
+      --line: #EFE2C6;
+      --soft: #FBF6EA;
     }
     * { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #E2E8F0; }
     body {
@@ -36,13 +39,12 @@
     [hidden] { display: none !important; }
 
     .main-shell { max-width: 1320px; margin: 18px auto 40px; background: #FFF; border-radius: 28px; }
-    .main-shell.mobile-sim { max-width: 430px; }
     .bento-card { background: #FFF; border-radius: 22px; border: 2px solid var(--line); }
     .bento-card-interactive { cursor: pointer; }
     .bento-card.bento-card-interactive:hover, .bento-soft.bento-card-interactive:hover { border-color: var(--blue); }
     .bento-blue { background: var(--blue); color: #FFF; border-radius: 22px; }
     .bento-orange { background: var(--orange); color: #FFF; border-radius: 22px; }
-    .bento-soft { background: var(--soft); border-radius: 22px; border: 2px solid #D5E2FA; }
+    .bento-soft { background: var(--soft); border-radius: 22px; border: 2px solid #EFE2C6; }
 
     .btn-3d-blue, .btn-3d-orange, .btn-3d-white {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -66,16 +68,16 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-.bg-\[\#092C96\]\/90{background-color:rgba(9,44,150,0.9)}
-.bg-\[\#0B2B8A\]{background-color:#0B2B8A}
-.bg-\[\#1D5CFF\]{background-color:#1D5CFF}
-.bg-\[\#F4F7FE\]{background-color:#F4F7FE}
-.bg-\[\#FF441F\]{background-color:#FF441F}
+.bg-\[\#1F2460\]\/90{background-color:rgba(9,44,150,0.9)}
+.bg-\[\#1F2460\]{background-color:#1F2460}
+.bg-\[\#A5122F\]{background-color:#A5122F}
+.bg-\[\#FBF6EA\]{background-color:#FBF6EA}
+.bg-\[\#F2B01E\]{background-color:#F2B01E}
 .bg-black\/20{background-color:rgba(0,0,0,0.2)}
 .bg-black\/25{background-color:rgba(0,0,0,0.25)}
 .bg-black\/30{background-color:rgba(0,0,0,0.3)}
-.bg-blue-50{background-color:#EFF6FF}
-.bg-blue-50\/90{background-color:rgba(239,246,255,0.9)}
+.bg-blue-50{background-color:#FBF6EA}
+.bg-blue-50\/90{background-color:#FBF6EA}
 .bg-orange-50{background-color:#FFF7ED}
 .bg-slate-100{background-color:#F1F5F9}
 .bg-slate-50{background-color:#F8FAFC}
@@ -87,12 +89,12 @@
 .block{display:block}
 .border{border-width:1px}
 .border-2{border-width:2px}
-.border-\[\#1D5CFF\]{border-color:#1D5CFF}
-.border-\[\#D5E2FA\]{border-color:#D5E2FA}
-.border-\[\#DCE6F7\]{border-color:#DCE6F7}
+.border-\[\#A5122F\]{border-color:#A5122F}
+.border-\[\#EFE2C6\]{border-color:#EFE2C6}
+.border-\[\#EFE2C6\]{border-color:#EFE2C6}
 .border-b{border-bottom-width:1px}
 .border-b-2{border-bottom-width:2px}
-.border-blue-200{border-color:#BFDBFE}
+.border-blue-200{border-color:#EFE2C6}
 .border-blue-400\/30{border-color:rgba(96,165,250,0.3)}
 .border-collapse{border-collapse:collapse}
 .border-dashed{border-style:dashed}
@@ -196,13 +198,13 @@
 .shrink-0{flex-shrink:0}
 .sticky{position:sticky}
 .text-2xl{font-size:1.5rem;line-height:2rem}
-.text-\[\#0B38B8\]{color:#0B38B8}
-.text-\[\#1D5CFF\]{color:#1D5CFF}
-.text-\[\#E02B00\]{color:#E02B00}
-.text-\[\#FF441F\]{color:#FF441F}
+.text-\[\#7B0D24\]{color:#7B0D24}
+.text-\[\#A5122F\]{color:#A5122F}
+.text-\[\#A5122F\]{color:#A5122F}
+.text-\[\#F2B01E\]{color:#F2B01E}
 .text-\[11px\]{font-size:11px}
 .text-base{font-size:1rem;line-height:1.5rem}
-.text-blue-100{color:#DBEAFE}
+.text-blue-100{color:#F9E7D2}
 .text-left{text-align:left}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-orange-100{color:#FFEDD5}
@@ -232,7 +234,7 @@
 .z-50{z-index:50}
 .divide-slate-200>*+*{border-color:#E2E8F0}
 .divide-y>*+*{border-top-width:1px}
-.focus\:border-\[\#1D5CFF\]:focus{border-color:#1D5CFF}
+.focus\:border-\[\#A5122F\]:focus{border-color:#A5122F}
 .hover\:bg-slate-200:hover{background-color:#E2E8F0}
 .hover\:bg-slate-50:hover{background-color:#F8FAFC}
 .hover\:bg-white\/25:hover{background-color:rgba(255,255,255,0.25)}
@@ -300,29 +302,216 @@
 
     @media (max-width: 767px) {
       .check-grid { grid-template-columns: minmax(0, 1fr); }
-      #viewportToggleBtn { display: none; }
       header .text-\[11px\] { display: none; }
     }
     @media (max-width: 520px) {
       .form-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
+
+    /* ---------- Phong cách Thái ---------- */
+    .text-\[\#3A1A00\] { color: var(--gold-ink); }
+    .text-\[\#A5720A\] { color: #A5720A; }
+    body {
+      background-color: #7B0D24;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M28 6l8 14 14 8-14 8-8 14-8-14-14-8 14-8z' fill='none' stroke='%23F2B01E' stroke-opacity='.18'/%3E%3C/svg%3E");
+    }
+    .main-shell { overflow: clip; }
+    .bento-blue { background-color: var(--blue); }
+    .hero-photo { background-image: linear-gradient(90deg, rgba(123,13,36,.95) 0%, rgba(123,13,36,.82) 55%, rgba(123,13,36,.45) 100%), url("img/hero-sunset.jpg"); background-size: cover; background-position: center; }
+    .pill-highlight { background: var(--gold); color: var(--gold-ink); }
+    .btn-3d-orange { background: var(--gold); color: var(--gold-ink); }
+    .btn-3d-orange:hover { background: #FFC940; }
+    .btn-3d-orange .arrow-badge, .arrow-badge.bg-white { background: var(--blue); color: #FFF; }
+    .arrow-badge { background: var(--blue); }
+    .btn-3d-blue .arrow-badge { background: var(--gold); color: var(--gold-ink); }
+    .progress i { background: var(--gold); }
+    .pay-visa { background: #E3F4E8; color: #116B3E; }
+
+    /* ---------- Header ---------- */
+    .site-header { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #FFF; padding: 12px 28px; }
+    .site-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 6px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='6'%3E%3Cpath d='M0 0h18L9 6z' fill='%23F2B01E'/%3E%3C/svg%3E") repeat-x; }
+    .brand { display: flex; align-items: center; gap: 10px; cursor: pointer; flex-shrink: 0; }
+    .brand-flag { width: 40px; height: 40px; object-fit: contain; }
+    .brand-year { color: var(--blue); }
+    .brand-sub { font-size: 11px; font-weight: 600; color: #64748B; margin-top: 2px; }
+    .main-nav { display: flex; align-items: center; gap: 6px; }
+    .nav-tab { padding: 9px 14px; font-size: 0.84rem; }
+    .caret { font-size: 11px; }
+    .nav-drop { position: relative; }
+    .drop-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; width: 320px; background: #FFF; border: 2px solid #EFE2C6; border-radius: 16px; padding: 8px; z-index: 45; }
+    .nav-drop.open .drop-menu { display: block; }
+    .drop-item { display: block; width: 100%; text-align: left; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+    .drop-item strong { display: block; font-size: 14px; font-weight: 800; }
+    .drop-item span { display: block; font-size: 12px; color: #64748B; }
+    .drop-item:hover { background: #FBF6EA; }
+    .drop-item.active { background: var(--blue); color: #FFF; }
+    .drop-item.active span { color: #F9E7D2; }
+    .menu-btn { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 42px; padding: 0 10px; border-radius: 12px; background: #FBF6EA; cursor: pointer; flex-shrink: 0; }
+    .menu-btn span { display: block; height: 2px; background: #1F2460; border-radius: 2px; }
+
+    /* ---------- Menu thanh bên ---------- */
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(15,10,20,.55); z-index: 60; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(300px, 84vw); background: #FFF; z-index: 61; padding: 16px; overflow-y: auto; transform: translateX(100%); visibility: hidden; transition: transform .2s ease, visibility .2s; display: flex; flex-direction: column; gap: 12px; }
+    body.drawer-open { overflow: hidden; }
+    body.drawer-open .drawer-overlay { display: block; }
+    body.drawer-open .drawer { transform: none; visibility: visible; }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; font-size: 15px; }
+    .drawer-close { width: 36px; height: 36px; border-radius: 10px; background: #FBF6EA; cursor: pointer; }
+    .drawer-nav { display: flex; flex-direction: column; gap: 2px; }
+    .drawer-group { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: #A5720A; padding: 12px 12px 4px; }
+    .drawer-link { text-align: left; padding: 10px 12px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .drawer-link.active { background: var(--blue); color: #FFF; }
+    .drawer-rate { padding: 10px; font-size: 13px; margin-top: auto; }
+
+    /* ---------- Hình ảnh ---------- */
+    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .gallery-tile { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; cursor: pointer; background: #EFE2C6; }
+    .gallery-tile img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-tile span { position: absolute; left: 8px; bottom: 8px; padding: 3px 10px; border-radius: 9999px; background: var(--gold); color: var(--gold-ink); font-size: 12px; font-weight: 800; }
+    .food-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .food-item { display: flex; align-items: center; gap: 12px; }
+    .food-item img { width: 84px; height: 84px; object-fit: contain; flex-shrink: 0; }
+    .food-item strong { display: block; font-size: 15px; font-weight: 800; }
+    .food-item span { display: block; font-size: 12px; color: #475569; }
+    .day-cover { width: 100%; height: 160px; object-fit: cover; border-radius: 14px; margin-bottom: 14px; }
+    .day-cover.contain { object-fit: contain; background: #FBF6EA; padding: 8px; }
+    .step-head { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+    .step-thumb { width: 92px; height: 92px; object-fit: cover; border-radius: 14px; flex-shrink: 0; }
+    .day-chips { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+    .day-chip { padding: 8px 4px; border-radius: 12px; background: #FBF6EA; text-align: center; cursor: pointer; line-height: 1.25; }
+    .day-chip strong { display: block; font-size: 14px; font-weight: 800; }
+    .day-chip span { display: block; font-size: 11px; color: #64748B; }
+    .day-chip.active { background: var(--blue); color: #FFF; }
+    .day-chip.active span { color: #F9E7D2; }
+
+    /* ---------- Dự trù tiền ---------- */
+    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .stat { padding: 16px; border-radius: 18px; color: #FFF; min-width: 0; }
+    .stat span { display: block; font-size: 12px; font-weight: 700; }
+    .stat strong { display: block; font-size: 22px; font-weight: 800; line-height: 1.25; margin-top: 4px; overflow-wrap: anywhere; }
+    .stat-red { background: var(--blue); }
+    .stat-navy { background: var(--navy); }
+    .stat-gold { background: var(--gold); color: var(--gold-ink); }
+    .stat-green { background: #116B3E; }
+    .total-row td { font-weight: 800; border-top: 2px solid #1F2460; border-bottom: 0; color: var(--blue); }
+
+    /* ---------- Lưu ý ---------- */
+    .must-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .must-card { display: flex; gap: 12px; padding: 16px; border-radius: 18px; background: var(--navy); color: #FFF; }
+    .must-icon { font-size: 26px; line-height: 1; flex-shrink: 0; }
+    .must-card strong { display: block; font-size: 15px; font-weight: 800; color: var(--gold); line-height: 1.3; }
+    .must-card p { font-size: 13px; line-height: 1.45; margin-top: 4px; color: #E8E6F5; }
+    .flow { display: flex; flex-direction: column; }
+    .flow-step { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; position: relative; padding-bottom: 20px; }
+    .flow-step:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 0; width: 3px; background: var(--gold); }
+    .flow-num { width: 44px; height: 44px; border-radius: 9999px; background: var(--blue); color: #FFF; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .flow-body { background: #FFF; border: 2px solid #EFE2C6; border-radius: 18px; padding: 16px 18px; min-width: 0; }
+    .flow-body h4 { font-size: 18px; font-weight: 800; margin: 0; }
+    .flow-when { font-size: 13px; font-weight: 700; color: #A5720A; }
+    .flow-time { list-style: none; margin: 12px 0 0; padding: 12px 14px; background: #FBF6EA; border-radius: 12px; }
+    .flow-time li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 8px; padding: 3px 0; font-size: 14px; }
+    .flow-time b { color: var(--blue); font-weight: 800; }
+    .flow-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; margin-top: 12px; }
+    .flow-group h5 { margin: 0 0 6px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 4px; }
+    .flow-group ul { list-style: none; }
+    .flow-group li { padding: 7px 0 7px 10px; border-left: 3px solid #EFE2C6; margin-bottom: 4px; font-size: 13.5px; line-height: 1.4; }
+    .flow-group li.is-must { border-left-color: var(--blue); background: #FDF1F1; border-radius: 0 8px 8px 0; }
+    .flow-group li strong { display: block; font-weight: 800; }
+    .flow-group li em { font-style: normal; font-size: 11px; font-weight: 800; color: var(--blue); margin-left: 4px; }
+    .flow-group li span { color: #334155; }
+    .flow-group a { color: var(--blue); text-decoration: underline; }
+    .sos-card { background: var(--blue); color: #FFF; border-radius: 22px; padding: 20px; }
+    .sos-calls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .sos-calls a { display: block; padding: 12px 8px; background: #FFF; color: var(--blue); border-radius: 14px; text-align: center; }
+    .sos-calls strong { display: block; font-size: 22px; font-weight: 800; line-height: 1.1; }
+    .sos-calls span { display: block; font-size: 12px; font-weight: 700; color: #334155; }
+    .sos-list { font-size: 14px; }
+    .sos-list li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.25); }
+
+    /* ---------- Hiệu ứng rê chuột ---------- */
+    .btn-3d-blue, .btn-3d-orange, .btn-3d-white, .nav-tab, .day-chip, .gallery-tile, .bento-card-interactive, .menu-btn, .drawer-link, .sos-calls a {
+      transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease, color .12s ease;
+    }
+    @media (hover: hover) {
+      .btn-3d-blue:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #4E0817; }
+      .btn-3d-orange:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #B07A0C; }
+      .btn-3d-white:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #EFE2C6; background: #FBF6EA; }
+      .nav-tab:hover, .day-chip:hover { transform: translateY(-2px); background: var(--gold); color: var(--gold-ink); box-shadow: 0 3px 0 #B07A0C; }
+      .nav-tab.active:hover { background: var(--blue-deep, #7B0D24); color: #FFF; box-shadow: 0 3px 0 #4E0817; }
+      .day-chip.active:hover { background: #7B0D24; color: #FFF; }
+      .gallery-tile:hover { transform: translateY(-3px); box-shadow: 0 5px 0 #B07A0C; }
+      .bento-card-interactive:hover { transform: translateY(-3px); box-shadow: 0 6px 0 rgba(31,36,96,.25); }
+      .drawer-link:hover { background: #FBF6EA; }
+      .drawer-link.active:hover { background: var(--blue); }
+    }
+    .btn-3d-blue:active, .btn-3d-orange:active, .btn-3d-white:active, .nav-tab:active, .day-chip:active, .gallery-tile:active { transform: translateY(1px); box-shadow: none; }
+
+    /* ---------- Máy bảng, điện thoại ---------- */
+    @media (max-width: 1099px) {
+      #topBar { display: none; }
+      .main-nav { display: none; }
+      .menu-btn { display: flex; }
+      .site-header { padding: 10px 16px; }
+      .main-shell { margin-top: 0; }
+      .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 767px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .food-grid, .must-grid, .flow-groups { grid-template-columns: minmax(0, 1fr); }
+      .food-item img { width: 64px; height: 64px; }
+      .hero-photo { background-image: linear-gradient(rgba(123,13,36,.88), rgba(123,13,36,.88)), url("img/hero-sunset.jpg"); }
+    }
+    @media (max-width: 640px) {
+      html { font-size: 14px; }
+      body.px-2 { padding: 0; }
+      .main-shell { border-radius: 0; margin: 0; }
+      .brand-flag { width: 34px; height: 34px; }
+      .step-thumb { width: 68px; height: 68px; }
+      .check, .note-list { font-size: 13px; }
+      .stat strong { font-size: 18px; }
+      .flow-step { grid-template-columns: 34px minmax(0, 1fr); gap: 10px; }
+      .flow-num { width: 34px; height: 34px; font-size: 15px; }
+      .flow-step:not(:last-child)::before { left: 16px; top: 34px; }
+      .flow-body { padding: 12px 14px; }
+      .flow-body h4 { font-size: 16px; }
+      .must-card { padding: 12px 14px; }
+      .bal-table { font-size: 13px; }
+    }
+
+    /* ---------- Bảng tổng 5 ngày ---------- */
+    .plan-table { width: 100%; font-size: 14px; }
+    .plan-table th { text-align: left; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #64748B; padding: 8px 0; border-bottom: 2px solid #E2E8F0; }
+    .plan-table td { padding: 10px 0; border-bottom: 1px solid #E2E8F0; vertical-align: middle; }
+    .plan-table th + th, .plan-table td + td { padding-left: 10px; }
+    .plan-table .r { text-align: right; white-space: nowrap; }
+    .plan-table td strong { display: block; font-weight: 800; color: #0F172A; }
+    .plan-table td span { display: block; font-size: 12px; color: #64748B; }
+    .plan-table .thb { font-weight: 800; }
+    .plan-table .dong { font-weight: 700; color: var(--blue); }
+    .plan-day td { padding: 0; border-bottom: 0; }
+    .plan-day button { display: block; width: 100%; margin-top: 12px; padding: 9px 12px; text-align: left; background: var(--navy); color: #FFF; font-size: 13px; font-weight: 800; border-radius: 10px; cursor: pointer; }
+    .plan-sub td { background: #FBF6EA; font-weight: 800; color: #7B0D24; padding-top: 9px; padding-bottom: 9px; }
+    .plan-sub td:first-child { padding-left: 12px; }
+    .plan-sub td:last-child { padding-right: 12px; }
+    .plan-grand td { background: var(--blue); color: #FFF; font-size: 15px; font-weight: 800; padding-top: 12px; padding-bottom: 12px; border-bottom: 0; }
+    .plan-grand td:first-child { padding-left: 12px; border-radius: 10px 0 0 10px; }
+    .plan-grand td:last-child { padding-right: 12px; border-radius: 0 10px 10px 0; }
+    @media (hover: hover) { .plan-day button:hover { background: var(--gold); color: var(--gold-ink); } }
+    @media (max-width: 640px) { .plan-table { font-size: 13px; } .plan-grand td { font-size: 13px; } }
   </style>
 </head>
 <body class="px-2 sm:px-5 py-3">
 
   <!-- TOP UTILITY BAR (OUTSIDE SHELL) -->
-  <div class="max-w-[1320px] mx-auto mb-3 flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-[#092C96]/90 border border-blue-400/30 text-white backdrop-blur-md">
+  <div id="topBar" class="max-w-[1320px] mx-auto mb-3 flex flex-wrap items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-[#1F2460]/90 border border-blue-400/30 text-white backdrop-blur-md">
     <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold">
-      <span class="px-2.5 py-1 rounded-full bg-[#FF441F] text-white font-extrabold text-xs">LIVE 2026</span>
+      <span class="px-2.5 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] font-extrabold text-xs">LIVE 2026</span>
       <span>Bangkok 5N4Đ (05/11 - 09/11/2026) • Đã thanh toán Vé bay & Khách sạn</span>
     </div>
     <div class="flex flex-wrap items-center gap-2">
       <button type="button" onclick="window.openRateModal()" class="px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-xs font-bold transition cursor-pointer">
         💱 Tỷ giá: 1 THB = <span id="topRateDisplay">760</span>đ • Nhóm <span id="topPaxDisplay">4</span> người (Chỉnh sửa)
-      </button>
-      <button type="button" id="viewportToggleBtn" onclick="window.toggleViewportMode()" class="px-3 py-1.5 rounded-full bg-[#FF441F] hover:bg-[#E02B00] text-white text-xs font-bold transition cursor-pointer shadow">
-        📱 Chế độ Điện thoại
       </button>
     </div>
   </div>
@@ -331,59 +520,34 @@
   <div id="mainShell" class="main-shell pb-12">
 
     <!-- STICKY TOP NAVIGATION BAR -->
-    <header class="sticky top-0 z-40 bg-white border-b-2 border-[#DCE6F7] rounded-t-[34px] px-4 sm:px-7 py-3.5">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-        <!-- Brand Logo -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3 cursor-pointer" onclick="window.switchTab('overview')">
-            <div class="w-10 h-10 rounded-2xl bg-[#1D5CFF] text-white font-extrabold flex items-center justify-center text-xs">
-              BKK
-            </div>
-            <div>
-              <div class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
-                BANGKOK <span class="text-[#FF441F]">2026</span>
-              </div>
-              <div class="text-[11px] font-semibold text-slate-500 mt-0.5">
-                05/11 – 09/11/2026 • Top High Airport Link Hotel
-              </div>
-            </div>
+    <header class="site-header">
+      <div class="brand" onclick="window.switchTab('overview')">
+        <img src="img/flag.png" alt="" class="brand-flag" />
+        <div>
+          <div class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 leading-none">
+            BANGKOK <span class="brand-year">2026</span>
           </div>
-          <button type="button" onclick="window.openRateModal()" class="lg:hidden btn-3d-white px-3 py-1.5 text-xs">
-            Tỷ giá & Nhóm
-          </button>
+          <div class="brand-sub">05/11 – 09/11/2026</div>
         </div>
-
-        <!-- Navigation Pills -->
-        <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1.5 pt-0.5" id="mainNavTabs">
-          <button type="button" data-tab="overview" onclick="window.switchTab('overview')" class="nav-tab active">
-            Tổng Quan
-          </button>
-          <button type="button" data-tab="day1" onclick="window.switchTab('day1')" class="nav-tab">
-            Ngày 1 (05/11)
-          </button>
-          <button type="button" data-tab="day2" onclick="window.switchTab('day2')" class="nav-tab">
-            Ngày 2 (06/11)
-          </button>
-          <button type="button" data-tab="day3" onclick="window.switchTab('day3')" class="nav-tab">
-            Ngày 3 (07/11)
-          </button>
-          <button type="button" data-tab="day4" onclick="window.switchTab('day4')" class="nav-tab">
-            Ngày 4 (08/11)
-          </button>
-          <button type="button" data-tab="day5" onclick="window.switchTab('day5')" class="nav-tab">
-            Ngày 5 (09/11)
-          </button>
-          <button type="button" data-tab="split" onclick="window.switchTab('split')" class="nav-tab">
-            Chia Tiền
-          </button>
-          <button type="button" data-tab="notes" onclick="window.switchTab('notes')" class="nav-tab">
-            Checklist & Lưu Ý
-          </button>
-          <button type="button" data-tab="survey" onclick="window.switchTab('survey')" class="nav-tab">
-            Khảo Sát Thị Trường
-          </button>
-        </nav>
       </div>
+
+      <nav class="main-nav" id="mainNavTabs" aria-label="Các mục chính">
+        <button type="button" data-tab="overview" onclick="window.switchTab('overview')" class="nav-tab active">Tổng Quan</button>
+        <div class="nav-drop" id="planDrop">
+          <button type="button" id="planBtn" class="nav-tab" aria-haspopup="true" aria-expanded="false" onclick="window.togglePlanMenu(event)"><span id="planLabel">Lịch Trình</span> <span class="caret">▾</span></button>
+          <div class="drop-menu" id="planMenu"></div>
+        </div>
+        <button type="button" data-tab="summary" onclick="window.switchTab('summary')" class="nav-tab">Tổng Lịch Trình</button>
+        <button type="button" data-tab="budget" onclick="window.switchTab('budget')" class="nav-tab">Dự Trù Tiền</button>
+        <button type="button" data-tab="split" onclick="window.switchTab('split')" class="nav-tab">Chia Tiền</button>
+        <button type="button" data-tab="check" onclick="window.switchTab('check')" class="nav-tab">Checklist</button>
+        <button type="button" data-tab="notes" onclick="window.switchTab('notes')" class="nav-tab">Lưu Ý</button>
+        <button type="button" data-tab="survey" onclick="window.switchTab('survey')" class="nav-tab">Khảo Sát</button>
+      </nav>
+
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="Mở menu" aria-expanded="false" onclick="window.openDrawer()">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <!-- MAIN CONTENT AREA -->
@@ -394,7 +558,7 @@
            ========================================== -->
       <section id="view-overview" class="tab-view space-y-8">
         <!-- Hero Section -->
-        <div class="bento-blue p-6 sm:p-9 relative overflow-hidden">
+        <div class="bento-blue hero-photo p-6 sm:p-9 relative overflow-hidden">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold tracking-wide uppercase">
@@ -409,7 +573,7 @@
               <div class="flex flex-wrap items-center gap-3 pt-2">
                 <button type="button" onclick="window.switchTab('day1')" class="btn-3d-orange px-6 py-3 text-sm sm:text-base">
                   <span>Bắt đầu xem Ngày 1 (05/11)</span>
-                  <span class="arrow-badge bg-white text-[#FF441F]">→</span>
+                  <span class="arrow-badge bg-white text-[#A5720A]">→</span>
                 </button>
                 <button type="button" onclick="window.switchTab('survey')" class="btn-3d-white px-5 py-3 text-sm">
                   <span>Khảo Sát Nhà Sách & VPP</span>
@@ -426,7 +590,7 @@
               <div class="bento-orange p-6 space-y-4">
                 <div class="flex items-center justify-between border-b border-white/25 pb-3">
                   <div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-orange-100">Tổng Chi Phí Dự Kiến / 1 Người</div>
+                    <div class="text-xs font-bold uppercase tracking-wider text-orange-100">Chi Tiêu Tại Thái / 1 Người</div>
                     <div class="text-2xl sm:text-3xl font-extrabold mt-0.5" id="heroTotalThb">4,650 THB</div>
                   </div>
                   <div class="text-right">
@@ -450,18 +614,24 @@
 
                 <div class="bg-white/15 rounded-2xl p-3.5 text-xs leading-relaxed">
                   <div class="font-extrabold uppercase tracking-wide mb-1">Tiền mặt cần cho lịch trình:</div>
-                  Khoảng <strong id="heroCash"></strong> mỗi người, nên mang khoảng <strong>2.500 THB</strong> để có dự phòng. Còn lại trả bằng Visa, Grab đã liên kết thẻ và MRT chạm thẻ. Nhóm <span id="heroGroupSize">4</span> người chia một xe.
+                  Khoảng <strong id="heroCash"></strong> mỗi người, nên đổi khoảng <strong><span class="cash-need"></span> THB</strong> để có dự phòng. Còn lại trả bằng Visa, Grab đã liên kết thẻ và MRT chạm thẻ. Nhóm <span id="heroGroupSize">4</span> người chia một xe.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- GALLERY -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Những Nơi <span class="pill-highlight">Sẽ Ghé Qua</span></h2>
+          <div class="gallery" id="placeGallery"></div>
+        </div>
+
         <!-- BIGBANG CONCERT SPECIAL ALERT BANNER -->
         <div class="bento-blue p-5 sm:p-6 border-2 border-yellow-300">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div class="space-y-1.5">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">
                 Cảnh Báo Sự Kiện Lớn Tại Bangkok (07/11 & 08/11/2026)
               </div>
               <h2 class="text-lg sm:text-xl font-extrabold">
@@ -473,7 +643,7 @@
             </div>
             <button type="button" onclick="window.switchTab('day3')" class="btn-3d-orange px-5 py-3 text-xs sm:text-sm shrink-0">
               <span>Xem chiến thuật Ngày 3</span>
-              <span class="arrow-badge bg-white text-[#FF441F]">→</span>
+              <span class="arrow-badge bg-white text-[#A5720A]">→</span>
             </button>
           </div>
         </div>
@@ -482,7 +652,7 @@
         <div class="space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
             <div>
-              <div class="text-xs font-extrabold uppercase tracking-wider text-[#1D5CFF]">Bấm vào từng ngày để xem bản đồ & chi tiết</div>
+              <div class="text-xs font-extrabold uppercase tracking-wider text-[#A5122F]">Bấm vào từng ngày để xem bản đồ & chi tiết</div>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-0.5">
                 Tóm Tắt 5 Ngày Hành Trình <span class="pill-highlight">Chuẩn Tuyến Đường</span>
               </h2>
@@ -497,15 +667,28 @@
           </div>
         </div>
 
+        <!-- MÓN NÊN THỬ -->
+        <div class="bento-soft p-5 sm:p-6 space-y-4">
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Món Nhất Định Phải Thử</h2>
+          <div class="food-grid">
+            <div class="food-item"><img src="img/tomyum.png" alt="Tom Yum" loading="lazy" /><div><strong>Tom Yum</strong><span>Baan Kook Kai, Jeh O ở Banthat Thong, tối 08/11</span></div></div>
+            <div class="food-item"><img src="img/padthai.png" alt="Pad Thai" loading="lazy" /><div><strong>Pad Thai</strong><span>SOOKSIAM trong ICONSIAM, chiều 06/11</span></div></div>
+            <div class="food-item"><img src="img/somtam.png" alt="Som Tam" loading="lazy" /><div><strong>Som Tam</strong><span>Jaekoy, Jae Kai gần khách sạn, tối 05/11</span></div></div>
+          </div>
+        </div>
+
         <!-- BUDGET SUMMARY & HOTEL / FLIGHT BASE INFO -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <!-- Left: 5-Day Budget Table -->
           <div class="lg:col-span-7 bento-card p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
               <div>
-                <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Bảng Tổng Hợp Ngân Sách Thực Tế</div>
+                <div class="text-xs font-extrabold uppercase text-[#A5122F]">Bảng Tổng Hợp Ngân Sách Thực Tế</div>
                 <h3 class="text-xl font-extrabold text-slate-900">Chi Phí Ăn Uống, Vé Tham Quan & Di Chuyển</h3>
               </div>
+              <button type="button" onclick="window.switchTab('budget')" class="btn-3d-white px-3.5 py-1.5 text-xs">
+                Xem Dự Trù Tiền
+              </button>
               <button type="button" onclick="window.openRateModal()" class="btn-3d-white px-3.5 py-1.5 text-xs">
                 Đổi tỷ giá (<span class="rate-inline-label">760</span>đ)
               </button>
@@ -531,7 +714,7 @@
           <!-- Right: Base Camp & Transit Golden Rules -->
           <div class="lg:col-span-5 space-y-5">
             <div class="bento-soft p-6 space-y-3">
-              <div class="inline-block px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">
+              <div class="inline-block px-3 py-1 rounded-full bg-[#A5122F] text-white text-xs font-extrabold uppercase">
                 Điểm Đóng Quân Cố Định (4 Đêm)
               </div>
               <h3 class="text-xl font-extrabold text-slate-900">Top High Airport Link Hotel</h3>
@@ -545,13 +728,13 @@
                   <span class="arrow-badge">↗</span>
                 </a>
                 <button type="button" onclick="window.switchTab('notes')" class="btn-3d-white px-4 py-2 text-xs">
-                  Xem Checklist & Lưu Ý
+                  Xem Lưu Ý
                 </button>
               </div>
             </div>
 
             <div class="bento-card p-6 space-y-3">
-              <div class="text-xs font-extrabold uppercase text-[#FF441F]">Quy Tắc Trả Tiền Cả Nhóm</div>
+              <div class="text-xs font-extrabold uppercase text-[#A5720A]">Quy Tắc Trả Tiền Cả Nhóm</div>
               <h3 class="text-lg font-extrabold text-slate-900">Dùng Visa nhiều nhất có thể</h3>
               <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
                 <li><strong>1. Máy POS hỏi loại tiền:</strong> luôn chọn THB, không chọn VND vì tỷ giá thường kém hơn.</li>
@@ -564,7 +747,7 @@
         </div>
 
         <div class="bento-soft p-6 space-y-3">
-          <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Có trong 2 file nhưng chưa xếp vào lịch</div>
+          <div class="text-xs font-extrabold uppercase text-[#A5122F]">Có trong 2 file nhưng chưa xếp vào lịch</div>
           <h3 class="text-lg font-extrabold text-slate-900">Điểm dự phòng nếu dư thời gian</h3>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
             <li><strong>Wat Paknam:</strong> miễn phí, nhưng xa và cần 1–1,5 giờ, trong khi Ngày 2 đã có Wat Arun.</li>
@@ -585,11 +768,69 @@
       <section id="view-day5" class="tab-view hidden"></section>
 
       <!-- ==========================================
+           VIEW: TỔNG LỊCH TRÌNH
+           ========================================== -->
+      <section id="view-summary" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8 space-y-2">
+          <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Tổng Lịch Trình <span class="pill-highlight">& Ngân Sách 5 Ngày</span></h2>
+          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Cả chuyến đi trong một bảng, tính cho 1 người. Bấm tên ngày để xem chi tiết.</p>
+        </div>
+        <div class="bento-card p-5 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between gap-3 border-b border-slate-200 pb-3">
+            <div>
+              <div class="text-xs font-extrabold uppercase text-[#A5720A]">Chi Tiết Ngân Sách 5 Ngày (THB & VNĐ)</div>
+              <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Bảng Dự Toán Cả Chuyến / 1 Người</h3>
+            </div>
+            <button type="button" onclick="window.openRateModal()" class="btn-3d-white px-3 py-1.5 text-xs shrink-0">1 THB = <span class="rate-inline-label">760</span>đ</button>
+          </div>
+          <table class="plan-table">
+            <thead><tr><th>Khoản chi & phương tiện</th><th class="r">THB</th><th class="r">VNĐ</th></tr></thead>
+            <tbody id="summaryBody"></tbody>
+          </table>
+          <p class="text-xs text-slate-500 leading-relaxed">Chưa gồm mua sắm và tiền dự phòng, xem thêm ở tab <button type="button" class="link" onclick="window.switchTab('budget')">Dự Trù Tiền</button>.</p>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW: DỰ TRÙ TIỀN
+           ========================================== -->
+      <section id="view-budget" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8 space-y-2">
+          <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Dự Trù Tiền <span class="pill-highlight">Cần Chuẩn Bị</span></h2>
+          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Cộng toàn bộ chi phí lịch trình với các khoản bạn nhập bên dưới. Đây là ước tính để chuẩn bị tiền, không phải số chính xác.</p>
+        </div>
+        <div class="stat-grid" id="budgetStats"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-7 bento-card p-5 sm:p-6 space-y-3">
+            <h3 class="text-lg font-extrabold text-slate-900">Tổng hợp tất cả khoản</h3>
+            <table class="bal-table">
+              <thead><tr><th>Khoản</th><th class="r">Mỗi người</th><th class="r">Cả nhóm 4</th></tr></thead>
+              <tbody id="budgetTable"></tbody>
+            </table>
+          </div>
+          <div class="lg:col-span-5 bento-soft p-5 sm:p-6 space-y-3">
+            <h3 class="text-lg font-extrabold text-slate-900">Sửa theo nhu cầu của bạn</h3>
+            <div class="form-grid" id="budgetInputs"></div>
+            <p class="text-xs text-slate-600 leading-relaxed">eSIM, bảo hiểm và phí thẻ là mức mình giả định, bạn sửa lại theo gói và ngân hàng thực tế. Vé bay, khách sạn đã trả nên để 0, muốn tính vào tổng thì nhập số vào.</p>
+            <button type="button" class="link" id="budgetReset">Về mức mặc định</button>
+          </div>
+        </div>
+        <div class="bento-card p-5 sm:p-6 space-y-3">
+          <h3 class="text-lg font-extrabold text-slate-900">Chi phí lịch trình theo ngày (mỗi người)</h3>
+          <table class="bal-table">
+            <thead><tr><th>Ngày</th><th class="r">Visa</th><th class="r">Tiền mặt</th><th class="r">Tổng</th></tr></thead>
+            <tbody id="budgetDays"></tbody>
+          </table>
+          <p class="text-xs font-semibold text-slate-700" id="budgetCompare"></p>
+        </div>
+      </section>
+
+      <!-- ==========================================
            VIEW: CHIA TIỀN
            ========================================== -->
       <section id="view-split" class="tab-view hidden space-y-6">
         <div class="bento-blue p-6 sm:p-8 space-y-2">
-          <div class="inline-block px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">Chia đều cho 4 người</div>
+          <div class="inline-block px-3 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">Chia đều cho 4 người</div>
           <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Chia Tiền <span class="pill-highlight">Phát, Quốc, K.Anh, Phương</span></h2>
           <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Nhập nội dung, ngày, số tiền và người đã trả. Có người trả thì mới tính được cuối chuyến ai chuyển cho ai.</p>
         </div>
@@ -642,7 +883,7 @@
             <button type="button" class="btn-3d-white px-4 py-2 text-xs" id="restoreBtn">Khôi phục</button>
             <input type="file" id="restoreFile" accept="application/json,.json" hidden>
           </div>
-          <p class="text-xs font-semibold text-[#1D5CFF]" id="splitMsg" role="status"></p>
+          <p class="text-xs font-semibold text-[#A5122F]" id="splitMsg" role="status"></p>
           <p class="text-xs text-slate-500 leading-relaxed">Dữ liệu chỉ lưu trên trình duyệt của máy đang nhập, nên cả nhóm nên để một người nhập trên một máy. Đổi tỷ giá thì mọi khoản THB tính lại theo tỷ giá mới.</p>
           <button type="button" class="link danger" id="clearAll">Xóa toàn bộ khoản chi</button>
         </div>
@@ -655,7 +896,7 @@
         <div class="bento-blue p-6 sm:p-8">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div class="space-y-2 max-w-3xl">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">
                 Chuyên Đề Nghiên Cứu & Khảo Sát Thực Địa
               </div>
               <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
@@ -668,7 +909,7 @@
             <div class="shrink-0">
               <a href="https://www.google.com/maps/dir/B2S+Think+Space+CentralWorld+Bangkok/Open+House+Central+Embassy+Bangkok/Medium+and+More+Samyan+Mitrtown+Bangkok/Siam+Discovery+Bangkok/Kinokuniya+Siam+Paragon+Bangkok/Bangkok+Art+and+Culture+Centre/Siam+Square+Soi+2+Bangkok/TCDC+Bangkok" target="_blank" rel="noopener noreferrer" class="btn-3d-orange px-5 py-3 text-xs sm:text-sm">
                 <span>Mở Google Maps Tuyến 8 Điểm Khảo Sát</span>
-                <span class="arrow-badge bg-white text-[#FF441F]">↗</span>
+                <span class="arrow-badge bg-white text-[#A5720A]">↗</span>
               </a>
             </div>
           </div>
@@ -702,24 +943,13 @@
       </section>
 
       <!-- ==========================================
-           VIEW 8: LƯU Ý DI CHUYỂN (TRAVEL CHECKLIST)
+           VIEW: CHECKLIST
            ========================================== -->
-      <section id="view-notes" class="tab-view hidden space-y-6">
-        <div class="bento-blue p-6 sm:p-8">
-          <div class="max-w-3xl space-y-2">
-            <div class="inline-block px-3 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">
-              Chuẩn Bị Trước & Trong Chuyến Đi
-            </div>
-            <h2 class="text-2xl sm:text-4xl font-extrabold">
-              Checklist & <span class="pill-highlight">Lưu Ý Cần Nhớ</span>
-            </h2>
-            <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
-              Đánh dấu từng việc khi xong, dấu tick được lưu trên máy này. Phía dưới là giờ tập trung, phương án lái xe của Quốc và các lưu ý quan trọng.
-            </p>
-          </div>
+      <section id="view-check" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8 space-y-2">
+          <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Checklist <span class="pill-highlight">Không Sót Việc</span></h2>
+          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Đánh dấu từng việc khi xong, dấu tick được lưu trên máy này.</p>
         </div>
-
-        <!-- Row 1: Departure Timeline & Anh Quoc Special Box -->
         <div class="bento-card p-5 sm:p-6 space-y-3">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <h3 class="text-xl font-extrabold text-slate-900" id="checkCount"></h3>
@@ -731,59 +961,57 @@
           <div class="progress"><i id="checkBar"></i></div>
         </div>
         <div class="check-grid" id="checkGroups"></div>
+      </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-span-6 bento-card p-6 space-y-4">
-            <div class="inline-block px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">
-              Chiều Đi • Thứ Năm 05/11/2026 (Chuyến bay 18:05)
-            </div>
-            <h3 class="text-xl font-extrabold text-slate-900">
-              Timeline Tập Trung Tại Sân Bay Quốc Tế Tân Sơn Nhất (Ga T2)
-            </h3>
-            <div class="space-y-3 text-xs sm:text-sm text-slate-700">
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                <strong>14:15 – 14:30:</strong> Xuất phát từ nhà/văn phòng tại TP.HCM. Khung giờ đầu giờ chiều đường Trường Sơn – Cộng Hòa thường đông xe, nên trừ hao 45 phút di chuyển.
-              </div>
-              <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-200">
-                <strong>15:00 (Bắt buộc có mặt):</strong> Toàn nhóm có mặt tại <strong>Ga Quốc tế T2 – Sân bay Tân Sơn Nhất</strong> (trước giờ bay đúng 3 tiếng) để làm thủ tục check-in, ký gửi hành lý và qua cửa Hải quan – An ninh soi chiếu.
-              </div>
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-                <strong>17:20:</strong> Có mặt tại cửa khởi hành (Boarding Gate). Máy bay cất cánh lúc <strong>18:05</strong>, hạ cánh tại Sân bay Quốc tế Don Mueang (DMK - Bangkok) lúc <strong>19:45</strong>.
-              </div>
-            </div>
-          </div>
-
-          <!-- Special Box for Anh Quoc -->
-          <div class="lg:col-span-6 bento-orange p-6 space-y-4">
-            <div class="inline-block px-3 py-1 rounded-full bg-black/25 text-white text-xs font-extrabold uppercase">
-              Lưu Ý Riêng Cho Quốc (Tự Lái Xe Cá Nhân)
-            </div>
-            <h3 class="text-xl font-extrabold text-white">
-              Lộ Trình Từ Thisofic Tower (An Khánh) & Bãi Giữ Xe Qua Đêm TCP Park
-            </h3>
-            <div class="space-y-2.5 text-xs sm:text-sm text-orange-50 leading-relaxed">
-              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
-                🕒 <strong>Giờ xuất phát khuyến nghị (14:15 ngày 05/11):</strong> Quốc tự lái xe cá nhân xuất phát từ <strong>Tòa nhà Thisofic Tower (Khu đô thị Sala, Phường An Khánh, TP. Thủ Đức)</strong> đi theo hướng Hầm Thủ Thiêm / Cầu Ba Son → Võ Văn Kiệt / Nguyễn Văn Trỗi → Trường Sơn → Sân bay Tân Sơn Nhất (~11–12km, khoảng 35–40 phút).
-              </div>
-              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
-                💳 <strong>Chi phí Grab ra sân bay = 0 VNĐ:</strong> Do tự lái xe cá nhân nên không tốn tiền taxi/Grab hai chiều.
-              </div>
-              <div class="bg-black/20 p-3.5 rounded-2xl border border-white/15">
-                🅿️ <strong>Gửi xe ô tô qua đêm (5 ngày 4 đêm):</strong> Gửi tại <strong>Nhà để xe TCP Park Tân Sơn Nhất</strong> (nằm ngay đối diện ga Quốc nội, đi bộ qua hành lang có mái che sang Ga Quốc tế T2 khoảng 5–7 phút; nên chọn tầng 3–5 trong nhà có mái che). Bản cũ ghi phí gửi ô tô qua đêm khoảng <strong>165.000đ – 220.000đ / 24 giờ</strong> (tổng 4,5 ngày khoảng <strong>750.000đ – 880.000đ</strong>), hoặc gửi bãi xe dịch vụ đường Hồng Hà/Bạch Đằng cách sân bay 500m (~120.000đ/ngày, có xe đưa đón sang T2). Nên kiểm tra lại giá trước khi đi.
-              </div>
-            </div>
-            <a href="https://www.google.com/maps/dir/Thisofic+Tower+Sala+Th%E1%BB%A7+%C4%90%E1%BB%A9c/TCP+Park+Tan+Son+Nhat+Airport" target="_blank" rel="noopener noreferrer" class="btn-3d-white px-4 py-2.5 text-xs">
-              <span>Mở Google Maps Lộ trình Thisofic Tower → Nhà xe TCP Tân Sơn Nhất</span>
-              <span class="arrow-badge">↗</span>
-            </a>
-          </div>
+      <!-- ==========================================
+           VIEW: LƯU Ý
+           ========================================== -->
+      <section id="view-notes" class="tab-view hidden space-y-6">
+        <div class="bento-blue p-6 sm:p-8 space-y-2">
+          <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Lưu Ý <span class="pill-highlight">Theo Từng Chặng</span></h2>
+          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Đọc 6 điều phải nhớ trước, rồi đi lần lượt từ lúc chuẩn bị đến khi về nhà.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start" id="notes"></div>
+        <div class="space-y-3">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">6 Điều Phải Nhớ</h3>
+          <div class="must-grid" id="mustGrid"></div>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">Đi Theo Từng Chặng</h3>
+          <div class="flow" id="noteFlow"></div>
+        </div>
+
+        <div class="sos-card space-y-3">
+          <h3 class="text-xl sm:text-2xl font-extrabold">Khi Có Sự Cố</h3>
+          <div class="sos-calls">
+            <a href="tel:1155"><strong>1155</strong><span>Cảnh sát du lịch</span></a>
+            <a href="tel:191"><strong>191</strong><span>Cảnh sát</span></a>
+            <a href="tel:1669"><strong>1669</strong><span>Cấp cứu</span></a>
+          </div>
+          <ul class="sos-list">
+            <li><strong>Mất thẻ:</strong> khóa ngay trong app ngân hàng hoặc gọi hotline, rồi dùng thẻ dự phòng.</li>
+            <li><strong>Mất hộ chiếu:</strong> báo công an địa phương lấy biên bản, liên hệ Đại sứ quán Việt Nam, gọi cho bảo hiểm du lịch.</li>
+            <li><strong>Đại sứ quán Việt Nam:</strong> 83/1 Wireless Road, Lumpini, Pathumwan. Nên tra và lưu số trực trước khi đi.</li>
+            <li><strong>Khách sạn:</strong> Top High Airport Link, 33 Soi Petchaburi 11-13, Thanon Phaya Thai, Ratchathewi, Bangkok 10400.</li>
+            <li><strong>Lạc nhau:</strong> thống nhất điểm hẹn trước khi vào chợ, giữ pin điện thoại trên 30%.</li>
+          </ul>
+        </div>
       </section>
 
     </main>
   </div>
+
+  <!-- MENU THANH BÊN TRÊN ĐIỆN THOẠI -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="window.closeDrawer()"></div>
+  <aside class="drawer" id="sideDrawer" aria-label="Menu" aria-hidden="true">
+    <div class="drawer-head">
+      <strong>BANGKOK 2026</strong>
+      <button type="button" class="drawer-close" aria-label="Đóng menu" onclick="window.closeDrawer()">✕</button>
+    </div>
+    <nav class="drawer-nav" id="drawerNav"></nav>
+    <button type="button" class="btn-3d-white drawer-rate" onclick="window.closeDrawer(); window.openRateModal()">Tỷ giá & Nhóm</button>
+  </aside>
 
   <!-- ==========================================
        MODAL: CHỈNH SỬA TỶ GIÁ & SỐ NGƯỜI
@@ -792,7 +1020,7 @@
     <div class="bento-card max-w-md w-full p-6 space-y-5 bg-white">
       <div class="flex items-center justify-between border-b border-slate-200 pb-3">
         <div>
-          <div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Công Cụ Tính Chi Phí Tự Động</div>
+          <div class="text-xs font-extrabold uppercase text-[#A5122F]">Công Cụ Tính Chi Phí Tự Động</div>
           <h3 class="text-xl font-extrabold text-slate-900">Cài Đặt Tỷ Giá & Số Thành Viên</h3>
         </div>
         <button type="button" onclick="window.closeRateModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 font-bold text-slate-700 cursor-pointer">
@@ -806,7 +1034,7 @@
             Tỷ giá 1 THB sang VNĐ (Mặc định: 760 VNĐ)
           </label>
           <input type="number" id="inputExchangeRate" value="760" min="500" max="1500" step="5"
-            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#1D5CFF] outline-none font-extrabold text-lg text-slate-900" />
+            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#A5122F] outline-none font-extrabold text-lg text-slate-900" />
         </div>
 
         <div>
@@ -814,7 +1042,7 @@
             Số người trong nhóm (Để chia tiền xe Bolt/Grab)
           </label>
           <input type="number" id="inputGroupSize" value="4" min="1" max="12" step="1"
-            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#1D5CFF] outline-none font-extrabold text-lg text-slate-900" />
+            class="w-full px-4 py-3 rounded-2xl border-2 border-slate-300 focus:border-[#A5122F] outline-none font-extrabold text-lg text-slate-900" />
         </div>
 
         <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-slate-700 leading-relaxed">
@@ -847,7 +1075,6 @@
         exchangeRate: readRate(),
         groupSize: 4,
         activeTab: 'overview',
-        mobileSim: false,
         activeSurveyFilter: 'all'
       };
 
@@ -1245,7 +1472,28 @@
         }
       ];
 
+      var DAY_EXTRA = {
+        day1: { cover: 'img/tomyum.png', coverContain: true, navHint: 'Bay sang, ăn đêm Jaekoy' },
+        day2: { cover: 'img/watarun.jpg', navHint: 'Wat Arun, Song Wat, ICONSIAM, Chinatown' },
+        day3: { cover: 'img/moca.jpg', navHint: 'MOCA, Ari, Chatuchak, Jodd Fairs' },
+        day4: { cover: 'img/centralpark.jpg', navHint: 'DIB, Cloud 11, Emsphere, Central Park' },
+        day5: { cover: 'img/hero-sunset.jpg', navHint: 'Siam Paragon, bay về' }
+      };
+      // [di chuyển, ăn uống, vé] THB mỗi người theo từng chặng, cộng lại bằng cost của chặng.
+      var COST_PARTS = {
+        day1: [[0, 0, 0], [120, 0, 0], [0, 180, 0]],
+        day2: [[30, 110, 0], [30, 0, 200], [40, 220, 0], [0, 120, 0], [20, 150, 0], [80, 300, 0]],
+        day3: [[15, 95, 0], [35, 0, 300], [35, 220, 0], [20, 80, 0], [60, 210, 0]],
+        day4: [[40, 0, 700], [25, 230, 0], [40, 170, 0], [40, 100, 0], [20, 0, 300], [20, 300, 0]],
+        day5: [[0, 0, 0], [30, 250, 0], [30, 0, 0], [120, 0, 0]]
+      };
+
       window.itineraryDays.forEach(function (d) {
+        var extra = DAY_EXTRA[d.id];
+        d.cover = extra.cover;
+        d.coverContain = !!extra.coverContain;
+        d.navHint = extra.navHint;
+        d.parts = COST_PARTS[d.id];
         d.totalThb = 0;
         d.cashThb = 0;
         d.steps.forEach(function (st, i) {
@@ -1300,7 +1548,7 @@
           var vnd = Math.round(d.totalThb * window.appState.exchangeRate);
 
           var cardClass = 'bento-card bento-card-interactive p-6 flex flex-col justify-between';
-          var badgeClass = 'bg-[#1D5CFF] text-white';
+          var badgeClass = 'bg-[#A5122F] text-white';
           var titleColor = 'text-slate-900';
           var descColor = 'text-slate-600';
           var priceBoxClass = 'bg-slate-50 border-slate-200 text-slate-900';
@@ -1308,7 +1556,7 @@
 
           if (d.themeStyle === 'blue') {
             cardClass = 'bento-blue bento-card-interactive p-6 flex flex-col justify-between';
-            badgeClass = 'bg-[#FF441F] text-white';
+            badgeClass = 'bg-[#F2B01E] text-[#3A1A00]';
             titleColor = 'text-white';
             descColor = 'text-blue-100';
             priceBoxClass = 'bg-white/15 border-white/25 text-white';
@@ -1324,6 +1572,7 @@
 
           cardsHtml +=
             '<div onclick="window.switchTab(\'' + d.id + '\')" class="' + cardClass + '">' +
+              '<img src="' + d.cover + '" alt="" loading="lazy" class="day-cover' + (d.coverContain ? ' contain' : '') + '" />' +
               '<div class="space-y-3">' +
                 '<div class="flex items-center justify-between gap-2">' +
                   '<span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase ' + badgeClass + '">' +
@@ -1352,10 +1601,10 @@
 
           rowsHtml +=
             '<tr class="hover:bg-slate-50 cursor-pointer transition" onclick="window.switchTab(\'' + d.id + '\')">' +
-              '<td class="py-3 pr-2 font-extrabold text-[#1D5CFF] whitespace-nowrap">' + d.dayNumber + ' (' + d.dateLabel.split(',')[1].trim().slice(0, 5) + ')</td>' +
+              '<td class="py-3 pr-2 font-extrabold text-[#A5122F] whitespace-nowrap">' + d.dayNumber + ' (' + d.dateLabel.split(',')[1].trim().slice(0, 5) + ')</td>' +
               '<td class="py-3 px-2 text-slate-700">' + d.shortTitle + '</td>' +
               '<td class="py-3 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap">' + fmtNum(d.totalThb) + ' THB</td>' +
-              '<td class="py-3 pl-2 text-right font-bold text-[#E02B00] whitespace-nowrap">~' + fmtNum(vnd) + 'đ</td>' +
+              '<td class="py-3 pl-2 text-right font-bold text-[#A5122F] whitespace-nowrap">~' + fmtNum(vnd) + 'đ</td>' +
             '</tr>';
         }
 
@@ -1364,7 +1613,7 @@
           '<div onclick="window.switchTab(\'survey\')" class="bento-soft bento-card-interactive p-6 flex flex-col justify-between">' +
             '<div class="space-y-3">' +
               '<div class="flex items-center justify-between gap-2">' +
-                '<span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-[#FF441F] text-white">' +
+                '<span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-[#F2B01E] text-[#3A1A00]">' +
                   'Chuyên Đề Riêng' +
                 '</span>' +
                 '<span class="text-xs font-bold text-slate-600">8 Tổ hợp lớn</span>' +
@@ -1379,7 +1628,7 @@
             '<div class="pt-4 mt-4 border-t border-slate-200 space-y-3">' +
               '<div class="p-3 rounded-2xl bg-white border border-slate-200 flex items-center justify-between text-xs">' +
                 '<span class="font-bold text-slate-600">Chế độ lọc:</span>' +
-                '<span class="font-extrabold text-[#1D5CFF]">Nhà sách • VPP • Art Hub</span>' +
+                '<span class="font-extrabold text-[#A5122F]">Nhà sách • VPP • Art Hub</span>' +
               '</div>' +
               '<button type="button" onclick="event.stopPropagation(); window.switchTab(\'survey\')" class="btn-3d-blue w-full py-2.5 text-xs">' +
                 '<span>Mở Bảng Khảo Sát Thị Trường</span>' +
@@ -1389,21 +1638,21 @@
           '</div>';
 
         // Reserve & Contingency Buffer Row (1,000 THB) to match ~4,650 THB total
-        var bufferThb = 1000;
+        var bufferThb = getBudget().buffer;
         var totalWithBufferThb = grandTotalThb + bufferThb;
         var totalWithBufferVnd = Math.round(totalWithBufferThb * window.appState.exchangeRate);
 
         rowsHtml +=
           '<tr class="bg-slate-50/80">' +
             '<td class="py-3 pr-2 font-bold text-slate-700">Dự phòng & Mua sắm</td>' +
-            '<td class="py-3 px-2 text-slate-600">eSIM, quà lưu niệm, văn phòng phẩm, cafe phát sinh</td>' +
+            '<td class="py-3 px-2 text-slate-600">Mua sắm bằng Visa và tiền mặt dự phòng, sửa ở tab Dự Trù Tiền</td>' +
             '<td class="py-3 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap">' + fmtNum(bufferThb) + ' THB</td>' +
             '<td class="py-3 pl-2 text-right font-bold text-slate-700 whitespace-nowrap">~' + fmtNum(bufferThb * window.appState.exchangeRate) + 'đ</td>' +
           '</tr>' +
-          '<tr class="bg-blue-50/90 border-t-2 border-[#1D5CFF]">' +
-            '<td class="py-3.5 pr-2 font-extrabold text-[#0B38B8]" colspan="2">TỔNG CỘNG TRỌN GÓI 5N4Đ / 1 NGƯỜI (Vé bay & KS đã trả = 0đ)</td>' +
-            '<td class="py-3.5 px-2 text-right font-extrabold text-base text-[#0B38B8] whitespace-nowrap">' + fmtNum(totalWithBufferThb) + ' THB</td>' +
-            '<td class="py-3.5 pl-2 text-right font-extrabold text-base text-[#E02B00] whitespace-nowrap">~' + fmtNum(totalWithBufferVnd) + 'đ</td>' +
+          '<tr class="bg-blue-50/90 border-t-2 border-[#A5122F]">' +
+            '<td class="py-3.5 pr-2 font-extrabold text-[#7B0D24]" colspan="2">TỔNG CỘNG TRỌN GÓI 5N4Đ / 1 NGƯỜI (Vé bay & KS đã trả = 0đ)</td>' +
+            '<td class="py-3.5 px-2 text-right font-extrabold text-base text-[#7B0D24] whitespace-nowrap">' + fmtNum(totalWithBufferThb) + ' THB</td>' +
+            '<td class="py-3.5 pl-2 text-right font-extrabold text-base text-[#A5122F] whitespace-nowrap">~' + fmtNum(totalWithBufferVnd) + 'đ</td>' +
           '</tr>';
 
         grid.innerHTML = cardsHtml;
@@ -1427,22 +1676,22 @@
         var nodes = dayObj.svgNodes || [];
         var height = Math.max(320, nodes.length * 66 + 30);
         var svgContent =
-          '<svg viewBox="0 0 430 ' + height + '" class="w-full h-auto rounded-2xl bg-[#0B2B8A]">' +
-            '<rect width="430" height="' + height + '" fill="#0B2B8A" rx="16" />' +
-            '<line x1="56" y1="42" x2="56" y2="' + (height - 42) + '" stroke="#FF441F" stroke-width="4" />';
+          '<svg viewBox="0 0 430 ' + height + '" class="w-full h-auto rounded-2xl bg-[#1F2460]">' +
+            '<rect width="430" height="' + height + '" fill="#1F2460" rx="16" />' +
+            '<line x1="56" y1="42" x2="56" y2="' + (height - 42) + '" stroke="#F2B01E" stroke-width="4" />';
 
         for (var i = 0; i < nodes.length; i++) {
           var n = nodes[i];
           var cy = 44 + i * 62;
-          var circleFill = (i === 0 || i === nodes.length - 1) ? '#FF441F' : '#1D5CFF';
+          var circleFill = (i === 0 || i === nodes.length - 1) ? '#C8102E' : '#3B4296';
 
           svgContent +=
             '<g transform="translate(0, ' + (cy - 24) + ')">' +
-              '<rect x="92" y="2" width="322" height="48" rx="12" fill="#133BB0" />' +
+              '<rect x="92" y="2" width="322" height="48" rx="12" fill="#2D3480" />' +
               '<circle cx="56" cy="26" r="18" fill="' + circleFill + '" />' +
               '<text x="56" y="31" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800">' + n.code + '</text>' +
               '<text x="108" y="22" fill="#FFFFFF" font-size="13.5" font-weight="800">' + n.time + ' • ' + n.name + '</text>' +
-              '<text x="108" y="40" fill="#93C5FD" font-size="11.5" font-weight="600">↳ ' + n.sub + '</text>' +
+              '<text x="108" y="40" fill="#F6D98A" font-size="11.5" font-weight="600">↳ ' + n.sub + '</text>' +
             '</g>';
         }
 
@@ -1468,7 +1717,7 @@
               '<div class="bento-soft p-5">' +
                 '<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">' +
                   '<div class="space-y-1">' +
-                    '<div class="inline-block px-3 py-0.5 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">' +
+                    '<div class="inline-block px-3 py-0.5 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">' +
                       'Chiến Thuật Giao Thông Ngày 07/11' +
                     '</div>' +
                     '<div class="text-base sm:text-lg font-extrabold text-slate-900">' +
@@ -1497,7 +1746,7 @@
                 '<td class="py-2.5 px-2 text-right font-extrabold text-slate-900 whitespace-nowrap text-xs sm:text-sm">' +
                   fmtNum(itemObj.thb) + ' THB' +
                 '</td>' +
-                '<td class="py-2.5 pl-2 text-right font-bold text-[#E02B00] whitespace-nowrap text-xs sm:text-sm">' +
+                '<td class="py-2.5 pl-2 text-right font-bold text-[#A5122F] whitespace-nowrap text-xs sm:text-sm">' +
                   (itemObj.thb > 0 ? '~' + fmtNum(itemVnd) + 'đ' : '0đ') +
                 '</td>' +
               '</tr>';
@@ -1513,9 +1762,11 @@
             stepsHtml +=
               '<div class="bento-card p-5 sm:p-6 space-y-4">' +
                 '<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">' +
+                  '<div class="step-head">' +
+                  (st.photo ? '<img src="' + st.photo + '" alt="" loading="lazy" class="step-thumb" />' : '') +
                   '<div class="space-y-1">' +
                     '<div class="flex flex-wrap items-center gap-2">' +
-                      '<span class="px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold">' +
+                      '<span class="px-3 py-1 rounded-full bg-[#A5122F] text-white text-xs font-extrabold">' +
                         st.num + ' • ' + st.time +
                       '</span>' +
                       '<span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200">' +
@@ -1530,6 +1781,7 @@
                       st.brief +
                     '</p>' +
                   '</div>' +
+                  '</div>' +
                   '<div class="shrink-0">' +
                     '<button type="button" onclick="window.toggleDetail(\'' + detailId + '\', \'' + btnTextId + '\')" class="btn-3d-blue px-4 py-2.5 text-xs">' +
                       '<span id="' + btnTextId + '">Xem chi tiết & Hình ảnh địa điểm</span>' +
@@ -1540,7 +1792,7 @@
 
                 '<!-- Collapsible Detail Drawer -->' +
                 '<div id="' + detailId + '" class="day-detail-drawer-' + d.id + ' hidden pt-4 border-t-2 border-dashed border-slate-200">' +
-                  '<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start bg-[#F4F7FE] p-4 sm:p-5 rounded-2xl border border-[#D5E2FA]">' +
+                  '<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start bg-[#FBF6EA] p-4 sm:p-5 rounded-2xl border border-[#EFE2C6]">' +
                     (st.photo ?
                     '<div class="lg:col-span-5">' +
                       '<img data-src="' + st.photo + '" alt="' + st.short + '" class="w-full h-56 sm:h-64 object-cover rounded-2xl bg-slate-100" />' +
@@ -1556,7 +1808,7 @@
                         '🚶 <strong>Phương tiện & Cách di chuyển tối ưu:</strong> ' + st.transit +
                       '</div>' +
                       '<div class="p-3 rounded-xl bg-white border border-slate-200">' +
-                        '💳 <strong>Chi phí dự kiến (1 người):</strong> <span class="font-extrabold text-[#E02B00]">' + fmtThbVnd(st.costThb) + '</span>' +
+                        '💳 <strong>Chi phí dự kiến (1 người):</strong> <span class="font-extrabold text-[#A5122F]">' + fmtThbVnd(st.costThb) + '</span>' +
                       '</div>' +
                       '<div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-slate-800">' +
                         '💡 <strong>Kinh nghiệm & Lưu ý thực tế:</strong> ' + st.tips +
@@ -1564,7 +1816,7 @@
                       '<div class="pt-1">' +
                         '<a href="' + st.mapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn-3d-orange px-4 py-2 text-xs">' +
                           '<span>Mở vị trí địa điểm này trên Google Maps</span>' +
-                          '<span class="arrow-badge bg-white text-[#FF441F]">↗</span>' +
+                          '<span class="arrow-badge bg-white text-[#A5720A]">↗</span>' +
                         '</a>' +
                       '</div>' +
                     '</div>' +
@@ -1576,13 +1828,14 @@
           // Assemble Full 3-Row Day Layout
           container.innerHTML =
             '<div class="space-y-7">' +
+              dayChips(d.id) +
               concertBannerHtml +
 
               '<!-- ROW 1: FULL-WIDTH DAY HEADER + 2 MEAL/REST HIGHLIGHT CARDS -->' +
-              '<div class="bento-blue p-6 sm:p-8 space-y-5">' +
+              '<div class="bento-blue p-6 sm:p-8 space-y-5"' + (d.coverContain ? '' : ' style="background-image:linear-gradient(rgba(123,13,36,.86),rgba(123,13,36,.86)),url(' + d.cover + ');background-size:cover;background-position:center"') + '>' +
                 '<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">' +
                   '<div class="space-y-2 max-w-3xl">' +
-                    '<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF441F] text-white text-xs font-extrabold uppercase">' +
+                    '<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">' +
                       d.dayNumber + ' • ' + d.dateLabel + ' • ' + d.highlightBadge +
                     '</div>' +
                     '<h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">' +
@@ -1618,7 +1871,7 @@
                 '<div class="lg:col-span-6 bento-card p-5 sm:p-6 space-y-4">' +
                   '<div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">' +
                     '<div>' +
-                      '<div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Sơ Đồ Tuyến Đường Không Đi Ngược Chiều</div>' +
+                      '<div class="text-xs font-extrabold uppercase text-[#A5122F]">Sơ Đồ Tuyến Đường Không Đi Ngược Chiều</div>' +
                       '<h3 class="text-lg font-extrabold text-slate-900">Bản Đồ Lộ Trình ' + d.dayNumber + '</h3>' +
                     '</div>' +
                     '<button type="button" onclick="window.toggleMapMode(\'' + d.id + '\')" id="mapToggleBtn-' + d.id + '" class="btn-3d-white px-3.5 py-1.5 text-xs">' +
@@ -1641,7 +1894,7 @@
                   '<div class="flex flex-wrap items-center justify-between gap-2 pt-1">' +
                     '<a href="' + d.multiStopMapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn-3d-orange w-full py-3 text-xs sm:text-sm">' +
                       '<span>Mở Lộ Trình Đa Điểm ' + d.dayNumber + ' Trên Google Maps App</span>' +
-                      '<span class="arrow-badge bg-white text-[#FF441F]">↗</span>' +
+                      '<span class="arrow-badge bg-white text-[#A5720A]">↗</span>' +
                     '</a>' +
                   '</div>' +
                 '</div>' +
@@ -1650,7 +1903,7 @@
                 '<div class="lg:col-span-6 bento-card p-5 sm:p-6 space-y-4">' +
                   '<div class="flex items-center justify-between border-b border-slate-200 pb-3">' +
                     '<div>' +
-                      '<div class="text-xs font-extrabold uppercase text-[#FF441F]">Chi Tiết Ngân Sách Trong Ngày (THB & VNĐ)</div>' +
+                      '<div class="text-xs font-extrabold uppercase text-[#A5720A]">Chi Tiết Ngân Sách Trong Ngày (THB & VNĐ)</div>' +
                       '<h3 class="text-lg font-extrabold text-slate-900">Bảng Dự Toán ' + d.dayNumber + ' / 1 Người</h3>' +
                     '</div>' +
                     '<button type="button" onclick="window.openRateModal()" class="btn-3d-white px-3 py-1.5 text-xs">' +
@@ -1669,16 +1922,16 @@
                       '</thead>' +
                       '<tbody>' +
                         costRowsHtml +
-                        '<tr class="bg-blue-50/90 border-t-2 border-[#1D5CFF]">' +
-                          '<td class="py-3 pr-2 font-extrabold text-[#0B38B8] text-xs sm:text-sm">TỔNG CỘNG ' + d.dayNumber.toUpperCase() + ' / 1 NGƯỜI</td>' +
-                          '<td class="py-3 px-2 text-right font-extrabold text-[#0B38B8] text-sm sm:text-base whitespace-nowrap">' + fmtNum(d.totalThb) + ' THB</td>' +
-                          '<td class="py-3 pl-2 text-right font-extrabold text-[#E02B00] text-sm sm:text-base whitespace-nowrap">~' + fmtNum(dayVnd) + 'đ</td>' +
+                        '<tr class="bg-blue-50/90 border-t-2 border-[#A5122F]">' +
+                          '<td class="py-3 pr-2 font-extrabold text-[#7B0D24] text-xs sm:text-sm">TỔNG CỘNG ' + d.dayNumber.toUpperCase() + ' / 1 NGƯỜI</td>' +
+                          '<td class="py-3 px-2 text-right font-extrabold text-[#7B0D24] text-sm sm:text-base whitespace-nowrap">' + fmtNum(d.totalThb) + ' THB</td>' +
+                          '<td class="py-3 pl-2 text-right font-extrabold text-[#A5122F] text-sm sm:text-base whitespace-nowrap">~' + fmtNum(dayVnd) + 'đ</td>' +
                         '</tr>' +
                       '</tbody>' +
                     '</table>' +
                   '</div>' +
 
-                  '<div class="p-3.5 rounded-2xl bg-[#F4F7FE] border border-[#D5E2FA] text-xs text-slate-700 leading-relaxed">' +
+                  '<div class="p-3.5 rounded-2xl bg-[#FBF6EA] border border-[#EFE2C6] text-xs text-slate-700 leading-relaxed">' +
                     '💡 <strong>Ghi chú di chuyển ' + d.dayNumber + ':</strong> ' + d.transportNote +
                   '</div>' +
                 '</div>' +
@@ -1686,9 +1939,9 @@
 
               '<!-- ROW 3: FULL-WIDTH TIMELINE & ACCORDION DETAILS -->' +
               '<div class="space-y-4">' +
-                '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#F4F7FE] p-4 rounded-2xl border border-[#D5E2FA]">' +
+                '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FBF6EA] p-4 rounded-2xl border border-[#EFE2C6]">' +
                   '<div>' +
-                    '<div class="text-xs font-extrabold uppercase text-[#1D5CFF]">Lịch Trình Chi Tiết Từng Khung Giờ</div>' +
+                    '<div class="text-xs font-extrabold uppercase text-[#A5122F]">Lịch Trình Chi Tiết Từng Khung Giờ</div>' +
                     '<h3 class="text-xl font-extrabold text-slate-900">Timeline & Chi Tiết Điểm Đến ' + d.dayNumber + '</h3>' +
                   '</div>' +
                   '<div class="flex flex-wrap items-center gap-2">' +
@@ -1727,10 +1980,10 @@
             '<div class="bento-card p-6 flex flex-col justify-between space-y-4">' +
               '<div class="space-y-3">' +
                 '<div class="flex flex-wrap items-center justify-between gap-2">' +
-                  '<span class="px-3 py-1 rounded-full bg-[#1D5CFF] text-white text-xs font-extrabold uppercase">' +
+                  '<span class="px-3 py-1 rounded-full bg-[#A5122F] text-white text-xs font-extrabold uppercase">' +
                     s.catLabel +
                   '</span>' +
-                  '<span class="text-xs font-bold text-[#FF441F]">Đề xuất khảo sát thực địa</span>' +
+                  '<span class="text-xs font-bold text-[#A5720A]">Đề xuất khảo sát thực địa</span>' +
                 '</div>' +
                 '<h3 class="text-xl font-extrabold text-slate-900">' +
                   s.title +
@@ -1771,7 +2024,6 @@
         window.appState.activeTab = tabId;
         try { history.replaceState(null, '', '#' + tabId); } catch (e) {}
 
-        // Hide all tab views, show selected
         var views = document.querySelectorAll('.tab-view');
         for (var i = 0; i < views.length; i++) {
           views[i].classList.add('hidden');
@@ -1781,21 +2033,98 @@
           targetView.classList.remove('hidden');
         }
 
-        // Update active state on nav buttons
-        var navButtons = document.querySelectorAll('#mainNavTabs .nav-tab');
-        for (var j = 0; j < navButtons.length; j++) {
-          var btn = navButtons[j];
-          if (btn.getAttribute('data-tab') === tabId) {
-            btn.classList.add('active');
-            btn.parentNode.scrollLeft = btn.offsetLeft - btn.parentNode.offsetLeft - 12;
-          } else {
-            btn.classList.remove('active');
-          }
+        var buttons = document.querySelectorAll('#mainNavTabs [data-tab], #drawerNav [data-tab]');
+        for (var j = 0; j < buttons.length; j++) {
+          buttons[j].classList.toggle('active', buttons[j].getAttribute('data-tab') === tabId);
         }
+        var isDay = /^day\d$/.test(tabId);
+        document.getElementById('planBtn').classList.toggle('active', isDay);
+        document.getElementById('planLabel').textContent = isDay ? 'Lịch Trình: Ngày ' + tabId.slice(3) : 'Lịch Trình';
 
-        // Smooth scroll to top of main container
+        window.closePlanMenu();
+        window.closeDrawer();
         window.scrollTo(0, 0);
       };
+
+      window.togglePlanMenu = function (e) {
+        e.stopPropagation();
+        var open = document.getElementById('planDrop').classList.toggle('open');
+        document.getElementById('planBtn').setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      window.closePlanMenu = function () {
+        document.getElementById('planDrop').classList.remove('open');
+        document.getElementById('planBtn').setAttribute('aria-expanded', 'false');
+      };
+      window.openDrawer = function () {
+        document.body.classList.add('drawer-open');
+        document.getElementById('sideDrawer').setAttribute('aria-hidden', 'false');
+        document.getElementById('menuBtn').setAttribute('aria-expanded', 'true');
+      };
+      window.closeDrawer = function () {
+        document.body.classList.remove('drawer-open');
+        document.getElementById('sideDrawer').setAttribute('aria-hidden', 'true');
+        document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
+      };
+      document.addEventListener('click', function () { window.closePlanMenu(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { window.closePlanMenu(); window.closeDrawer(); }
+      });
+
+      function renderNavMenus() {
+        var dayItems = window.itineraryDays.map(function (d) {
+          return { id: d.id, title: d.dayNumber + ' • ' + d.dateLabel.split(',')[1].trim().slice(0, 5), sub: d.navHint };
+        });
+        document.getElementById('planMenu').innerHTML = dayItems.map(function (it) {
+          return '<button type="button" class="drop-item" data-tab="' + it.id + '" onclick="window.switchTab(\'' + it.id + '\')"><strong>' + it.title + '</strong><span>' + it.sub + '</span></button>';
+        }).join('');
+        function link(id, label) {
+          return '<button type="button" class="drawer-link" data-tab="' + id + '" onclick="window.switchTab(\'' + id + '\')">' + label + '</button>';
+        }
+        document.getElementById('drawerNav').innerHTML =
+          link('overview', 'Tổng Quan') +
+          '<div class="drawer-group">Lịch Trình</div>' +
+          link('summary', 'Tổng Lịch Trình') +
+          dayItems.map(function (it) { return link(it.id, it.title); }).join('') +
+          '<div class="drawer-group">Tiền</div>' +
+          link('budget', 'Dự Trù Tiền') + link('split', 'Chia Tiền') +
+          '<div class="drawer-group">Chuẩn Bị</div>' +
+          link('check', 'Checklist') + link('notes', 'Lưu Ý') + link('survey', 'Khảo Sát');
+      }
+
+      function dayChips(activeId) {
+        return '<div class="day-chips">' + window.itineraryDays.map(function (d) {
+          return '<button type="button" class="day-chip' + (d.id === activeId ? ' active' : '') + '" onclick="window.switchTab(\'' + d.id + '\')">' +
+            '<strong>' + d.dateLabel.split(',')[1].trim().slice(0, 5) + '</strong><span>' + d.dayNumber + '</span></button>';
+        }).join('') + '</div>';
+      }
+
+      function renderSummaryTable() {
+        var rate = window.appState.exchangeRate, grand = 0, html = '';
+        function vnd(thb) { return thb > 0 ? '~' + fmtNum(thb * rate) + 'đ' : '0đ'; }
+        window.itineraryDays.forEach(function (d) {
+          grand += d.totalThb;
+          html += '<tr class="plan-day"><td colspan="3"><button type="button" onclick="window.switchTab(\'' + d.id + '\')">' + d.dayNumber + ' •' + d.dateLabel.split(',')[1] + ' • ' + d.dateLabel.split(',')[0] + '</button></td></tr>';
+          d.steps.forEach(function (st) {
+            html += '<tr><td><strong>' + st.short + '</strong><span>' + st.time + ' • ' + st.costNote + '</span></td><td class="r thb">' + fmtNum(st.cost) + ' THB</td><td class="r dong">' + vnd(st.cost) + '</td></tr>';
+          });
+          html += '<tr class="plan-sub"><td>Tổng ' + d.dayNumber + '</td><td class="r">' + fmtNum(d.totalThb) + ' THB</td><td class="r">' + vnd(d.totalThb) + '</td></tr>';
+        });
+        html += '<tr class="plan-grand"><td>Tổng cộng 5 ngày / 1 người</td><td class="r">' + fmtNum(grand) + ' THB</td><td class="r">' + vnd(grand) + '</td></tr>';
+        document.getElementById('summaryBody').innerHTML = html;
+      }
+
+      function renderGallery() {
+        var tiles = [
+          ['img/watarun.jpg', 'Wat Arun', 'day2'], ['img/iconsiam.jpg', 'ICONSIAM', 'day2'],
+          ['img/songwat.jpg', 'Song Wat', 'day2'], ['img/chatuchak.jpg', 'Chatuchak', 'day3'],
+          ['img/moca.jpg', 'Bảo tàng MOCA', 'day3'], ['img/joddfairs.jpg', 'Jodd Fairs', 'day3'],
+          ['img/dib.jpg', 'Bảo tàng DIB', 'day4'], ['img/centralpark.jpg', 'Central Park', 'day4']
+        ];
+        document.getElementById('placeGallery').innerHTML = tiles.map(function (t) {
+          return '<button type="button" class="gallery-tile" onclick="window.switchTab(\'' + t[2] + '\')">' +
+            '<img src="' + t[0] + '" alt="' + t[1] + '" loading="lazy" /><span>' + t[1] + '</span></button>';
+        }).join('');
+      }
 
       // 2. Toggle Single Timeline Item Detail Drawer
       window.toggleDetail = function (detailId, btnTextId) {
@@ -1926,23 +2255,10 @@
         renderOverviewSection();
         renderAllDays();
         renderSplit();
+        renderBudget();
+        renderSummaryTable();
         var fRate = document.getElementById('fRate');
         if (fRate && document.activeElement !== fRate) fRate.value = window.appState.exchangeRate;
-      };
-
-      // 7. Mobile / Desktop Viewport Simulator Toggle
-      window.toggleViewportMode = function () {
-        var shell = document.getElementById('mainShell');
-        var btn = document.getElementById('viewportToggleBtn');
-        window.appState.mobileSim = !window.appState.mobileSim;
-
-        if (window.appState.mobileSim) {
-          if (shell) shell.classList.add('mobile-sim');
-          if (btn) btn.textContent = '🖥️ Chế độ Máy tính (Toàn màn hình)';
-        } else {
-          if (shell) shell.classList.remove('mobile-sim');
-          if (btn) btn.textContent = '📱 Chế độ Điện thoại';
-        }
       };
 
 
@@ -1970,7 +2286,7 @@
       ['Hỏi ngân hàng phí giao dịch ngoại tệ và phí rút ATM ở nước ngoài'],
       ['Cả nhóm có ít nhất 2 thẻ Visa, để ở hai nơi khác nhau'],
       ['Lưu số hotline khóa thẻ của ngân hàng'],
-      ['Đổi khoảng 2.500 THB tiền mặt mỗi người, có tờ nhỏ'],
+      ['Đổi tiền mặt theo mức ở tab Dự Trù Tiền, có tờ nhỏ'],
       ['Thống nhất trước ai sẽ quẹt các khoản chung, ai nhập tab Chia tiền']
     ]},
     { id: 'phone', title: 'Điện thoại và ứng dụng', items: [
@@ -2037,58 +2353,101 @@
     ]}
   ];
 
-  var NOTES = [
-    { title: 'Thanh toán bằng Visa', items: [
-      'Mall, chuỗi nhà hàng và cửa hàng lớn thường nhận Visa. Quán nhỏ, chợ, xe đẩy thường chỉ nhận tiền mặt hoặc QR nội địa, nên hỏi trước khi gọi món.',
-      'Khi máy POS hỏi loại tiền, chọn THB. Đọc số tiền và loại tiền trên màn hình trước khi xác nhận.',
-      'Các quán cafe trong lịch mình chưa xác nhận được có nhận thẻ không, nên ghi là mang thêm ít tiền mặt.',
-      'Một số cửa hàng có thể đặt mức quẹt tối thiểu, đặc biệt cửa hàng tiện lợi.',
-      'Rút ATM ở Thái thường mất phí máy, cộng thêm phí ngân hàng của bạn, nên chỉ rút khi thật cần.',
-      'Giữ thẻ trong tầm mắt khi thanh toán, bật thông báo giao dịch để phát hiện khoản lạ.',
-      'Mất thẻ thì khóa ngay trong app hoặc gọi hotline, rồi dùng thẻ dự phòng.'
+  var MUST_KNOW = [
+    ['🛂', 'Khai TDAC cho từng người', 'Tại tdac.immigration.go.th, miễn phí, trong vòng 3 ngày trước ngày đến. Lưu mã QR vào điện thoại.'],
+    ['🚭', 'Không mang vape, cần sa', 'Thuốc lá điện tử bị cấm cả mang vào lẫn sử dụng, mức phạt có thể rất nặng.'],
+    ['🔋', 'Pin dự phòng để xách tay', 'Tối đa 2 cục, dưới 100Wh, không dùng hay sạc trên máy bay.'],
+    ['💳', 'Máy POS hỏi thì chọn THB', 'Không chọn VND vì tỷ giá thường kém hơn. Đọc số tiền trước khi xác nhận.'],
+    ['💵', 'Đổi <span class="cash-need"></span> THB mỗi người', 'Dành cho chùa, chợ và quán lề đường. Còn lại trả bằng Visa.'],
+    ['⏰', '09/11 rời Paragon lúc 12:30', '13:00 lên xe ra sân bay, bay 15:40. Kiểm tra lại giờ trên vé.']
+  ];
+
+  // Mỗi mục: [tiêu đề, nội dung, 1 nếu bắt buộc]
+  var NOTE_FLOW = [
+    { title: 'Trước ngày bay', when: 'Từ hôm nay đến 05/11', groups: [
+      { name: 'Giấy tờ', items: [
+        ['Hộ chiếu', 'Còn hạn trên 6 tháng, chụp ảnh lưu trong điện thoại.', 1],
+        ['TDAC', 'Chỉ khai ở trang chính thức. Trang thu phí thường là trang trung gian.', 1],
+        ['Vé và booking', 'Lưu vé khứ hồi, booking khách sạn trong điện thoại và in thêm một bộ.']
+      ]},
+      { name: 'Thẻ và tiền', items: [
+        ['Bật thẻ Visa', 'Bật thanh toán quốc tế, online và chạm thẻ. Kiểm tra hạn mức.', 1],
+        ['Nhận được OTP', 'Đảm bảo nhận OTP khi ở Thái, qua app hoặc SMS roaming.', 1],
+        ['Thẻ dự phòng', 'Cả nhóm có ít nhất 2 thẻ, để ở hai nơi khác nhau.']
+      ]},
+      { name: 'Điện thoại', items: [
+        ['Mạng', 'Mua eSIM hoặc roaming, kiểm tra máy có hỗ trợ eSIM.'],
+        ['Grab', 'Cài và liên kết Visa ngay khi còn ở Việt Nam.', 1],
+        ['Offline', 'Tải bản đồ Bangkok và tiếng Thái trên Google Dịch.']
+      ]}
     ]},
-    { title: 'Tàu và xe', items: [
-      'MRT tuyến Xanh dương và Tím nhận chạm thẻ Visa contactless từ 06/2026. Dùng đúng một thẻ cho cả lúc vào và lúc ra, mỗi người một thẻ.',
-      'BTS vẫn cần vé lượt hoặc thẻ Rabbit, thường phải có tiền mặt để mua. BTS và MRT tính vé riêng.',
-      'Grab và Bolt: đặt xe 6 chỗ khi có vali, giờ mưa và giờ tan tầm giá có thể tăng mạnh.',
-      'Đi Tollway có thể phát sinh phí cao tốc, xem app hoặc hỏi tài xế trước.',
-      'Không lên taxi hay tuk-tuk chào giá trọn gói ở điểm du lịch.'
+    { title: 'Ngày bay', when: 'Thứ Năm 05/11', timeline: [
+      ['14:15', 'Quốc lái xe từ Thisofic Tower, gửi xe ở TCP Park'],
+      ['15:00', 'Cả nhóm có mặt ga T2 Tân Sơn Nhất'],
+      ['17:20', 'Có mặt ở cửa khởi hành'],
+      ['18:05', 'Cất cánh'],
+      ['19:45', 'Hạ cánh Don Mueang']
+    ], groups: [
+      { name: 'Riêng Quốc', items: [
+        ['Gửi xe', 'Bản cũ ghi TCP Park khoảng 165.000–220.000đ mỗi 24 giờ, tổng 750.000–880.000đ. Nên kiểm tra lại giá.'],
+        ['Phương án khác', 'Bãi dịch vụ đường Hồng Hà hoặc Bạch Đằng, khoảng 120.000đ mỗi ngày, có xe đưa đón.'],
+        ['Đường đi', '<a href="https://www.google.com/maps/dir/Thisofic+Tower+Thu+Duc/TCP+Park+Tan+Son+Nhat+Airport" target="_blank" rel="noopener">Mở trên Google Maps</a>, trừ hao tắc đường Cộng Hòa, Trường Sơn.']
+      ]}
     ]},
-    { title: 'Nhập cảnh và hải quan', items: [
-      'TDAC là bắt buộc và miễn phí. Chỉ khai ở trang chính thức, các trang thu phí thường là trang trung gian.',
-      'Chuẩn bị sẵn vé khứ hồi và booking khách sạn phòng khi được hỏi.',
-      'Bản cũ có nhắc mức kiểm tra ngẫu nhiên 20.000 THB tiền mặt mỗi người. Mình chưa tìm được nguồn chính thức xác nhận, nên nếu mang ít tiền mặt thì để sẵn thẻ và sao kê trong app ngân hàng.',
-      'Thuốc lá điện tử bị cấm ở Thái, gồm cả mang vào, sở hữu và sử dụng. Mức phạt có thể rất nặng.',
-      'Cần sa không còn là mặt hàng tự do. Không mua, không mang theo về.'
+    { title: 'Nhập cảnh Don Mueang', when: 'Tối 05/11', groups: [
+      { name: 'Tại sân bay', items: [
+        ['Mở sẵn QR TDAC', 'Chuẩn bị cùng vé về và booking phòng khi được hỏi.', 1],
+        ['Tiền mặt', 'Bản cũ nhắc mức kiểm tra ngẫu nhiên 20.000 THB mỗi người, mình chưa tìm được nguồn chính thức. Nếu mang ít, để sẵn thẻ và sao kê.'],
+        ['Về khách sạn', 'Đặt Grab 6 chỗ từ đúng điểm đón trong app vì 4 người có vali.']
+      ]}
     ]},
-    { title: 'Hoàn thuế VAT', items: [
-      'Chỉ áp dụng ở cửa hàng có biển VAT Refund for Tourists. Mức thường được nêu là từ 2.000 THB mỗi cửa hàng trong một ngày, và tổng từ 5.000 THB trở lên.',
-      'Xin tờ P.P.10 và hóa đơn gốc ngay khi mua, mang theo hộ chiếu.',
-      'Tại Don Mueang, tới quầy hải quan đóng dấu trước khi ký gửi. Các nguồn tả vị trí quầy khác nhau, nên đi theo biển chỉ dẫn và chừa thêm thời gian.',
-      'Số thực nhận thường khoảng 5–6% sau phí. Nếu mua không nhiều thì không cần xếp hàng làm.'
+    { title: 'Trong Bangkok', when: '06/11 – 08/11', groups: [
+      { name: 'Trả tiền', items: [
+        ['Mall, chuỗi lớn', 'Thường nhận Visa.'],
+        ['Quán nhỏ, chợ, xe đẩy', 'Thường chỉ nhận tiền mặt hoặc QR nội địa, hỏi trước khi gọi món.', 1],
+        ['ATM', 'Thường mất phí máy cộng phí ngân hàng, chỉ rút khi thật cần.'],
+        ['Quẹt cho cả nhóm', 'Nhập ngay vào tab Chia Tiền.']
+      ]},
+      { name: 'Đi lại', items: [
+        ['MRT', 'Chạm thẻ Visa contactless, mỗi người một thẻ, dùng cùng thẻ khi vào và ra.'],
+        ['BTS', 'Vẫn dùng vé hoặc thẻ Rabbit, thường cần tiền mặt. Vé tính riêng với MRT.'],
+        ['Grab, Bolt', 'Giờ mưa và tan tầm giá có thể tăng mạnh.'],
+        ['Taxi, tuk-tuk', 'Không lên xe chào giá trọn gói ở điểm du lịch.']
+      ]},
+      { name: 'Concert BIGBANG 07, 08/11', items: [
+        ['Tránh khu Rajamangala', 'Tránh trục Ramkhamhaeng, Rama 9 khoảng 16:30–23:00.', 1],
+        ['Tối 07/11', 'Đi MRT tới Jodd Fairs, rời chợ lúc 20:40.']
+      ]},
+      { name: 'Ứng xử', items: [
+        ['Hoàng gia', 'Không bình luận về hoàng gia, không giẫm lên tiền.', 1],
+        ['Vào chùa', 'Che vai và đầu gối, cởi giày khi vào điện.'],
+        ['Rượu, thuốc lá', 'Mua rượu có thể bị giới hạn giờ, chỉ hút thuốc ở khu cho phép.'],
+        ['Nước uống', 'Không uống nước máy, mua nước đóng chai.']
+      ]},
+      { name: 'An toàn', items: [
+        ['Chiêu "chùa đóng cửa"', 'Người lạ rủ đi tuk-tuk giá rẻ thường dẫn khách tới cửa hàng.'],
+        ['Túi xách', 'Đeo phía trước, nhất là ở Chatuchak và Yaowarat.'],
+        ['Thời tiết', 'Nóng ẩm, có thể mưa rào, mang ô và áo khoác mỏng vào mall.']
+      ]}
     ]},
-    { title: 'Ứng xử và luật địa phương', items: [
-      'Không bình luận về hoàng gia, không giẫm lên tiền vì tiền in hình Nhà vua.',
-      'Vào chùa cần che vai và đầu gối, cởi giày khi vào điện.',
-      'Mua rượu có thể bị giới hạn theo giờ. Không hút thuốc ở nơi công cộng ngoài khu vực cho phép.',
-      'Không dùng nước máy để uống. Mua nước đóng chai.'
-    ]},
-    { title: 'An toàn và lừa đảo thường gặp', items: [
-      'Người lạ nói "chùa hôm nay đóng cửa" rồi rủ đi tuk-tuk giá rẻ thường là chiêu dẫn khách tới cửa hàng.',
-      'Đi đông thì đeo túi phía trước, nhất là ở Chatuchak và Yaowarat.',
-      'Thống nhất một điểm hẹn nếu lạc nhau ở chợ, giữ pin điện thoại trên 30%.',
-      'Giữ hóa đơn lớn và kiểm tra hàng trước khi rời quầy.'
-    ]},
-    { title: 'Khẩn cấp', items: [
-      'Cảnh sát du lịch: 1155. Cảnh sát: 191. Cấp cứu: 1669.',
-      'Đại sứ quán Việt Nam tại Bangkok: 83/1 Wireless Road, Lumpini, Pathumwan. Nên tra và lưu số điện thoại trực trước khi đi.',
-      'Mất hộ chiếu: báo công an địa phương lấy biên bản, rồi liên hệ Đại sứ quán để làm giấy tờ về nước. Gọi luôn cho bảo hiểm du lịch.',
-      'Top High Airport Link Hotel: 33 Soi Petchaburi 11-13, Thanon Phaya Thai, Ratchathewi, Bangkok 10400.'
-    ]},
-    { title: 'Thời tiết và tiện ích', items: [
-      'Thời gian trùng với Việt Nam. Đầu tháng 11 thường nóng ẩm, cuối mùa mưa, có thể có mưa rào.',
-      'Điện 220V, phích cắm Việt Nam thường dùng được.',
-      'Trong mall khá lạnh, nên mang áo khoác mỏng.'
+    { title: 'Ngày về', when: 'Thứ Hai 09/11', timeline: [
+      ['09:30', 'Rà két, tủ, ổ cắm, trả phòng, gửi vali'],
+      ['10:00', 'Siam Paragon, điểm duy nhất của buổi sáng'],
+      ['12:30', 'Rời Paragon về lấy vali'],
+      ['13:00', 'Lên Grab 6 chỗ, đi Tollway'],
+      ['13:30', 'Có mặt Don Mueang'],
+      ['15:40', 'Bay về, hạ cánh TP.HCM 17:15']
+    ], groups: [
+      { name: 'Hoàn thuế VAT, nếu mua đủ mức', items: [
+        ['Điều kiện', 'Cửa hàng có biển VAT Refund for Tourists, thường từ 2.000 THB mỗi cửa hàng một ngày, tổng từ 5.000 THB.'],
+        ['Giấy tờ', 'Xin tờ P.P.10 và hóa đơn gốc ngay khi mua, mang theo hộ chiếu.'],
+        ['Tại sân bay', 'Đóng dấu hải quan trước khi ký gửi. Các nguồn tả vị trí quầy khác nhau, nên đi theo biển chỉ dẫn.'],
+        ['Thực nhận', 'Thường khoảng 5–6% sau phí, mua ít thì không cần xếp hàng.']
+      ]},
+      { name: 'Trước khi ký gửi', items: [
+        ['Pin dự phòng', 'Lấy ra để trong xách tay.', 1],
+        ['Chia tiền', 'Nhập nốt khoản chi và gửi kết quả cho cả nhóm.']
+      ]}
     ]}
   ];
 
@@ -2190,6 +2549,7 @@
     var list = state.expenses.slice().sort(function (a, b) {
       return String(b.date).localeCompare(String(a.date)) || (b.id > a.id ? 1 : -1);
     });
+    if ($('budgetInputs').children.length) renderBudget();
     $('expCount').textContent = list.length ? '(' + list.length + ')' : '';
     $('expenses').innerHTML = list.length
       ? '<div>' + list.map(function (e) {
@@ -2414,9 +2774,116 @@
   $('hideDone').addEventListener('change', function () { save(KEY.hide, this.checked); applyHide(); });
 
   function renderNotes() {
-    $('notes').innerHTML = NOTES.map(function (n) {
-      return '<div class="bento-card p-5 space-y-3"><h3 class="text-lg font-extrabold text-slate-900">' + esc(n.title) + '</h3><ul class="note-list">' + n.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
+    $('mustGrid').innerHTML = MUST_KNOW.map(function (m, i) {
+      return '<div class="must-card"><span class="must-icon">' + m[0] + '</span><div><strong>' + (i + 1) + '. ' + m[1] + '</strong><p>' + m[2] + '</p></div></div>';
     }).join('');
+    $('noteFlow').innerHTML = NOTE_FLOW.map(function (st, i) {
+      var timeline = st.timeline ? '<ol class="flow-time">' + st.timeline.map(function (t) {
+        return '<li><b>' + t[0] + '</b><span>' + t[1] + '</span></li>';
+      }).join('') + '</ol>' : '';
+      var groups = st.groups.map(function (g) {
+        return '<div class="flow-group"><h5>' + g.name + '</h5><ul>' + g.items.map(function (it) {
+          return '<li' + (it[2] ? ' class="is-must"' : '') + '><strong>' + it[0] + (it[2] ? ' <em>Bắt buộc</em>' : '') + '</strong><span>' + it[1] + '</span></li>';
+        }).join('') + '</ul></div>';
+      }).join('');
+      return '<div class="flow-step"><div class="flow-num">' + (i + 1) + '</div><div class="flow-body"><h4>' + st.title + '</h4><p class="flow-when">' + st.when + '</p>' + timeline + '<div class="flow-groups">' + groups + '</div></div></div>';
+    }).join('');
+  }
+
+  // ----- Dự trù tiền -----
+  var BUDGET_KEY = 'bkk26_budget';
+  var BUDGET_DEFAULT = { shopVisa: 1000, cashReserve: 800, feePct: 3, esim: 150000, insurance: 100000, parking: 880000, flight: 0, hotel: 0 };
+  var BUDGET_FIELDS = [
+    ['shopVisa', 'Mua sắm bằng Visa (THB/người)'],
+    ['cashReserve', 'Tiền mặt dự phòng (THB/người)'],
+    ['feePct', 'Phí giao dịch thẻ (%)'],
+    ['esim', 'eSIM (đ/người)'],
+    ['insurance', 'Bảo hiểm (đ/người)'],
+    ['parking', 'Gửi xe TCP, chia 4 (đ/cả nhóm)'],
+    ['flight', 'Vé máy bay (đ/người)'],
+    ['hotel', 'Khách sạn (đ/người)']
+  ];
+  var budgetInput = (function () {
+    var saved = load(BUDGET_KEY, {}), out = {};
+    Object.keys(BUDGET_DEFAULT).forEach(function (k) {
+      out[k] = saved && Number(saved[k]) >= 0 && saved[k] !== '' && saved[k] != null ? Number(saved[k]) : BUDGET_DEFAULT[k];
+    });
+    return out;
+  })();
+
+  function getBudget() {
+    var b = budgetInput, rate = window.appState.exchangeRate, n = PEOPLE.length;
+    var r = { move: 0, food: 0, ticket: 0, tripThb: 0, cashThb: 0 };
+    window.itineraryDays.forEach(function (d) {
+      r.tripThb += d.totalThb;
+      r.cashThb += d.cashThb;
+      d.parts.forEach(function (p) { r.move += p[0]; r.food += p[1]; r.ticket += p[2]; });
+    });
+    r.buffer = b.shopVisa + b.cashReserve;
+    r.cashNeedThb = Math.ceil((r.cashThb + b.cashReserve) / 100) * 100;
+    r.visaThb = r.tripThb - r.cashThb + b.shopVisa;
+    r.feeDong = r.visaThb * rate * b.feePct / 100;
+    r.visaDong = r.visaThb * rate + r.feeDong;
+    r.cashDong = r.cashNeedThb * rate;
+    r.vnDong = b.esim + b.insurance + b.parking / n + b.flight + b.hotel;
+    r.totalDong = r.visaDong + r.cashDong + r.vnDong;
+    return r;
+  }
+
+  function renderBudget() {
+    var r = getBudget(), b = budgetInput, rate = window.appState.exchangeRate, n = PEOPLE.length;
+    var stats = [
+      ['Mỗi người cần chuẩn bị', dong(r.totalDong), 'stat-red'],
+      ['Cả nhóm ' + n + ' người', dong(r.totalDong * n), 'stat-navy'],
+      ['Tiền mặt cần đổi mỗi người', num(r.cashNeedThb) + ' THB', 'stat-gold'],
+      ['Số dư Visa mỗi người', dong(r.visaDong), 'stat-green']
+    ];
+    $('budgetStats').innerHTML = stats.map(function (s) {
+      return '<div class="stat ' + s[2] + '"><span>' + s[0] + '</span><strong>' + s[1] + '</strong></div>';
+    }).join('');
+    var rows = [
+      ['Ăn uống, cafe', r.food * rate], ['Vé tham quan', r.ticket * rate], ['Di chuyển', r.move * rate],
+      ['Mua sắm bằng Visa', b.shopVisa * rate], ['Tiền mặt dự phòng, làm tròn lên', r.cashDong - r.cashThb * rate],
+      ['Phí giao dịch thẻ', r.feeDong], ['eSIM', b.esim], ['Bảo hiểm', b.insurance], ['Gửi xe TCP', b.parking / n],
+      ['Vé máy bay', b.flight], ['Khách sạn', b.hotel]
+    ];
+    $('budgetTable').innerHTML = rows.map(function (x) {
+      return '<tr><td>' + x[0] + '</td><td class="r">' + dong(x[1]) + '</td><td class="r">' + dong(x[1] * n) + '</td></tr>';
+    }).join('') + '<tr class="total-row"><td>Tổng cần chuẩn bị</td><td class="r">' + dong(r.totalDong) + '</td><td class="r">' + dong(r.totalDong * n) + '</td></tr>';
+    $('budgetDays').innerHTML = window.itineraryDays.map(function (d) {
+      return '<tr><td>' + d.dayNumber + ' (' + d.dateLabel.split(',')[1].trim().slice(0, 5) + ')</td><td class="r">' + num(d.totalThb - d.cashThb) + '</td><td class="r">' + num(d.cashThb) + '</td><td class="r">' + num(d.totalThb) + ' THB</td></tr>';
+    }).join('') + '<tr class="total-row"><td>Tổng</td><td class="r">' + num(r.tripThb - r.cashThb) + '</td><td class="r">' + num(r.cashThb) + '</td><td class="r">' + num(r.tripThb) + ' THB</td></tr>';
+    var spent = computeSplit().total;
+    $('budgetCompare').textContent = spent ? 'Thực tế đã nhập ở tab Chia Tiền: ' + dong(spent) + ', so với dự kiến chi tại Thái cả nhóm ' + dong((r.visaDong + r.cashDong) * n) + '.' : '';
+    var els = document.querySelectorAll('.cash-need');
+    for (var i = 0; i < els.length; i++) els[i].textContent = num(r.cashNeedThb);
+  }
+
+  function initBudget() {
+    $('budgetInputs').innerHTML = BUDGET_FIELDS.map(function (f) {
+      return '<label><span class="form-label">' + f[1] + '</span><input class="field-input" type="number" min="0" inputmode="numeric" data-budget="' + f[0] + '" value="' + budgetInput[f[0]] + '"></label>';
+    }).join('');
+    $('budgetInputs').addEventListener('input', function (e) {
+      var key = e.target.getAttribute('data-budget');
+      if (!key) return;
+      var v = parseFloat(e.target.value);
+      budgetInput[key] = v >= 0 ? v : 0;
+      save(BUDGET_KEY, budgetInput);
+      renderBudget();
+      renderOverviewSection();
+    });
+    $('budgetReset').addEventListener('click', function () {
+      Object.keys(BUDGET_DEFAULT).forEach(function (k) { budgetInput[k] = BUDGET_DEFAULT[k]; });
+      save(BUDGET_KEY, budgetInput);
+      initBudgetValues();
+      renderBudget();
+      renderOverviewSection();
+    });
+    renderBudget();
+  }
+  function initBudgetValues() {
+    var inputs = document.querySelectorAll('[data-budget]');
+    for (var i = 0; i < inputs.length; i++) inputs[i].value = budgetInput[inputs[i].getAttribute('data-budget')];
   }
 
       // Initialize Everything cleanly on DOMContentLoaded & Immediate Fallback
@@ -2424,10 +2891,14 @@
         renderOverviewSection();
         renderAllDays();
         renderSurveySection();
+        renderNavMenus();
+        renderGallery();
+        renderSummaryTable();
         renderSplit();
         renderChecks();
         applyHide();
         renderNotes();
+        initBudget();
         var hash = location.hash.slice(1);
         if (hash && document.getElementById('view-' + hash)) window.switchTab(hash);
       }
