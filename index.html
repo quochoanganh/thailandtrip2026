@@ -280,10 +280,34 @@
     .bal-table th { text-align: left; font-size: 11px; text-transform: uppercase; color: #64748B; padding: 8px 0; border-bottom: 2px solid #E2E8F0; }
     .bal-table td { padding: 10px 0; border-bottom: 1px solid #E2E8F0; font-weight: 600; }
     .bal-table .r { text-align: right; }
-    .expense { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 0; border-bottom: 1px solid #E2E8F0; overflow-wrap: anywhere; font-weight: 600; font-size: 14px; }
-    .expense .sub { color: #64748B; font-size: 12px; font-weight: 500; }
-    .expense .amt { font-weight: 800; white-space: nowrap; text-align: right; }
-    .expense .ops { display: flex; gap: 12px; justify-content: flex-end; }
+    #view-split .grid > *, #expenseForm > * { min-width: 0; }
+    .participant-field { margin: 0; padding: 0; min-width: 0; }
+    .participant-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .participant-option { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 2px solid #CBD5E1; border-radius: 14px; cursor: pointer; font-size: 14px; font-weight: 700; }
+    .participant-option:has(input:checked) { border-color: var(--blue); background: #FFF1F3; color: var(--blue); }
+    .participant-option:focus-within { outline: 2px solid var(--navy); outline-offset: 2px; }
+    .participant-option input { width: 18px; height: 18px; margin: 0; accent-color: var(--blue); }
+    .participant-hint { margin-top: 8px; font-size: 12px; color: #64748B; }
+    .split-preview { margin-top: 8px; padding: 10px 12px; border-radius: 10px; background: var(--soft); color: var(--gold-ink); font-size: 13px; font-weight: 700; }
+    .split-scroll { width: 100%; overflow-x: auto; }
+    .split-table { width: 100%; font-size: 13px; }
+    .split-table th { padding: 10px 12px; text-align: left; color: #64748B; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid var(--line); }
+    .split-table td { padding: 12px; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+    .split-table .r { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .split-table th:first-child, .split-table td:first-child { padding-left: 0; }
+    .split-table th:last-child, .split-table td:last-child { padding-right: 0; }
+    .split-table .sub { margin-top: 4px; color: #64748B; font-size: 12px; font-weight: 500; }
+    .split-table .ops { display: flex; gap: 12px; justify-content: flex-end; }
+    .split-table .person-name { font-weight: 800; }
+    .split-table .net-row td { background: var(--soft); font-weight: 800; }
+    .split-table tbody + tbody { border-top: 2px solid var(--line); }
+    .split-table th[scope="row"] { color: #0F172A; text-transform: none; font-size: 14px; vertical-align: top; }
+    .expense-table { min-width: 560px; }
+    .expense-table .expense-detail { min-width: 200px; overflow-wrap: anywhere; font-weight: 700; }
+    .transfer-table { min-width: 320px; }
+    .transfer-table td:first-child { font-weight: 600; }
+    .transfer-table td.r { font-weight: 800; color: var(--blue); }
+    .person-table { min-width: 410px; }
 
     .progress { height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden; }
     .progress i { display: block; height: 100%; background: var(--orange); }
@@ -834,9 +858,9 @@
            ========================================== -->
       <section id="view-split" class="tab-view hidden space-y-6">
         <div class="bento-blue p-6 sm:p-8 space-y-2">
-          <div class="inline-block px-3 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">Chia đều cho 4 người</div>
+          <div class="inline-block px-3 py-1 rounded-full bg-[#F2B01E] text-[#3A1A00] text-xs font-extrabold uppercase">Chia theo người tham gia từng khoản</div>
           <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Chia Tiền <span class="pill-highlight">Phát, Quốc, K.Anh, Phương</span></h2>
-          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Nhập nội dung, ngày, số tiền và người đã trả. Có người trả thì mới tính được cuối chuyến ai chuyển cho ai.</p>
+          <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Chọn người trả và những người cùng tham gia. Mỗi khoản chỉ chia cho đúng những người có mặt, dù là 2, 3 hay cả 4 người.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -844,6 +868,12 @@
             <label class="form-wide"><span class="form-label">Nội dung</span><input class="field-input" type="text" id="fDesc" maxlength="120" placeholder="Ví dụ: Ăn trưa Emsphere" autocomplete="off"></label>
             <label><span class="form-label">Ngày</span><input class="field-input" type="date" id="fDate"></label>
             <label><span class="form-label">Người trả</span><select class="field-input" id="fPayer"></select></label>
+            <fieldset class="form-wide participant-field" aria-describedby="fParticipantHint fSplitPreview">
+              <legend class="form-label">Người tham gia (không bao gồm người trả)</legend>
+              <div class="participant-options" id="fParticipants"></div>
+              <p class="participant-hint" id="fParticipantHint"></p>
+              <p class="split-preview" id="fSplitPreview" role="status"></p>
+            </fieldset>
             <div><label class="form-label" for="fAmount">Số tiền</label>
               <div class="amount-row">
                 <input class="field-input" type="text" id="fAmount" inputmode="decimal" placeholder="0" autocomplete="off">
@@ -861,26 +891,27 @@
 
           <div class="lg:col-span-6 space-y-5">
             <div class="grid grid-cols-2 gap-4">
-              <div class="bento-orange p-4 sm:p-5"><div class="text-xs font-bold text-orange-100">Tổng chi chuyến đi</div><div class="text-xl sm:text-2xl font-extrabold mt-0.5" id="sTotal"></div></div>
-              <div class="bento-blue p-4 sm:p-5"><div class="text-xs font-bold text-blue-100">Mỗi người phải chịu</div><div class="text-xl sm:text-2xl font-extrabold mt-0.5" id="sShare"></div></div>
+              <div class="bento-orange p-4 sm:p-5"><div class="text-xs font-bold text-orange-100">Tổng chi · Baht (quy đổi)</div><div class="text-xl sm:text-2xl font-extrabold mt-0.5" id="sTotalThb"></div></div>
+              <div class="bento-blue p-4 sm:p-5"><div class="text-xs font-bold text-blue-100">Tổng chi · VNĐ</div><div class="text-xl sm:text-2xl font-extrabold mt-0.5" id="sTotal"></div></div>
             </div>
             <div class="bento-card p-5 sm:p-6 space-y-3">
               <h3 class="text-lg font-extrabold text-slate-900">Ai chuyển cho ai</h3>
               <div id="transfers"></div>
+              <p class="text-xs text-slate-500 leading-relaxed" id="splitRateNote"></p>
             </div>
             <div class="bento-card p-5 sm:p-6 space-y-3">
               <h3 class="text-lg font-extrabold text-slate-900">Tổng hợp theo người</h3>
-              <table class="bal-table">
-                <thead><tr><th>Người</th><th class="r">Đã trả</th><th class="r">Chênh lệch</th></tr></thead>
-                <tbody id="balances"></tbody>
-              </table>
+              <div class="split-scroll" tabindex="0" role="region" aria-label="Tổng hợp theo người, kéo ngang để xem đủ cột">
+                <table class="split-table person-table" id="balances"></table>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed">Phải chịu = tổng phần chia của các khoản có tham gia. Chênh lệch: (+) được nhận lại, (−) cần chuyển thêm.</p>
             </div>
           </div>
         </div>
 
         <div class="bento-card p-5 sm:p-6 space-y-3">
           <h3 class="text-lg font-extrabold text-slate-900">Các khoản đã nhập <span class="text-sm text-slate-500" id="expCount"></span></h3>
-          <div id="expenses"></div>
+          <div class="split-scroll" id="expenses" tabindex="0" role="region" aria-label="Các khoản đã nhập, kéo ngang để xem đủ cột"></div>
           <div class="flex flex-wrap items-center gap-2 pt-2">
             <button type="button" class="btn-3d-blue px-4 py-2.5 text-xs" id="copySummary">Sao chép kết quả</button>
             <button type="button" class="btn-3d-white px-4 py-2 text-xs" id="backup">Tải bản sao lưu</button>
@@ -888,7 +919,7 @@
             <input type="file" id="restoreFile" accept="application/json,.json" hidden>
           </div>
           <p class="text-xs font-semibold text-[#A5122F]" id="splitMsg" role="status"></p>
-          <p class="text-xs text-slate-500 leading-relaxed">Dữ liệu chỉ lưu trên trình duyệt của máy đang nhập, nên cả nhóm nên để một người nhập trên một máy. Đổi tỷ giá thì mọi khoản THB tính lại theo tỷ giá mới.</p>
+          <p class="text-xs text-slate-500 leading-relaxed">Dữ liệu chỉ lưu trên trình duyệt của máy đang nhập, nên cả nhóm nên để một người nhập trên một máy. Đổi tỷ giá thì mọi khoản THB tính lại theo tỷ giá mới. Khoản cũ chưa chọn người tham gia vẫn chia cho cả 4 người; bấm Sửa để điều chỉnh. Số lẻ được phân bổ trong từng khoản để tổng phần chia luôn khớp tổng chi.</p>
           <button type="button" class="link danger" id="clearAll">Xóa toàn bộ khoản chi</button>
         </div>
       </section>
@@ -2261,6 +2292,7 @@
         renderSummaryTable();
         var fRate = document.getElementById('fRate');
         if (fRate && document.activeElement !== fRate) fRate.value = window.appState.exchangeRate;
+        updatePreview();
       };
 
 
@@ -2508,25 +2540,49 @@
     return /^\d+(\.\d+)?$/.test(n) ? parseFloat(n) : NaN;
   }
   function toDong(e) { return Math.round(e.amount * (e.cur === 'THB' ? window.appState.exchangeRate : 1)); }
+  function baht(n) { return n.toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' THB'; }
+  function dongToBaht(n) { return n / window.appState.exchangeRate; }
+  function signedBaht(n) { return (n > 0 ? '+' : n < 0 ? '−' : '') + baht(dongToBaht(Math.abs(n))); }
+  // participants stores only additional people; the payer always has a share.
+  // Missing participants marks a legacy expense, shared by all four people.
+  function expenseMembers(e) {
+    var others = Array.isArray(e.participants) ? e.participants : PEOPLE;
+    return PEOPLE.filter(function (p) { return p === e.payer || others.indexOf(p) >= 0; });
+  }
+  function selectedParticipants() {
+    return Array.from($('fParticipants').querySelectorAll('input:checked')).map(function (input) { return input.value; });
+  }
+  function renderParticipants(members) {
+    var payer = $('fPayer').value;
+    members = members || PEOPLE;
+    $('fParticipants').innerHTML = PEOPLE.filter(function (p) { return p !== payer; }).map(function (p) {
+      return '<label class="participant-option"><input type="checkbox" value="' + esc(p) + '"' + (members.indexOf(p) >= 0 ? ' checked' : '') + '><span>' + esc(p) + '</span></label>';
+    }).join('');
+    $('fParticipantHint').textContent = payer + ' là người trả và được tính sẵn. Chọn thêm những người cùng chia khoản này.';
+    updatePreview();
+  }
   function computeSplit() {
     var paid = PEOPLE.map(function () { return 0; });
+    var share = PEOPLE.map(function () { return 0; });
     state.expenses.forEach(function (e) {
       var i = PEOPLE.indexOf(e.payer);
-      if (i >= 0) paid[i] += toDong(e);
+      if (i < 0) return;
+      var amount = toDong(e);
+      paid[i] += amount;
+      var members = expenseMembers(e);
+      var base = Math.floor(amount / members.length);
+      var extra = amount - base * members.length;
+      // Allocate integer-VND remainders only to actual participants, payer first.
+      var order = [e.payer].concat(members.filter(function (p) { return p !== e.payer; }));
+      order.forEach(function (p, j) { share[PEOPLE.indexOf(p)] += base + (j < extra ? 1 : 0); });
     });
     var total = paid.reduce(function (a, b) { return a + b; }, 0);
-    var base = Math.floor(total / PEOPLE.length);
-    var extra = total - base * PEOPLE.length;
-    // Vài đồng lẻ tính cho người trả nhiều nhất để không sinh khoản chuyển vụn.
-    var order = PEOPLE.map(function (_, i) { return i; }).sort(function (a, b) { return paid[b] - paid[a]; });
-    var share = PEOPLE.map(function () { return base; });
-    for (var x = 0; x < extra; x++) share[order[x]]++;
     var balance = paid.map(function (p, i) { return p - share[i]; });
 
     var creditors = [], debtors = [];
     balance.forEach(function (b, i) {
-      if (b >= PEOPLE.length) creditors.push({ i: i, v: b });
-      else if (b <= -PEOPLE.length) debtors.push({ i: i, v: -b });
+      if (b > 0) creditors.push({ i: i, v: b });
+      else if (b < 0) debtors.push({ i: i, v: -b });
     });
     creditors.sort(function (a, b) { return b.v - a.v; });
     debtors.sort(function (a, b) { return b.v - a.v; });
@@ -2538,7 +2594,7 @@
       if (creditors[c].v === 0) c++;
       if (debtors[d].v === 0) d++;
     }
-    return { paid: paid, total: total, balance: balance, transfers: transfers };
+    return { paid: paid, share: share, total: total, balance: balance, transfers: transfers };
   }
   function fmtDate(iso) {
     var p = String(iso).split('-');
@@ -2551,15 +2607,19 @@
   function renderSplit() {
     var r = computeSplit();
     $('sTotal').textContent = dong(r.total);
-    $('sShare').textContent = dong(r.total / PEOPLE.length);
-    $('balances').innerHTML = PEOPLE.map(function (p, i) {
+    $('sTotalThb').textContent = baht(dongToBaht(r.total));
+    $('splitRateNote').textContent = '1 THB = ' + dong(window.appState.exchangeRate) + '. Quyết toán theo VNĐ; cột Baht là giá trị quy đổi, làm tròn 2 chữ số thập phân.';
+    $('balances').innerHTML = '<thead><tr><th scope="col">Người</th><th scope="col">Khoản</th><th scope="col" class="r">Baht (THB)</th><th scope="col" class="r">VNĐ</th></tr></thead>' + PEOPLE.map(function (p, i) {
       var b = r.balance[i];
-      return '<tr><td>' + esc(p) + '</td><td class="r">' + dong(r.paid[i]) + '</td><td class="r ' + (b > 0 ? 'pos' : b < 0 ? 'neg' : '') + '">' + signed(b) + '</td></tr>';
+      var cls = b > 0 ? 'pos' : b < 0 ? 'neg' : '';
+      return '<tbody><tr><th scope="rowgroup" rowspan="3" class="person-name">' + esc(p) + '</th><td>Đã trả</td><td class="r">' + baht(dongToBaht(r.paid[i])) + '</td><td class="r">' + dong(r.paid[i]) + '</td></tr>' +
+        '<tr><td>Phải chịu</td><td class="r">' + baht(dongToBaht(r.share[i])) + '</td><td class="r">' + dong(r.share[i]) + '</td></tr>' +
+        '<tr class="net-row"><td>Chênh lệch</td><td class="r ' + cls + '">' + signedBaht(b) + '</td><td class="r ' + cls + '">' + signed(b) + '</td></tr></tbody>';
     }).join('');
     $('transfers').innerHTML = r.transfers.length
-      ? '<div>' + r.transfers.map(function (t) {
-          return '<div class="transfer"><span>' + esc(t.from) + ' chuyển cho ' + esc(t.to) + '</span><b>' + dong(t.amount) + '</b></div>';
-        }).join('') + '</div>'
+      ? '<div class="split-scroll" tabindex="0" role="region" aria-label="Các khoản chuyển tiền, kéo ngang để xem đủ cột"><table class="split-table transfer-table"><thead><tr><th scope="col">Chuyển tiền</th><th scope="col" class="r">Baht (THB)</th><th scope="col" class="r">VNĐ</th></tr></thead><tbody>' + r.transfers.map(function (t) {
+          return '<tr><td>' + esc(t.from) + ' chuyển cho ' + esc(t.to) + '</td><td class="r">' + baht(dongToBaht(t.amount)) + '</td><td class="r">' + dong(t.amount) + '</td></tr>';
+        }).join('') + '</tbody></table></div>'
       : '<p class="text-xs sm:text-sm text-slate-500">' + (r.total ? 'Mọi người đã cân bằng, không ai cần chuyển.' : 'Chưa có khoản nào. Nhập khoản đầu tiên ở form phía trên.') + '</p>';
 
     var list = state.expenses.slice().sort(function (a, b) {
@@ -2568,12 +2628,15 @@
     if ($('budgetInputs').children.length) renderBudget();
     $('expCount').textContent = list.length ? '(' + list.length + ')' : '';
     $('expenses').innerHTML = list.length
-      ? '<div>' + list.map(function (e) {
-          var orig = e.cur === 'THB' ? num(e.amount) + ' THB · ' : '';
-          return '<div class="expense"><div>' + esc(e.desc) + '</div><div class="amt">' + dong(toDong(e)) + '</div>' +
-            '<div class="sub">' + fmtDate(e.date) + ' · ' + orig + esc(e.payer) + ' trả</div>' +
-            '<div class="ops"><button type="button" class="link" data-edit="' + esc(e.id) + '">Sửa</button><button type="button" class="link danger" data-del="' + esc(e.id) + '">Xóa</button></div></div>';
-        }).join('') + '</div>'
+      ? '<table class="split-table expense-table"><thead><tr><th scope="col">Khoản chi & người tham gia</th><th scope="col" class="r">Baht (THB)</th><th scope="col" class="r">VNĐ</th><th scope="col" class="r">Thao tác</th></tr></thead><tbody>' + list.map(function (e) {
+          var members = expenseMembers(e);
+          var thb = e.cur === 'THB' ? Number(e.amount) : dongToBaht(toDong(e));
+          return '<tr><td class="expense-detail">' + esc(e.desc) +
+            '<div class="sub">' + esc(fmtDate(e.date)) + ' · ' + esc(e.payer) + ' trả · Nhập bằng ' + (e.cur === 'THB' ? 'THB' : 'VNĐ') + '</div>' +
+            '<div class="sub">Chia ' + members.length + ' người: ' + members.map(esc).join(', ') + '</div></td>' +
+            '<td class="r">' + baht(thb) + '</td><td class="r">' + dong(toDong(e)) + '</td>' +
+            '<td><div class="ops"><button type="button" class="link" data-edit="' + esc(e.id) + '">Sửa</button><button type="button" class="link danger" data-del="' + esc(e.id) + '">Xóa</button></div></td></tr>';
+        }).join('') + '</tbody></table>'
       : '<p class="text-xs sm:text-sm text-slate-500">Chưa có khoản nào.</p>';
   }
   function defaultDate() {
@@ -2584,7 +2647,15 @@
   }
   function updatePreview() {
     var a = parseAmount($('fAmount').value);
-    $('fPreview').textContent = $('fCur').value === 'THB' && a > 0 ? '≈ ' + dong(a * window.appState.exchangeRate) : '';
+    var isThb = $('fCur').value === 'THB';
+    $('fPreview').textContent = a > 0 ? '≈ ' + (isThb ? dong(a * window.appState.exchangeRate) : baht(dongToBaht(a))) : '';
+    var count = selectedParticipants().length + 1;
+    var message = count === 1 ? 'Chỉ người trả chịu khoản này.' : 'Chia đều cho ' + count + ' người (đã gồm ' + $('fPayer').value + ').';
+    if (a > 0) {
+      var perPerson = Math.round(a * (isThb ? window.appState.exchangeRate : 1)) / count;
+      message += ' Mỗi người khoảng ' + baht(dongToBaht(perPerson)) + ' / ' + dong(perPerson) + '.';
+    }
+    $('fSplitPreview').textContent = message;
   }
   function resetForm() {
     state.editId = null;
@@ -2593,7 +2664,7 @@
     $('fSubmit').textContent = 'Thêm khoản chi';
     $('fCancel').hidden = true;
     $('fError').textContent = '';
-    updatePreview();
+    renderParticipants();
   }
   function flash(msg) { $('splitMsg').textContent = msg; }
   function persist() {
@@ -2603,13 +2674,21 @@
 
   $('fPayer').innerHTML = PEOPLE.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('');
   $('fPayer').value = 'Quốc';
+  var previousPayer = $('fPayer').value;
   $('fDate').value = defaultDate();
   $('fRate').value = window.appState.exchangeRate;
+  renderParticipants();
+  $('fPayer').addEventListener('change', function () {
+    var members = selectedParticipants().concat(previousPayer);
+    previousPayer = this.value;
+    renderParticipants(members);
+  });
+  $('fParticipants').addEventListener('change', updatePreview);
   $('fAmount').addEventListener('input', updatePreview);
   $('fCur').addEventListener('change', updatePreview);
   $('fRate').addEventListener('input', function () {
     var v = parseFloat(this.value);
-    if (v > 0) {
+    if (Number.isFinite(v) && v > 0) {
       window.appState.exchangeRate = v;
       save(KEY.rate, v);
       window.updateCalculations();
@@ -2625,8 +2704,8 @@
     var date = $('fDate').value;
     if (!desc) { $('fError').textContent = 'Nhập nội dung khoản chi.'; $('fDesc').focus(); return; }
     if (!date) { $('fError').textContent = 'Chọn ngày.'; $('fDate').focus(); return; }
-    if (!(amount > 0)) { $('fError').textContent = 'Số tiền chưa đúng. Ví dụ: 350 hoặc 1.200.000'; $('fAmount').focus(); return; }
-    var item = { desc: desc, date: date, amount: amount, cur: $('fCur').value, payer: $('fPayer').value };
+    if (!(amount > 0) || !Number.isFinite(amount) || !Number.isSafeInteger(Math.round(amount * ($('fCur').value === 'THB' ? window.appState.exchangeRate : 1)))) { $('fError').textContent = 'Số tiền chưa đúng. Ví dụ: 350 hoặc 1.200.000'; $('fAmount').focus(); return; }
+    var item = { desc: desc, date: date, amount: amount, cur: $('fCur').value, payer: $('fPayer').value, participants: selectedParticipants() };
     if (state.editId) {
       state.expenses = state.expenses.map(function (x) {
         if (x.id !== state.editId) return x;
@@ -2656,6 +2735,8 @@
       $('fAmount').value = x.amount;
       $('fCur').value = x.cur;
       $('fPayer').value = x.payer;
+      previousPayer = x.payer;
+      renderParticipants(expenseMembers(x));
       $('fSubmit').textContent = 'Lưu thay đổi';
       $('fCancel').hidden = false;
       $('fError').textContent = '';
@@ -2682,10 +2763,12 @@
   });
   function summaryText() {
     var r = computeSplit();
-    var out = ['CHIA TIỀN BANGKOK 05–09/11/2026', 'Tổng chi: ' + dong(r.total), 'Mỗi người: ' + dong(r.total / PEOPLE.length), '', 'Đã trả:'];
-    PEOPLE.forEach(function (p, i) { out.push('- ' + p + ': ' + dong(r.paid[i]) + ' (' + signed(r.balance[i]) + ')'); });
+    var out = ['CHIA TIỀN BANGKOK 05–09/11/2026', 'Tỷ giá: 1 THB = ' + dong(window.appState.exchangeRate), 'Tổng chi: ' + baht(dongToBaht(r.total)) + ' / ' + dong(r.total), 'Chia theo người tham gia từng khoản (bao gồm người trả).', 'Quyết toán bằng VNĐ; THB là giá trị quy đổi.', '', 'Tổng hợp theo người:'];
+    PEOPLE.forEach(function (p, i) {
+      out.push('- ' + p + ': đã trả ' + baht(dongToBaht(r.paid[i])) + ' / ' + dong(r.paid[i]) + '; phải chịu ' + baht(dongToBaht(r.share[i])) + ' / ' + dong(r.share[i]) + '; chênh lệch ' + signedBaht(r.balance[i]) + ' / ' + signed(r.balance[i]));
+    });
     out.push('', 'Chuyển khoản:');
-    if (r.transfers.length) r.transfers.forEach(function (t) { out.push('- ' + t.from + ' → ' + t.to + ': ' + dong(t.amount)); });
+    if (r.transfers.length) r.transfers.forEach(function (t) { out.push('- ' + t.from + ' → ' + t.to + ': ' + baht(dongToBaht(t.amount)) + ' / ' + dong(t.amount)); });
     else out.push('- Không ai cần chuyển');
     return out.join('\n');
   }
@@ -2708,7 +2791,7 @@
     } else fallback();
   });
   $('backup').addEventListener('click', function () {
-    var blob = new Blob([JSON.stringify({ rate: window.appState.exchangeRate, expenses: state.expenses }, null, 2)], { type: 'application/json' });
+    var blob = new Blob([JSON.stringify({ version: 2, rate: window.appState.exchangeRate, expenses: state.expenses }, null, 2)], { type: 'application/json' });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'chia-tien-bangkok.json';
@@ -2730,12 +2813,13 @@
       try { data = JSON.parse(reader.result); } catch (e) { flash('Tệp sao lưu không đọc được.'); return; }
       if (!data || !Array.isArray(data.expenses)) { flash('Tệp sao lưu không đúng định dạng.'); return; }
       var clean = data.expenses.filter(function (x) {
-        return x && typeof x.desc === 'string' && x.amount > 0 && PEOPLE.indexOf(x.payer) >= 0 &&
-          (x.cur === 'THB' || x.cur === 'VND') && /^\d{4}-\d{2}-\d{2}$/.test(x.date) && typeof x.id === 'string';
+        return x && typeof x.desc === 'string' && Number.isFinite(Number(x.amount)) && x.amount > 0 && PEOPLE.indexOf(x.payer) >= 0 &&
+          (x.cur === 'THB' || x.cur === 'VND') && /^\d{4}-\d{2}-\d{2}$/.test(x.date) && typeof x.id === 'string' &&
+          (x.participants === undefined || (Array.isArray(x.participants) && x.participants.every(function (p) { return PEOPLE.indexOf(p) >= 0; })));
       });
       if (!confirm('Thay dữ liệu hiện tại bằng ' + clean.length + ' khoản trong tệp sao lưu?')) return;
       state.expenses = clean;
-      if (data.rate > 0) { window.appState.exchangeRate = Number(data.rate); save(KEY.rate, window.appState.exchangeRate); $('fRate').value = window.appState.exchangeRate; window.updateCalculations(); }
+      if (Number.isFinite(Number(data.rate)) && data.rate > 0) { window.appState.exchangeRate = Number(data.rate); save(KEY.rate, window.appState.exchangeRate); $('fRate').value = window.appState.exchangeRate; window.updateCalculations(); }
       persist();
       resetForm();
       renderSplit();
